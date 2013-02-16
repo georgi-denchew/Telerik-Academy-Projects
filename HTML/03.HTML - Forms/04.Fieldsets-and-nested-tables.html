@@ -1,0 +1,145 @@
+﻿<DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>Fieldsets and Nested tables</title>
+    <style type="text/css">
+        nav {
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        img {
+            width: 100px;
+        }
+
+        figure {
+            float: left;
+        }
+
+        p {
+            float: right;
+            padding: 5px;
+            font-size: 14px;
+            line-height: 30px;
+        }
+
+        aside {
+            float: right;
+            padding-right: 30em;
+            padding-top: 3em;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">Apple</a>
+        <a href="#">Toshiba</a>
+        <a href="#">Lenovo</a>
+        <a href="#">Dell</a>
+        <a href="#">Asus</a>
+        <a href="#">Acer</a>
+        <a href="#">HP</a>
+    </nav>
+    <hr />
+    <form method="get" action="04.Fieldsets-and-nested-tables.html">
+        <aside>
+            <p>Min Price:   500USD</p>
+                    <br />
+            <input type="range" min="500" max="1500" />
+            <br />
+            <p>Max Price:  1500USD</p>
+            <br />
+            <input type="range" min="500" max="1500" />
+            <br />
+            <p>Min RAM:    4GB</p>
+                    <br />
+            <input type="range" min="4" max="16" />
+            <br />
+            <p>Max RAM:    16GB</p>
+            <br />
+            <input type="range" min="4" max="16" />
+        </aside>
+        <table border="1">
+            <tr>
+                <td>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <fieldset>
+                                        <legend>Apple Macbook Air</legend>
+                                        <figure>
+                                            <img src="Macbook.jpg" />
+                                            <figcaption>1300 USD</figcaption>
+                                        </figure>
+                                        <p>64 GB SSD<br />2GB DDR<br />Intel Core i5</p>
+                                    </fieldset>
+                                </td>
+                                <td>
+                                    <fieldset>
+                                        <legend>Apple Macbook Air</legend>
+                                        <figure>
+                                            <img src="Macbook.jpg" />
+                                            <figcaption>1300 USD</figcaption>
+                                        </figure>
+                                        <p>64 GB SSD<br />2GB DDR<br />Intel Core i5</p>
+                                    </fieldset>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <fieldset>
+                                        <legend>Apple Macbook Air</legend>
+                                        <figure>
+                                            <img src="Macbook.jpg" />
+                                            <figcaption>1300 USD</figcaption>
+                                        </figure>
+                                        <p>64 GB SSD<br />2GB DDR<br />Intel Core i5</p>
+                                    </fieldset>
+                                </td>
+                                <td>
+                                    <fieldset>
+                                        <legend>Apple Macbook Air</legend>
+                                        <figure>
+                                            <img src="Macbook.jpg" />
+                                            <figcaption>1300 USD</figcaption>
+                                        </figure>
+                                        <p>64 GB SSD<br />2GB DDR<br />Intel Core i5</p>
+                                    </fieldset>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <fieldset>
+                                        <legend>Apple Macbook Air</legend>
+                                        <figure>
+                                            <img src="Macbook.jpg" />
+                                            <figcaption>1300 USD</figcaption>
+                                        </figure>
+                                        <p>64 GB SSD<br />2GB DDR<br />Intel Core i5</p>
+                                    </fieldset>
+                                </td>
+                                <td>
+                                    <fieldset>
+                                        <legend>Apple Macbook Air</legend>
+                                        <figure>
+                                            <img src="Macbook.jpg" />
+                                            <figcaption>1300 USD</figcaption>
+                                        </figure>
+                                        <p>64 GB SSD<br />2GB DDR<br />Intel Core i5</p>
+                                    </fieldset>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

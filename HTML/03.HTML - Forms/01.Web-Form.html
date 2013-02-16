@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <style type="text/css">
+        table {
+            border: none;
+            border-collapse: collapse;
+        }
+
+        tfoot {
+            text-align: center;
+            background-color: aliceblue;
+            border-spacing: 0px;
+        }
+
+        td.info {
+            text-align: right;
+            font-weight: bold;
+        }
+    </style>
+    <title>Web Form</title>
+</head>
+<body>
+    <form name="Web Form" method="post" action="Web-Form.html">
+        <table border="1">
+            <colgroup>
+                <col style="width: 100px" />
+            </colgroup>
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Submit" />
+                        <input type="reset" value="Clear this form" />
+                    </td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td class="info">
+                        <label for="LastName">Last Name</label>
+                    </td>
+                    <td>
+                        <input type="text" id="LastName" placeholder="Enter last name here" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info">
+                        <label for="FirstName">First Name</label>
+                    </td>
+                    <td>
+                        <input type="text" id="FirstName" placeholder="Enter first name here" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info">
+                        <label for="Address">Address</label>
+                    </td>
+                    <td>
+                        <textarea rows="4" id="Address" cols="25"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info">
+                        <label for="City">City</label>
+                    </td>
+                    <td>
+                        <input type="text" id="City" size="17" />
+                        <label  for="State" style="font-weight: bold;">State</label>
+                        <input type="text" id="State" size="1" maxlength="2" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info">
+                        <label for="ZipPostalCode">Zip/Postal Code</label>
+                    </td>
+                    <td>
+                        <input type="text" id="ZipPostalCode" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info">
+                        <label for="Country">Country</label>
+                    </td>
+                    <td>
+                        <select id="Country">
+                            <option value="Bulgaria"
+                                selected="selected">Bulgaria
+                            </option>
+                            <option value="United States">United States
+                            </option>
+                            <option value="United Kingdom">United Kingdom
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info">
+                        <label for="CountryCode">Phone (country code, area code, number)</label>
+                    </td>
+                    <td>(+<input type="tel" id="CountryCode" size="3" />)
+                        <input type="tel" name="Area Code" size="3" />
+                        <input type="tel" name="Number" size="10" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info">
+                        <label for="Email">E-mail</label>
+                    </td>
+                    <td>
+                        <input type="email" id="Email" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info">Birth Date</td>
+                    <td>
+                        <label for="Month">Month</label>
+                        <input type="month" id="Month" name="Month" size="1" />
+                        <label for="Date">Date</label>
+                        <input type="text" id="Date" name="Date" size="1" />
+                        <label for="Year">Year</label>
+                        <input type="text" id="Year" name="Year" size="1" maxlength="4" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info">Gender</td>
+                    <td>
+                        <select name="Gender">
+                            <option selected="selected" value="Male">Male
+                            </option>
+                            <option value="Female">Female
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info">Starting Date</td>
+                    <td>
+                        <input type="radio" id="Spring2006" name="2006" value="Spring 2006" />
+                        <label for="Spring2006">Spring 2006</label>
+                        <input type="radio" id="Summer2006" name="2006" value="Summer 2006" />
+                        <label for="Summer2006">Summer 2006</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info">
+                        <label for="CommentsQuestions">Comments/Questions</label>
+                    </td>
+                    <td>
+                        <textarea id="CommentsQuestions" rows="5" cols="25"></textarea>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>
