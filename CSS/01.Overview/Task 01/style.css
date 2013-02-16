@@ -1,0 +1,55 @@
+* {
+    padding:0;
+    margin:0;
+}
+.part {
+    width:300px;
+    background-color: rgb(89, 89, 89);
+}
+table {
+    
+}
+
+th {
+    color: rgb(160, 160, 160);
+    font-weight: normal;
+}
+
+.info {
+    vertical-align:text-top;
+    font-style: italic;
+    color: rgb(209, 209, 209);
+}
+.personinfo {
+    text-align:left;
+    color:rgb(208, 194, 133);
+}
+#support {
+    padding:0;
+    text-align:left;
+    color:rgb(226, 12, 31);
+}
+.actionandtime {
+    color:rgb(151, 150, 139);
+}
+a {
+    text-align:right;
+    text-decoration:none;
+    color:rgb(208, 194, 133);
+}
+#statusanswer {
+    color: rgb(212, 109, 26);
+}
+.circle {
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    border-radius: 999px;
+    behavior: url(PIE.htc);
+    width: 10px;
+    height: 10px;
+    background-color:rgb(113, 180, 122);
+}
+p {
+    text-align:left;
+    padding:5px;
+}

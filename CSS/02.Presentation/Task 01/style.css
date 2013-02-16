@@ -1,0 +1,13 @@
+* { padding:0;
+    margin:0;
+}
+#l { font-family:'Edwardian Script ITC';
+     font-size:2em;
+}
+p { margin: 10px 5px;
+    width: 500px;
+}
+p, span { color:rgb(96, 193, 255);
+}
+#first-row { font-weight:bold;
+}

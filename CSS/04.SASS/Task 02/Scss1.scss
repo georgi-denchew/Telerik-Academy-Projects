@@ -1,0 +1,72 @@
+body, form section, div, ul, li, input, label, img{
+padding:0;
+margin:0;
+border:0;
+}
+
+ul
+{
+	li
+	{
+		list-style-type:none;
+		display:inline;
+	}
+	
+	.thumbnails
+	{
+		height:150px;
+		border: 1px solid grey;
+
+		opacity: 0.5;
+
+		&:hover
+		{
+			opacity: 1;
+			box-shadow: white 0px 0px 25px, inset white 0px -10px 10px;
+		}
+	}
+}
+
+#picture1-full-size, #picture2-full-size, #picture3-full-size, #picture4-full-size, #picture5-full-size, #picture6-full-size
+{
+	display:none;
+}
+
+input
+{
+	display:none;
+
+	&:checked + label #picture1-full-size
+	{
+		display:block;
+	}
+	&:checked + label #picture2-full-size
+	{
+		display:block;
+	}
+	&:checked + label #picture3-full-size
+	{
+		display:block;
+	}
+	&:checked + label #picture4-full-size
+	{
+		display:block;
+	}
+	&:checked + label #picture5-full-size
+	{
+		display:block;
+	}
+	&:checked + label #picture6-full-size
+	{
+		display:block;
+	}
+
+	&:checked + label img
+	{
+		margin-left:70px;
+		margin-bottom:40px;
+		height:400px;
+
+	}
+
+}

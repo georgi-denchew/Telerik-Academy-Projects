@@ -1,0 +1,89 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.main {
+    margin-bottom:0;
+    padding: 5px 0px 0px 0px;
+    background-color:rgb(30, 55, 65);
+    border: 2px solid rgb(51, 125, 143);
+    border-radius: 5px;
+    height:340px;
+    width:600px;
+}
+
+a {
+    font-family:Arial;
+    font-weight:bold;
+    font-size:11px;
+    text-decoration: none;
+}
+
+ul {
+
+    list-style-type: none;
+}
+
+.first {
+    position:absolute;
+    margin:0;
+    padding:0;
+}
+
+.first li:first-of-type {
+        background:none;
+    }
+    .first li:first-of-type a {
+        color:white;
+    }
+
+.first li {
+    float:left;
+    border-left: 1px solid rgb(30, 55, 65);
+    background-color: rgb(79, 98, 106);
+    padding: 0px 10px 2px 10px;
+}
+
+    .first li:last-of-type {
+        border-right: 1px solid black;
+    }
+
+    .first li a {
+        text-align:center;
+        color:rgb(106, 149, 173);
+    }
+
+    .first li:hover {
+        text-decoration: underline;
+    }
+
+.second {
+    float:left;
+    line-height: 15px;
+    padding:15px 0px 0px 0px;
+    width:200px;
+}
+
+    .second li {
+        padding: 10px 6px;
+        border-top:1px solid rgb(51, 73, 82);
+    }
+
+        .second li a {
+            color:rgb(156, 167, 171);
+        }
+
+        .second li:hover {
+            background-color: rgb(0, 150, 140);
+        }
+
+            .second li:hover a {
+                color:white;
+            }
+
+img {
+    width:350px;
+    padding-top:30px;
+    position:relative;
+}

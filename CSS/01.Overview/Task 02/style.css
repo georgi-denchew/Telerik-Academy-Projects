@@ -1,0 +1,44 @@
+* { font-family:'Arial Rounded MT';
+    padding:0;
+    margin:0;
+}
+table { 
+        border-width:thin;
+        border-collapse:collapse;
+        width:450px;
+        text-align:left;
+        line-height:30px;
+        border-bottom-style:inset;
+        
+}
+th { padding-left: 5px;
+     background-color:rgb(84, 183, 6);
+     color:rgb(232, 232, 232);
+     font-weight: normal;
+}
+td {
+    padding-right:27px;
+    border-bottom-style:hidden;
+    padding-left: 5px;
+}
+tr:nth-child(2n) { background-color:rgb(236, 236, 216)
+}
+img { vertical-align:central;
+}
+.germany {
+    background-image:url('img/germany.jpg');
+    background-repeat:no-repeat;
+    background-position: 8px;
+    padding-left:40px;
+}
+.mexico { background-image:url('img/mexico.jpg');
+          background-repeat:no-repeat;
+          background-position: 8px;
+          padding-left:40px;
+}
+.uk {
+    background-image: url('img/uk.jpg');
+    background-repeat: no-repeat;
+    background-position: 8px;
+    padding-left:40px;
+}

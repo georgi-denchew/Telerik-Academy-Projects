@@ -1,0 +1,59 @@
+.main {
+    width:600px;
+    background-color:rgb(59, 59, 59);
+    border: 1px solid rgb(191, 133, 28);
+    border-radius: 5px;
+    
+}
+
+nav {
+    padding: 10px 5px;
+    border-radius:5px;
+    background-color:rgb(53, 53, 53);
+    box-shadow:0px 5px 1.5em hsla(0, 0%, 0%, 0.5);
+    color:white;
+    font-size:20px;
+
+}
+
+.login {
+    margin-left:33px;
+}
+
+img {
+    position:absolute;
+    filter:alpha(opacity=70);
+    opacity:0.7;
+    width:30px;
+}
+
+.heading {
+    padding-top:20px;
+    color:rgb(244, 210, 26);
+    font-size:25px;
+
+}
+
+input {
+    margin-left:15px;
+    margin-right:15px;
+}
+
+button {
+    color:rgb(215, 215, 215);
+    width:50px;
+    height:23px;
+    background-color:rgb(220, 75, 74);
+    border:1px solid white;
+    border-radius:5px;
+}
+
+article {
+    color:rgb(165, 165, 165);
+    padding-left:10px;
+    padding-right:50px;
+}
+
+.white {
+    color:white;
+}

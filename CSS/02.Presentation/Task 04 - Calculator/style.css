@@ -1,0 +1,259 @@
+* { 
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family:Consolas;
+    background-color:white;
+}
+
+.outer {
+    background-color:white;
+    height:380px;
+    width:410px;
+    box-shadow:1px 1px 5px #888888;
+}
+
+.inner { 
+    background:-webkit-gradient(linear, 0% 50%, 0% 0%, from(#D9E4F1), to(#EDF4FC));
+    background:-moz-linear-gradient(0% 50% 90deg, #D9E4F1, #EDF4FC );
+    background:-o-linear-gradient(#EDF4FC, #D9E4F1);
+    height: 378px;
+    width: 408px;
+}
+
+ h1 { 
+    background:white; 
+    background-image:url('img/calculator.png');
+    background-repeat:no-repeat;
+    font-weight:normal;
+    font-size: 16px;
+    line-height:25px;
+    text-align:center;
+    padding-left:100px;
+}
+
+.float-right { 
+    float:right;
+    text-decoration:none;
+}
+
+#close {
+    line-height:21px;
+    color:white;
+    background-color:rgb(199, 80, 80);
+    padding-right:19px;
+    padding-left:19px;
+}
+
+    #close:hover {
+        background-color:rgb(224, 67, 67);
+    }
+
+input[src="img/maximize.png"] {
+    padding-right:7px;
+    padding-left:7px;
+    padding-top:5px;
+}
+
+#minimize {
+    color:black;
+    padding-left:7px;
+    text-align:center; 
+    font-size:25px;
+    font-weight:normal;
+    padding-right:10px;
+    
+}
+
+    #minimize:hover {
+        line-height:22px;
+        color:white;
+        background-color:rgb(54, 101, 179);
+    }
+
+nav ul {
+    border:1px solid rgb(220, 220, 220);
+    background-color:rgb(245, 246, 247);
+}
+
+    nav ul li {
+        display:inline;
+    }
+
+header
+nav ul li a {
+    margin:0;
+    padding-bottom:2px;
+    padding-top:3px;
+    padding-left:5px;
+    padding-right:6px;
+    vertical-align:central;
+    font-size:12px;
+    text-decoration:none;
+    color:black;
+}
+
+   nav ul li a:hover {
+        border-width:1px; 
+        border-style:solid;
+        border-color:rgb(122, 177, 232);
+        background-color:rgb(213, 231, 248);
+    }
+
+.numberfield {
+
+    padding-right: 5px;
+    background:-webkit-gradient(linear, 0% 0%, 0% 90%, from(#E5EFFB), to(#FFFFFF));
+    background:-moz-linear-gradient(0% 90% 90deg, #FFFFFF, #E5EFFB);
+    background:-o-linear-gradient(#E5EFFB, #FFFFFF);
+    font-size:23px;
+    vertical-align:text-bottom;
+    line-height:46px;
+    text-align:right;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border:1px solid rgb(160, 160, 160);
+    border-radius:2px;
+}
+
+.numerics > table {
+    padding-left:10px;
+    font-size:small;
+    width:388px;
+    line-height:12px;
+    color: rgb(30, 57, 91); 
+    border:1px solid rgb(160, 160, 160);
+    border-radius:2px;
+    margin: 5px 10px 0px 10px;
+}
+
+.td-align-right {
+    padding-right: 16px;
+    text-align: right;
+}
+
+section table  tr:nth-child(2n) {
+    color:rgb(102, 102, 102);
+}
+table {
+    color:rgb(31, 57, 118);
+    margin-left:5px;
+}
+
+form table td ul {
+    width:69px;
+}
+
+    form table ul {
+        border-radius:2px;
+        border:1px solid rgb(134, 150, 170);
+        height:83px;
+        padding-left:5px;
+        text-align:left;
+        padding-top:5px;
+        line-height:20px;
+        font-size:12px;
+        list-style-type:none;
+    }
+
+form table {
+    border-spacing:5px;
+}
+form table  td {
+    text-align:center;
+    
+}
+
+    form table table td:hover {
+         background-color:yellow;
+    }
+    form table table td:active {
+        background-color:green;
+    }
+
+label { padding-left:2px;
+}
+
+button {
+    color:rgb(31, 57, 118);
+    font-size:11px;
+    border-radius:2px;
+    border:1px solid rgb(134, 150, 170);
+    margin:0px;
+    padding:0px;
+    width:34px;
+    height:27px;
+}
+
+#zero {
+    width:73px;
+}
+
+#equals {
+    font-size:18px;
+    height:59px;
+}
+
+#empty {
+    background:rgb(217, 228, 241);
+    border:1px solid rgb(134, 150, 170);
+}
+
+.primary-buttons {
+    font-size:15px;
+}
+
+#delete {
+    font-size:20px;
+    font-weight:900;
+}
+
+.primary-buttons {
+    background:rgb(218, 229, 241);
+}
+
+.primary-buttons-background {
+    
+    font-size:15px;
+    background:-webkit-gradient(linear, 40% 40%, 40% 110%, from(#F7FBFF), to(#D5E0ED));
+    background:-moz-linear-gradient(40% 110% 90deg, #D5E0ED, #F7FBFF);
+    background:-o-linear-gradient(#F7FBFF, #D5E0ED);
+}
+
+#comma, #MC, #MR, #MS, #Mplus, #M-, #sqrt, #moded, #one-over-x {
+    background:rgb(218, 228, 241);
+}
+
+#Mod, #RoL, #RoR, #Or, #Xor, #Lsh, #Rsh, #Not, #And, #CE, #C, #plus-minus, #slash, #multiply, #plus, #equals, #delete, #opening-paranthesis, #closing-paranthesis, #minus {
+    background:-webkit-gradient(linear, 15% 15%, 15% 70%, from(#F0F6FB), to(#D7E2EF));
+    background:-moz-linear-gradient(15% 70% 90deg, #D7E2EF, #F0F6FB);
+    background:-o-linear-gradient(#F0F6FB, #D7E2EF);
+}
+
+#MC:hover, #MR:hover, #MS:hover, #Mplus:hover, #M-:hover{
+    background:-webkit-gradient(linear, 10% 10%, 10% 100%, from(#FFCE67), to(#FFFFF2));
+    background:-moz-linear-gradient(10% 100% 90deg, #FFFFF2, #FFCE67);
+    background:-o-linear-gradient(#FFCE67, #FFFFF2);
+}
+
+#MC:active, #MR:active, #MS:active, #Mplus:active, #M-:active {
+    background: -webkit-gradient(linear, 10% 10%, 10% 100%, from(#E7B55D), to(#E9E398));
+    background: -moz-linear-gradient(10% 100% 90deg, #E9E398, #E7855D);
+    background: -o-linear-gradient(#E7B55D, #E9E398);
+}
+
+.primary-buttons-background:hover, #Mod:hover, #RoL:hover, #RoR:hover, #Or:hover, #Xor:hover, #Lsh:hover, #Rsh:hover, #Not:hover, #And:hover, #CE:hover, #C:hover, #plus-minus:hover, #slash:hover, #multiply:hover, #plus:hover, #equals:hover, #delete:hover, #opening-paranthesis:hover, #closing-paranthesis:hover, #minus:hover {
+    background:-webkit-gradient(linear, 90% 90%, 90% 50%, from(#FFD06C), to(#FFFAB4));
+    background:-moz-linear-gradient(90% 50% 90deg, #FFFAB4, #FFD06C);
+    background: -o-linear-gradient(#FFD06C, #FFFAB4);
+}
+
+.primary-buttons-background:active, #Mod:active, #RoL:active, #RoR:active, #Or:active, #Xor:active, #Lsh:active, #Rsh:active, #Not:active, #And:active, #CE:active, #C:active, #plus-minus:active, #slash:active, #multiply:active, #plus:active, #equals:active, #delete:active, #opening-paranthesis:active, #closing-paranthesis:active, #minus:active {
+    background:-webkit-gradient(linear, 10% 10%, 10% 100%, from(#F3CE8D), to(#F2F2BB));
+    background:-moz-linear-gradient(10% 100% 90deg, #F2F2BB, #F3CE8D);
+    background: -o-linear-gradient(#F3CE8D, #F2F2BB);
+}
+/* NESTED TABLES!!
+   1/X - smaller font*/

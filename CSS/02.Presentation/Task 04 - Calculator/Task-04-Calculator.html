@@ -1,0 +1,197 @@
+﻿<DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>Windows 8 Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">
+            <header>
+                <h1><span>Calculator</span>
+                    <a href="#" id="close" class="float-right">x</a>
+                    <input type="image" src="img/maximize.png" class="float-right" />
+                    <a href="#" id="minimize" class="float-right">-</a>
+                </h1>
+                <nav>
+                    <ul>
+                        <li><a href="#">View</a></li>
+                        <li><a href="#">Edit</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <section class="numberfield"><span>8854455</span></section>
+            <section class="numerics">
+                <table>
+                    <tr>
+                        <td>0000</td>
+                        <td>0000</td>
+                        <td>0000</td>
+                        <td>0000</td>
+                        <td>0000</td>
+                        <td>0000</td>
+                        <td>0000</td>
+                        <td>0000</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">63</td>
+                        <td colspan="2">47</td>
+                        <td class="td-align-right" colspan="2">32</td>
+                    </tr>
+                    <tr>
+                        <td>0000</td>
+                        <td>0000</td>
+                        <td>1000</td>
+                        <td>0111</td>
+                        <td>0001</td>
+                        <td>1011</td>
+                        <td>1011</td>
+                        <td>0111</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">31</td>
+                        <td colspan="2">15</td>
+                        <td class="td-align-right" colspan="2">0</td>
+                    </tr>
+                </table>
+            </section>
+            <form>
+                <table class="first">
+                    <tr>
+                        <td rowspan="3" colspan="2">
+                            <ul>
+                                <li>
+                                    <input type="radio" id="Hex"  checked="checked" name="numerics" /><label for="Hex">Hex</label></li>
+                                <li>
+                                    <input type="radio" id="Dec" name="numerics" /><label for="Dec">Dec</label></li>
+                                <li>
+                                    <input type="radio" id="Oct" name="numerics" /><label for="Oct">Oct</label></li>
+                                <li>
+                                    <input type="radio" id="Bin" name="numerics" /><label for="Bin">Bin</label></li>
+                            </ul>
+                        </td>
+                                    <td ><button id="empty"></button></td>
+                                    <td>
+                                        <button id="Mod">Mod</button></td>
+                                    <td>
+                                        <button class="primary-buttons">A</button></td>
+                                    <td>
+                                        <button id="MC">MC</button></td>
+                                    <td>
+                                        <button id="MR">MR</button></td>
+                                    <td>
+                                        <button id="MS">MS</button></td>
+                                    <td>
+                                        <button id="Mplus">M+</button></td>
+                                    <td>
+                                        <button id="M-">M-</button></td>
+                            </tr>
+                                <tr>
+                                    <td>
+                                        <button id="opening-paranthesis">(</button></td>
+                                    <td>
+                                        <button id="closing-paranthesis">)</button></td>
+                                    <td>
+                                        <button class="primary-buttons">B</button></td>
+                                    <td>
+                                        <button id="delete" >&#8592</button></td>
+                                    <td>
+                                        <button id="CE">CE</button></td>
+                                    <td>
+                                        <button id="C">C</button></td>
+                                    <td>
+                                        <button id="plus-minus">±</button></td>
+                                    <td>
+                                        <button id="sqrt">√</button></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button id="RoL">RoL</button></td>
+                                    <td>
+                                        <button id="RoR">RoR</button></td>
+                                    <td>
+                                        <button class="primary-buttons">C</button></td>
+                                    <td>
+                                        <button class="primary-buttons-background">7</button></td>
+                                    <td>
+                                        <button class="primary-buttons-background">8</button></td>
+                                    <td>
+                                        <button class="primary-buttons-background">9</button></td>
+                                    <td>
+                                        <button id="slash">/</button></td>
+                                    <td>
+                                        <button id="moded">%</button></td>
+                                </tr>
+
+                    <tr>
+                        <td rowspan="3" colspan="2">
+                            <ul>
+                                <li>
+                                    <input type="radio" id="Qword" name="word" checked="checked" /><label for="Qword">Qword</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="Dword" name="word" /><label for="Dword">Dword</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="Word" name="word" /><label for="Word">Word</label></li>
+                                <li>
+                                    <input type="radio" id="Byte" name="word" /><label for="Byte">Byte</label></li>
+                            </ul>
+                        </td>
+                                    <td>
+                                        <button id="Or">Or</button></td>
+                                    <td>
+                                        <button id="Xor">Xor</button></td>
+                                    <td>
+                                        <button class="primary-buttons">D</button></td>
+                                    <td>
+                                        <button class="primary-buttons-background">4</button></td>
+                                    <td>
+                                        <button class="primary-buttons-background">5</button></td>
+                                    <td>
+                                        <button class="primary-buttons-background">6</button></td>
+                                    <td>
+                                        <button id="multiply">*</button></td>
+                                    <td>
+                                        <button id="one-over-x">1/x</button></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button id="Lsh">Lsh</button></td>
+                                    <td>
+                                        <button id="Rsh">Rsh</button></td>
+                                    <td>
+                                        <button class="primary-buttons">E</button></td>
+                                    <td>
+                                        <button class="primary-buttons-background">1</button></td>
+                                    <td>
+                                        <button class="primary-buttons-background">2</button></td>
+                                    <td>
+                                        <button class="primary-buttons-background">3</button></td>
+                                    <td>
+                                        <button id="minus">-</button></td>
+                                    <td rowspan="2">
+                                        <button id="equals">=</button></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button id="Not">Not</button></td>
+                                    <td>
+                                        <button id="And">And</button></td>
+                                    <td>
+                                        <button class="primary-buttons">F</button></td>
+                                    <td colspan="2">
+                                        <button class="primary-buttons-background" id="zero">0</button></td>
+                                    <td>
+                                        <button id="comma">,</button></td>
+                                    <td>
+                                        <button id="plus">+</button></td>
+                                </tr>
+                            </table>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+* { padding:0;
+    margin:0;
+}
+body { 
+       background-color:rgb(169, 169, 169);
+       text-align:justify;
+}
+h1 { margin:20px 5px;
+     text-align:center;
+     color:rgb(250, 250, 210);
+}
+.left-align { text-align:left;
+}
+ul {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    list-style-type: none;
+}
+a { text-decoration:none;
+    color:white;
+}
+.current { background-color:rgb(211, 211, 211);
+}
+.underlined {
+    text-decoration: underline;
+}
+p { margin-left: 5px;
+    margin-right: 5px;
+}
+.doncho { color:black;
+}
+.posted { margin-top:20px
+}
+#telerik { margin-top:10px;
+           text-align:center;
+}
+section h1 { font-size:25px;
+}
