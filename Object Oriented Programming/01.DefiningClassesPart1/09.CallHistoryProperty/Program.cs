@@ -6,6 +6,9 @@ using System.Text;
 
 namespace _09.CallHistoryProperty
 {
+    //Add a property CallHistory in the GSM class to hold a list of the performed calls. 
+    //Try to use the system class List<Call>.
+
     class Program
     {
         static void Main(string[] args)
