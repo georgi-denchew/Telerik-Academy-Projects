@@ -1,16 +1,16 @@
 ﻿using System;
-using System.Threading;
-using System.Globalization;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace _09.CallHistoryProperty
+namespace _10.AddRemoveClearMethods
 {
-    //Add a property CallHistory in the GSM class to hold a list of the performed calls. 
-    //Try to use the system class List<Call>.
-
     class Program
     {
+        //Add methods in the GSM class for adding and deleting calls from the calls history.
+        //Add a method to clear the call history.
+
         static void Main(string[] args)
         {
             DateTime galaxyDate = new DateTime(2013, 02, 20, 11, 11, 12);
@@ -31,7 +31,11 @@ namespace _09.CallHistoryProperty
             Display htcOneDisplay = new Display(4.8M, 18000000);
             GSM htcOne = new GSM("htc", "One", 600, "bash bai shile", htcOneBattery, htcOneDisplay, htcCall);
 
-            
+            GSM.DeleteCall(callNokia);
+
+            //GSM.AddCall(htcCall);
+
+            //GSM.CallClear();
 
             foreach (Call call in GSM.CallHistory)
             {

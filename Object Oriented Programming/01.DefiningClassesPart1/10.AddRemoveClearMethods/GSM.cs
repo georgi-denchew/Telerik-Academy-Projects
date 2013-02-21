@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Collections.Generic;
 using System.Text;
 
-namespace _09.CallHistoryProperty
+namespace _10.AddRemoveClearMethods
 {
     public class GSM
     {
@@ -109,6 +109,20 @@ namespace _09.CallHistoryProperty
             string info = infoBuild.ToString();
             return info.Trim();
         }
-        
+
+        public static  void ClearCallHistory()
+        {
+            callHistory.Clear();
+        }
+
+        public static void AddCall(Call call)
+        {
+            callHistory.Add(call);
+        }
+
+        public static void DeleteCall(Call call)
+        {
+            callHistory.Remove(call);
+        }
     }
 }

@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Collections.Generic;
 using System.Text;
 
-namespace _09.CallHistoryProperty
+namespace _12.GSMCallHistoryTest
 {
     public class GSM
     {
@@ -20,6 +20,15 @@ namespace _09.CallHistoryProperty
         private static string iPhone4S = "IPhone4S (made by Apple) is a revolutionary new product, with elegant design and is able to " +
             "perform many different operations";
 
+        public GSM(string manifacturer, string model, decimal? price, string owner, Battery battery, Display display)
+            : this(manifacturer, model, price, owner, battery, display, null)
+        {
+        }
+
+        public GSM(string manifacturer, decimal? price, string owner)
+            : this(manifacturer, null, price, owner, null, null, null)
+        {
+        }
 
         public GSM(string manifacturer, string model, decimal? price, string owner, Battery battery, Display display, Call call)
         {
@@ -109,6 +118,38 @@ namespace _09.CallHistoryProperty
             string info = infoBuild.ToString();
             return info.Trim();
         }
-        
+
+        public static  void ClearCallHistory()
+        {
+            callHistory.Clear();
+        }
+
+        public static void AddCall(Call call)
+        {
+            callHistory.Add(call);
+        }
+
+        public static void DeleteCall(Call call)
+        {
+            callHistory.Remove(call);
+        }
+
+        public static decimal CallsPrice(decimal priceForMinute)
+        {
+            decimal price = 0;
+
+            foreach (Call call in callHistory)
+            {
+                if (call.Duration < 60)
+                {
+                    price += priceForMinute;
+                }
+                else
+                {
+                    price += ((decimal)call.Duration / 60) * priceForMinute;
+                }
+            }
+            return price;
+        }
     }
 }

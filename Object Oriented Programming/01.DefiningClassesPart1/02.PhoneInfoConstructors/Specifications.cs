@@ -22,10 +22,10 @@ namespace _02.PhoneInfoConstructors
             int hoursTalk = 18;
             decimal displaySize = 4.3M;
             int displayColors = 16000000;
-            //GSM phone = new GSM(manifacturer, model);
+            GSM phone = new GSM(manifacturer, model);
             //GSM phone = new GSM(manifacturer, model, price, owner);
             //GSM phone = new GSM(manifacturer, model, price, owner, batteryType, displaySize);
-            GSM phone = new GSM(manifacturer, model, price, owner, batteryModel, hoursIdle, hoursTalk, displaySize, displayColors);
+           // GSM phone = new GSM(manifacturer, model, price, owner, batteryModel, hoursIdle, hoursTalk, displaySize, displayColors);
             Console.WriteLine("Phone specifications:");
             Console.WriteLine("Phone model: {0}", phone.Model);
             Console.WriteLine("Phone manifacturer: {0}", phone.Manifacturer);

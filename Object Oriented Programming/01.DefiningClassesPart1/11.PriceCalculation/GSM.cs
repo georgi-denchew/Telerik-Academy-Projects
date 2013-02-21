@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Collections.Generic;
 using System.Text;
 
-namespace _09.CallHistoryProperty
+namespace _11.PriceCalculation
 {
     public class GSM
     {
@@ -109,6 +109,38 @@ namespace _09.CallHistoryProperty
             string info = infoBuild.ToString();
             return info.Trim();
         }
-        
+
+        public static  void ClearCallHistory()
+        {
+            callHistory.Clear();
+        }
+
+        public static void AddCall(Call call)
+        {
+            callHistory.Add(call);
+        }
+
+        public static void DeleteCall(Call call)
+        {
+            callHistory.Remove(call);
+        }
+
+        public static decimal CallsPrice(decimal priceForMinute)
+        {
+            decimal price = 0;
+
+            foreach (Call call in callHistory)
+            {
+                if (call.Duration < 60)
+                {
+                    price += priceForMinute;
+                }
+                else
+                {
+                    price += ((decimal)call.Duration / 60) * priceForMinute;
+                }
+            }
+            return price;
+        }
     }
 }
