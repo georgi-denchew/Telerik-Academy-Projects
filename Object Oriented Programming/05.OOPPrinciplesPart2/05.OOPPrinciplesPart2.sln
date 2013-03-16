@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Shape", "01.Shape\01.Shape.csproj", "{802C3D95-1002-4063-B99E-B012B76BB564}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.Bank", "02.Bank\02.Bank.csproj", "{EC0FC530-267B-4B39-B225-A92862F9F716}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.InvalidRangeException", "03.InvalidRangeException\03.InvalidRangeException.csproj", "{E4DDE4B8-41C2-4E44-B745-66FE3967EF07}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{802C3D95-1002-4063-B99E-B012B76BB564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{802C3D95-1002-4063-B99E-B012B76BB564}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{802C3D95-1002-4063-B99E-B012B76BB564}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{802C3D95-1002-4063-B99E-B012B76BB564}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC0FC530-267B-4B39-B225-A92862F9F716}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC0FC530-267B-4B39-B225-A92862F9F716}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC0FC530-267B-4B39-B225-A92862F9F716}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC0FC530-267B-4B39-B225-A92862F9F716}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4DDE4B8-41C2-4E44-B745-66FE3967EF07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4DDE4B8-41C2-4E44-B745-66FE3967EF07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4DDE4B8-41C2-4E44-B745-66FE3967EF07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4DDE4B8-41C2-4E44-B745-66FE3967EF07}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

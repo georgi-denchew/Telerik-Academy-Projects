@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <a href="#" onclick="SequenceButtonClick()">Find largest sequence</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function SequenceButtonClick()
+        {
+            var numbers = [1, 1, 1, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4];
+            var i = 1;
+            var count = 1;
+            var maxCount = 1;
+            var number;
+            var j = 0;
+
+
+            for (i; i < numbers.length; i++) {
+
+                if (numbers[i] == numbers[i - 1])
+                {
+                    count++;
+                    if (maxCount < count)
+                    {
+                        maxCount = count;
+                        number = numbers[i];
+                    }
+                }
+                else
+                {
+                    count = 1;
+                }
+            }
+            for (j; j < maxCount; j++) {
+                jsConsole.write(number);
+                
+                if(j != maxCount - 1)
+                {
+                    jsConsole.write(", ");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

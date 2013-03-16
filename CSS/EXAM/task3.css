@@ -1,0 +1,89 @@
+body, div, p, a, h2{
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+    font-size: 16px;
+    padding:20px;
+}
+
+h2, h3{
+    margin:0;
+    font-size:17px;
+}
+
+#wrapper{
+    margin:20px;
+    display:table-row;
+}
+
+#wrapper > div{
+    padding-top:10px;
+    padding-left:4px;
+    display:table-cell;
+    border: 2px solid #D3D7DA;
+    border-right:0;
+    width:144px;
+}
+#wrapper > div:last-of-type{
+    border-right:2px solid #D3D7DA;
+}
+#wrapper > div:nth-of-type(2n){
+    background: -webkit-linear-gradient(top, #FFFFFF 10%,#F1F2F3 100%);
+    height:257px;
+}
+
+a{
+    text-decoration:none;
+    color:#C72D2F;
+    text-align:left;
+}
+
+hgroup{
+    height:40px;
+    padding-left:40px;
+    margin-bottom:16px;
+    background-position-y:4px;
+}
+
+#wrapper > div:first-of-type > hgroup{
+    background-image: url(imgs/install.png);
+    background-repeat:no-repeat;
+}
+#wrapper > div:nth-of-type(2) > hgroup {
+    background-image: url(imgs/tuneUp.png);
+    background-repeat:no-repeat;
+   
+}
+
+#wrapper > div:nth-of-type(3) > hgroup{
+    background-image: url(imgs/manage.png);
+    background-repeat:no-repeat;
+}
+#wrapper > div:nth-of-type(4) > hgroup{
+    background-image: url(imgs/openSource.png);
+    background-repeat:no-repeat;
+}
+#wrapper > div:nth-of-type(5) > hgroup{
+    background-image: url(imgs/twitter.png);
+    background-repeat:no-repeat;
+}
+#wrapper > div:nth-of-type(6) > hgroup{
+    background-image: url(imgs/about.png);
+    background-repeat:no-repeat;
+}
+
+div span{
+    text-transform:uppercase;
+}
+
+.yellowBox{
+    border:1px solid #FFFF00;
+    background-color:rgb(255, 255, 221);
+}
+
+p{
+    text-align:left;
+}

@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="number">Number:</label>
+    <input type="text" id="number"/>
+    <a href="#" onclick="DividedBy7and5ButtonClick()">Check if divisible</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function DividedBy7and5ButtonClick()
+        {
+            var number = jsConsole.readInteger("#number");
+            var isDivisible = number % 7 == 0 && number % 5 == 0;
+
+            if (isDivisible)
+            {
+                jsConsole.writeLine("The number can be divided by 7 and 5 at the same time");
+            }
+            else
+            {
+                jsConsole.writeLine("The number cannot be divided by 7 and 5 at the same time");
+            }
+        }
+    </script>
+</body>
+</html>
