@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var str = "unvalid@email-com @anotherunvalid and@one@more  zuzi_@kaval.bg;; ciki89@duduk.net, bob@mail.bg\n\nfn12345@fmi.uni-sofia.bg\n mente@eu.int | , , ;;; gero@dir.bg";
+        var pattern;
+        
+        var emails = EmailExtract(str);
+
+        jsConsole.writeLine(str);
+        jsConsole.writeLine();
+        jsConsole.writeLine("valid emails:");
+        jsConsole.writeLine(emails);
+        
+        function EmailExtract(string)
+        {
+            pattern = /\w+@[a-zA-z_]+\.[a-z]{2,3}/g; // regular expression --> here's a link to check them out: http://www.w3schools.com/js/js_obj_regexp.asp
+            return string.match(pattern);
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var str = "<p>Please visit <a href=\"http://academy.telerik. com\">our site</a> to choose a training course. Also visit <a href=\"www.devbg.org\">our forum</a> to discuss the courses.</p>";
+        var length, i, result, isTagText;
+
+        var replaced = ATagReplace(str);
+
+        function ATagReplace(string)
+        {
+            length = string.length;
+            result = "";
+            isTagText = false; // boolean variable checks if the text is tag text, in other words - if it's in <> 
+
+            for (i = 0; i < length; i++) {
+                if (str[i] === "<" && str.indexOf("a href=", i) === i + 1)
+                {
+                    isTagText = true;
+                    result += "[URL=";
+                    i += 8;
+                    continue;
+                }
+                else if(str[i] === "\"" && isTagText)
+                {
+                    isTagText = false;
+                    result += "]";
+                    i++;
+                    continue;
+                }
+                else if (str[i] === "<" && str.indexOf("/a>", i) === i + 1)
+                {
+                    result += "[/URL]";
+                    i += 3;
+                    continue;
+                }
+
+                else
+                {
+                    result += str[i];
+                }
+            }
+            return result;
+        }
+    </script>
+</body>
+</html>

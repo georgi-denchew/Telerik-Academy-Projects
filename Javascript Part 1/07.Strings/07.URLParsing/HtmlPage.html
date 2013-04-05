@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var url = "http://www.devbg.org/forum/index.php";//hardcored string to perform a test
+        var length, result, i, protocol, server, resource, protocolEndIndex, isResource;
+        var parsed = UrlParse(url); //testing
+
+        function UrlParse(str)
+        {
+            length = str.length;
+            i = 0;
+            result = "";
+            protocol = "";
+            server = "";
+            resource = "";
+            isResource = false;
+
+            protocolEndIndex = str.indexOf(":"); //finding where the protocol ends
+            protocol = str.substring(0, protocolEndIndex); //setting protocol string
+
+            for (i = protocolEndIndex + 3; i < length; i++) { //setting server and resource string
+                if (str[i] === '/' && !isResource)
+                {
+                    isResource = true;
+                }
+
+                else if(!isResource) //the loop assigns value to teh server string, until it reaches the resource area
+                {
+                    server += str[i]
+                    continue;
+                }
+                if (isResource)
+                {
+                    resource += str[i];
+                }
+            }
+
+            var url = {
+                protocol: protocol,
+                server: server,
+                resource: resource,
+                toString: this.protocol + "://" + this.server + this.resource
+            }
+            return url;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        //I CHANGED THE HARDCORED STRING TO CHECK HOW NESTED REGIONS BEHAVE AFTER BEING CHANGED
+        var str = "We are <mixcase>living</mixcase> in a <upcase>yellow <lowcase>submarine</lowcase></upcase>. We <mixcase>don't</mixcase> have <lowcase>anything</lowcase> else.";
+        jsConsole.writeLine(str);
+
+        var result = "";
+        var length, i, mixcase, upcase, lowcase, tempMixcase, tempUpcase, tempLowcase;
+        var caseChanged = ChangeLetters(str);
+
+        jsConsole.writeLine();
+        jsConsole.writeLine(caseChanged);
+
+        function ChangeLetters(str)
+        {
+            
+            length = str.length;
+            for (i = 0; i < length; i++) {
+                if (str[i] === "<" && str[i + 1] === "m" && str[i + 2] === "i" && str[i + 3] === "x" && str[i + 4] === "c" && str[i + 5] === "a" && str[i + 6] === "s" && str[i + 7] === "e" && str[i + 8] === ">") {
+                    if (upcase || lowcase) {
+                        tempMixcase = true; //using the temp variables for the nested regions
+                    }
+                    else {
+                        mixcase = true;
+                    }
+                    i += 8;
+                    continue;
+                }
+                else if (str[i] === "<" && str[i + 1] === "/" && str[i + 2] === "m" && str[i + 3] === "i" && str[i + 4] === "x" && str[i + 5] === "c" && str[i + 6] === "a" && str[i + 7] === "s" && str[i + 8] === "e" && str[i + 9] === ">") {
+                    if (upcase || lowcase) {
+                        tempMixcase = false; //using the temp variables for the nested regions
+                    }
+                    else {
+                        mixcase = false;
+                    }
+                    i += 9;
+                    continue;
+                }
+                    //The following idea came to me after i started doing the homework task and I wanted to see if it will work. I left the upper conditional statements different than these on purpose, just so I can see if both of them will work correctly;
+
+                else if (str[i] === "<" && str.indexOf("upcase>", i) === i + 1) { 
+
+                    if (mixcase || lowcase) {
+                        tempUpcase = true; //using the temp variables for the nested regions
+                    }
+
+                    else {
+                        upcase = true;
+                    }
+                    i += 7;
+                    continue;
+                }
+
+                else if (str[i] === "<" && str.indexOf("/upcase>", i) === i + 1)
+                {
+                    if (mixcase || lowcase) {
+                        tempUpcase = false;
+                    }
+
+                    else {
+                        upcase = false;
+                    }
+                    i += 8;
+                    continue;
+                }
+
+                else if(str[i] === "<" && str.indexOf("lowcase>", i) === i + 1)
+                {
+                    if (upcase || mixcase) {
+                        tempLowcase = true;
+                    }
+
+                    else {
+                        lowcase = true;
+                    }
+                    i += 8;
+                    continue;
+                }
+
+                else if (str[i] === "<" && str.indexOf("/lowcase>", i) === i + 1) {
+
+                    if (upcase || mixcase) {
+                        tempLowcase = false;
+                    }
+                    else {
+                        lowcase = false;
+                    }
+                    i += 9;
+                    continue;
+                }
+
+                else {
+
+                    if ((mixcase && !tempLowcase && !tempUpcase) || tempMixcase)
+                    {
+                        if (Math.floor((Math.random() * 10) + 1) > 5)
+                        {
+                            result += str[i].toUpperCase();
+                        }
+
+                        else
+                        {
+                            result += str[i].toLowerCase();
+                        }
+                    }
+
+                    else if ((upcase && !tempLowcase && !tempMixcase) || tempUpcase)
+                    {
+                        result += str[i].toUpperCase();
+                    }
+
+                    else if ((lowcase && !tempMixcase &&tempUpcase) || tempLowcase)
+                    {
+                        result += str[i].toLowerCase();
+                    }
+
+                    else
+                    {
+                        result += str[i];
+                    }
+                }
+            }
+            return result;
+        }
+    </script>
+</body>
+</html>

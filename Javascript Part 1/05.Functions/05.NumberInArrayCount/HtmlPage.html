@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var arr = new Array(1, 2, 3, 1, 1, 1);
+
+        FindNumberCount(arr, 1);
+
+        function FindNumberCount(array, number)
+        {
+            var count = 0;
+            for (var i = 0; i < array.length; i++) {
+                if (array[i] == number)
+                {
+                    count++;
+                }
+            }
+            jsConsole.writeLine(count);
+        }
+    </script>
+</body>
+</html>

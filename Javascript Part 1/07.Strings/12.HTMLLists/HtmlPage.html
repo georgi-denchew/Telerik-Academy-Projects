@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+       
+    <div>Template</div>
+    <div data-type="template" id="list-item">
+        <strong>-{name}-</strong> <span>-{age}-</span>
+    </div>
+    <div>Result</div>
+    <div id="ul-result"></div>
+        <script>
+
+
+            var people =
+            [
+                { name: "Pesho Goshev", age: 5 },
+                { name: "Gosho Peshev", age: 10 },
+                { name: "Peshko Goshkev", age: 8 },
+            ];
+            var result, replacement, item, match, replacementValue;
+
+
+            var template = document.getElementById("list-item").innerHTML;
+            var peopleList = generateList(people, template);
+
+            document.getElementById("ul-result").innerHTML = peopleList;
+
+            function generateList(array, template) {
+                result = "<ul>";
+                replacement = /-{(.*?)}-/;
+
+                for (var i in array) {
+                    item = template;
+                    
+                    while(match = item.match(replacement))
+                    {
+                        replacementValue = array[i][match[1]];
+                        item = item.replace(replacement, replacementValue);
+                    }
+
+                    result += "<li>" + item + "</li>";
+                }
+
+                result += "</ul>";
+                return result;
+            }
+        </script>
+</body>
+</html>

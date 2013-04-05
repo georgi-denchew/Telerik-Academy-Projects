@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var format = "{0}, {1}, {0} text {2} {3} {4} {5} {6} {7} {8} {9} {10} {11} {12} {13} {14} {15} {16} {17} {18} {19} {20} {21} {22} {23} {24} {25} {26} {27} {28} {29} {30} ";
+        var length, i, string, number;
+        var str = stringFormat(format, 1, "Pesho", "Gosho", 3, 4, 5, 6, 7, 8, "asd", "asd", 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, "asd", 30);
+
+        function stringFormat()
+        {
+            string = arguments[0]; //arguments - array of all function arguments - the [0] argument is the string and the rest are the placeholder replacements
+            length = string.length;
+
+            for (i = 0; i < length - 2; i++) { //checking for placeholders
+
+                if (string[i] === "{" && string[i + 1] >= "0" && string[i + 1] <= "9" && string[i + 2] === "}")
+                {
+                    number = parseInt(string[i + 1]); //getting the number of the placeholder so we can use it in the arguments array
+
+                    string = string.replace(string.substring(i, i + 3), arguments[number + 1]);//replacing the placeholder with the respective replacement string
+
+                    i += arguments[number + 1].toString.length;
+                }
+
+                    //checking for double-digit placeholders
+                else if(string[i] === "{" && string[i + 1] >= "0" && string[i + 1] <= "9" && string[i + 2] >= "0" && string[i + 2] <= "9" && string[i + 3] === "}")
+                {
+                    number = parseInt(string.substring(i + 1, i + 3)); // getting the number of the placeholder
+
+                    string = string.replace(string.substring(i, i + 4), arguments[number + 1]); //replacing the placeholders
+
+                    i += arguments[number + 1].toString.length;
+
+                }
+
+                }
+
+            return string;
+        }
+    </script>
+</body>
+</html>

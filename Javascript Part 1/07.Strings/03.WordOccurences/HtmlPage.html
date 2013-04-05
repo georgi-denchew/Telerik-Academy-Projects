@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var str = "We are living in an yellow submarine. We don't have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.";
+        var word = "in";
+        var strLength, wordLength, wordPosition, count;
+        var result = OccurenceNumber(str, word);
+        jsConsole.writeLine("The word occurences are " + result);
+
+        function OccurenceNumber(str, word)
+        {
+            strLength = str.length;
+            wordLength = word.length;
+            count = 0; // setting the counter to zero, in case the word does not exist in the text;
+
+            wordPosition = str.indexOf(word, 0);
+            if (wordPosition != -1) {
+                count = 1;
+            }
+
+            while (wordPosition !== -1) {
+                count++;
+                wordPosition = str.indexOf(word, wordPosition + wordLength);
+            }
+
+            return count;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        var str = "We are living in a yellow submarine. We don't have anything else";
+        var length, i, result;
+        var changed = ReplaceWhiteSpaces(str);
+        jsConsole.writeLine(changed);
+
+        function ReplaceWhiteSpaces(str)
+        {
+            length = str.length;
+            result = '';
+
+            for (i = 0; i < length; i++) {
+                if (str[i] == ' ')
+                {
+                    result += '&nbsp';
+                }
+                else
+                {
+                    result += str[i];
+                }
+            }
+            return result;
+        }
+
+    </script>
+</body>
+</html>

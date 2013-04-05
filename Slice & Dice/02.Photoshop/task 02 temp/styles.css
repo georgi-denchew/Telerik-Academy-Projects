@@ -1,0 +1,36 @@
+﻿body, table, tr, td, img{
+    padding:0;
+    margin:0;
+    border-collapse:collapse;
+    border-spacing:0;
+
+}
+
+/*Works only in Google Chrome, I'm sorry I didn't have more time 
+    to make it work for other browsers*/
+
+
+td > img{
+    margin-right: -0.1em;
+    position:relative;
+}
+
+
+table{
+    margin:5%;
+}
+
+
+.top-right-corner{
+    width: 1%;
+    position:absolute;
+    height:1em;
+    background:url(imgs/top-right-corner.png);
+    background-repeat:no-repeat;
+}
+
+.y{
+    width:1%;
+    height:1em;
+    background:url(imgs/y-shadow.png);
+}

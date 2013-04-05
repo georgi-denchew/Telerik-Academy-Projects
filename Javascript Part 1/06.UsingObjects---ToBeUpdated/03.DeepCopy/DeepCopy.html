@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <a href="#" onclick="Example()">Run example</a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function Example() {
+
+            var array = new Array(1, 2, 3, 4, 5, 6, 20, 30);
+            //example
+            var clone = DeepClone(array);
+
+            jsConsole.writeLine(clone.toString());
+
+            //example
+            var copy = DeepClone({
+                one: {
+                    '1.1': new String('Hello, World!'),
+                    '1.2': [
+                        "one", "two", "three", true
+                    ]
+                },
+
+                two: document.createElement("div"),
+                three: [
+                    {
+                        name: "Gosho Goshev",
+                        number: new Number("123"),
+                        obj: new function () {
+                            this.name = "pesho peshev";
+                        }
+                    }
+                ]
+            }
+
+            )
+
+        };
+
+        function DeepClone(object) {
+
+            if (!object) { return object; } //checking if null or undefined
+
+            var types = [Number, Boolean, String];
+            var result;
+
+            types.forEach(function (type) {
+                if (object instanceof type) {
+                    result = type(object)
+                }
+            }
+            );
+            if (typeof result == 'undefined') {
+                if (Object.prototype.toString.call(object) === "[object Array]") {
+                    result = [];
+                    object.forEach(function (child, index, array) {
+                        result[index] = DeepClone(child);
+                    });
+                }
+                else if (typeof object == "object") {
+                    //test if DOM
+                    if(object.nodeType && typeof object.cloneNode == "function")
+                    {
+                        var result = object.cloneNode(true);
+                    }
+                    else if (!object.prototype) //checking if litieral
+                    {
+                        result = {};
+                        for (var i in object) {
+                            result[i] = DeepClone(object[i]);
+                        }
+                    }
+                    else
+                    {
+                        if (false && object.constructor) {
+                            result = new object.constructor();
+                        }
+                        else
+                        {
+                            result = item;
+                        }
+                    }
+                }
+                else {
+                    result = object;
+                }
+            }
+            return result;
+        }
+
+    </script>
+</body>
+</html>

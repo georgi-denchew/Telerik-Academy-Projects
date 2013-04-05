@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <a href="#"></a>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script dir="ltr">
+        var people = [
+{ firstname: "pesho", lastname: "peshev", age: 15 },
+{ firstname: "gosho", lastname: "goshev", age: 20 },
+{ firstname: "vancho", lastname: "vanchev", age: 12 }];
+        
+        var groupedByFirstName = groupBy(people, 'firstname');
+        
+        for (var i in groupedByFirstName) {
+            jsConsole.writeLine(i.firstname);
+        }
+
+
+        //TASK IS NOT FINISHED YET
+        function groupBy(array, property) {
+            var result = [];
+            var tempValue;
+            var length = array.length;
+            var position;
+
+            for (var i = 0; i < length; i++) {
+                if (i == 0)
+                {
+                    tempValue = array[0];
+                    position = 0;
+                }
+
+                for (var element in array) {
+                    
+                    switch(property)
+                    {
+                        case "firstname":
+                            if(tempValue.firstname > array[element].firstname)
+                            {
+                                tempValue = array[element];
+                                position = element;
+                                jsConsole.writeLine(position);
+                            }
+                            break;
+                        case "firstname":
+                            if (tempValue.lastname > array[element].lastname) {
+                                tempValue = array[element];
+                                position = element;
+                                jsConsole.writeLine(position);
+                            }
+                            break;
+                        case "age":
+                            if (tempValue.age > array[element].age) {
+                                tempValue = array[element];
+                                position = element;
+                                jsConsole.writeLine(position);
+                            }
+                            break;
+                    }
+                }
+                result[i] = tempValue;
+            }
+        }
+    </script>
+</body>
+</html>

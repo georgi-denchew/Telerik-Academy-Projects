@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var str = "<html><head><title>Sample site</title></head><body><div>text<div>more text</div>and more...</div>in body</body></html>";
+        var result, inTag, length, i;
+        var changed = ExtractContent(str);
+
+        function ExtractContent(string)
+        {
+            result = "";
+            length = str.length;
+
+            for (i = 0; i < length; i++) {
+                if (str[i] === "<")
+                {
+                    inTag = true;
+                    continue;
+                }
+                else if(str[i] === ">")
+                {
+                    inTag = false;
+                    continue;
+                }
+                else if(!inTag)
+                {
+                    result += str[i];
+                }
+            }
+            return result;
+        }
+    </script>
+</body>
+</html>

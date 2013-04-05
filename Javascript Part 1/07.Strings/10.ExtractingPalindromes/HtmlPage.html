@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var str = "abba lamal exe asd dsa";
+        var words, string, word, singleWordlength, allWordsLength, i, j, reversedWord, result;
+        var palindromes = ExtractPalindromes(str);
+
+        jsConsole.writeLine("String:");
+        jsConsole.writeLine(str);
+        jsConsole.writeLine();
+        jsConsole.writeLine("Palindromes:");
+        jsConsole.writeLine(palindromes);
+        
+        function ExtractPalindromes(string)
+        {
+            words = string.split(" ");
+            result = new Array();
+            allWordsLength = words.length;
+
+            for (j = 0; j < allWordsLength; j++) {
+
+                word = words[j];
+                singleWordlength = word.length;
+                reversedWord = "";
+
+                for (i = singleWordlength -1; i >= 0; i--) {
+                    reversedWord += word[i];
+                }
+
+                if (word === reversedWord)
+                {
+                    result.push(word);
+                }
+            }
+            return result;
+        }
+    </script>
+</body>
+</html>
