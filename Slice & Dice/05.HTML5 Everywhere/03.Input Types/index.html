@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- I don't know why the date and month funcionality appear occasionally - I'll be happy to get a comment about it -->
+    <title>Input Types</title>
+    <script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="scripts/modernizr.custom.js"></script>
+    <script type="text/javascript" src="scripts/js-webshim/minified/polyfiller.js"></script>
+    <script>
+        $.webshims.polyfill();
+    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="scripts/datetime-polyfill-master/datetime-polyfill.js"></script>
+    <script src="scripts/week-polyfill-master/week-polyfill.js"></script>
+    <!-- That's the color picker - I've tried like 3 or 4 more and that's the only one that worked for me -->
+    <script type="text/javascript" src="scripts/modcoder_excolor/jquery.modcoder.excolor.js"></script> 
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/themes/base/jquery.ui.all.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <style type="text/css">
+        input, label {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <p>The date and month funcionality appear occasionally - refresh until it appears. And I'm sorry for the crappy looks - I had no time for the styling</p>
+    <form>
+        <label for="Range">Range</label>
+        <output onforminput="this.value = Range.value"></output>
+        <input type="range" name="range" value="" min="0" max="300" step="2" />
+        <label for="Number">Number</label>
+        <input type="number" id="number" name="number" />
+        <label for="Email">Email</label>
+        <input type="email" id="email" name="email" />
+        <label for="Date">Date</label>
+        <input type="date" id="date" name="date" />
+        <label for="Color">Color (press "Enter" when you choose color)</label>
+        <input name="color" type="color" id="color" value="#ff6600"/>
+        <script type="text/javascript">
+            $("#color").modcoder_excolor();
+        </script>
+        <label for="Datetime">Datetime</label>
+        <input type="datetime" id="Datetime" />
+        <label for="Month">Month</label>
+        <input type="month" id="Month" />
+        <label for="Search">Search</label>
+        <input type="search" id="Search" />
+        <label for="Tel">Tel</label>
+        <input type="tel" id="Tel" />
+        <label for="Time">Time</label>
+        <input type="time" id="Time" />
+        <label for="Url">Url</label>
+        <input type="url" id="Url" />
+        <label for="Week">Week</label>
+        <input type="week" id="Week" />
+        <input type="submit" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- I'cant find out why it doesn't work on IE8 and IE7, even though I added jquery and webshim. Please help -->
+    <title>Geolocation</title>
+    <script type="text/javascript" src="scripts/modernizr.custom.02407.js"></script>
+    <script type="text/javascript" src="scripts/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="scripts/js-webshim/minified/polyfiller.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=true"></script>
+    <script>
+
+        $.webshims.polyfill();
+
+        function success(position) {
+            var mapcanvas = document.createElement('div');
+            mapcanvas.id = 'mapcontainer';
+            mapcanvas.style.height = '600px';
+            mapcanvas.style.width = '600px';
+            document.querySelector('article').appendChild(mapcanvas);
+            var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            var options = {
+                zoom: 15,
+                center: coords,
+                navigationControlOptions: {
+                    style: google.maps.NavigationControlStyle.SMALL
+                },
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
+            var marker = new google.maps.Marker({
+                position: coords,
+            });
+            marker.setMap(map);
+        }
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(success);
+        }
+        else {
+            error("Geo Location is not supported");
+        }
+    </script>
+</head>
+<body>
+        <article>
+        </article>
+</body>
+</html>

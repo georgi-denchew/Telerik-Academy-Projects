@@ -1,0 +1,234 @@
+﻿
+body, header, h1, h2, nav, ul, li, p, a, aside, section, h3 {
+    padding: 0;
+    margin: 0;
+}
+
+#wrapper{
+    width: 780px;
+    margin: 0 auto;
+    border: 1px solid #e1ebf7;
+}
+
+#wrapper img{
+    border: 1px solid #000000;
+}
+
+#wrapper a {
+    text-decoration: none;
+}
+
+#wrapper a:hover, #wrapper #right .links a:hover, #right #news li a:hover h3 {
+    color: #ff0000;
+}
+/*#region Clearing */
+
+/*#wrapper, #left, header, img, article, #right, #main {
+    zoom: 1;
+}
+
+#wrapper:after, #left:after, header:after, img:after, article:after, #right:after, #main:after {
+    content: "";
+    clear:both;
+    display:block;
+}*/
+/*#endregion Cleaning */
+
+/*HEADER*/
+
+#main-header {
+    /*I couldn't find a way to use background position x with background repeat x so i had to make a large image
+        If you know how to make it, please share it with me*/
+    background: url(../imgs/header-background-tile.png) no-repeat right 0;
+}
+
+#main-header h1{
+    padding-top: 9px;
+    padding-bottom:6px;
+    padding-left: 29px;
+    color: #ffffff;
+    font: italic 27px buxton sketch, sans-serif;
+    width: 91px;
+    
+    background: #59518c;
+    display: inline-block;
+}
+
+#shadowed{
+    font-family:Century;
+    color: #52597c;
+    margin-left: 245px;
+    display:inline-block;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    text-shadow: -2px 1px 5px #cdcef6;
+
+}
+
+/*Left sidebar*/
+
+#left{
+    width: 120px;
+    height: 304px;
+    background: #f2f3f7;
+    float:left;
+}
+
+#left p{
+    margin-top: 10px;
+    margin-left: 8px;
+    color: #424284;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#left ul{
+    margin-left: 9px;
+    list-style:inside;
+    list-style-type:square;
+    font-size: 10px;
+}
+
+#left ul li a{
+    color: #006699;
+}
+
+/*Main Section*/
+
+#main{
+    font-size:15px;
+    float:left;
+    border: 2px solid #e6def5;
+    width: 450px;
+    height: 300px;
+}
+
+#main nav {
+    line-height:25px;
+    background: #e6def5 url(../imgs/star.png) no-repeat 7px 7px;
+    padding-left:28px;
+}
+
+#main nav ul {
+    display:inline-block;
+    list-style-type:none;
+}
+
+#main nav ul li {
+    display: inline-block;
+}
+
+#main nav ul li a{
+    
+    font-size:12px;
+    line-height:12px;
+    color: #0000cc;
+    display: inline-block;
+    border-left: 1px solid #0000cc;
+    padding: 0 7px;
+}
+
+#main nav ul li:first-of-type a {
+    padding-left : 3px;
+    border: none;
+}
+
+#main article{
+    padding: 10px;
+}
+
+#main article img{
+    float:left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display:inline-block;
+}
+
+#main article header {
+    padding-top:20px;
+    max-width: 250px;
+    float:left;
+}
+
+#main article header h2{
+    color: #c41e89;
+    font-size: 16px;
+    line-height: 16px;
+    display:inline-block;
+}
+
+
+
+#main article header p, #main article header time, #main article > p{
+    color: #4b3e82;
+    font-size: 12px;
+}
+
+#main article header p{
+    font-weight: bold;
+}
+
+#main article > p{
+    clear: both;
+}
+
+#main footer ul {
+    margin-left: 10px;
+    list-style: square inside;
+    color: #ff6600;
+}
+
+#main footer ul li a {
+    color: #0000cc;
+    font-size: 12px;
+}
+
+#right {
+    border: 2px solid #e6def5;
+    padding: 10px;
+    width: 182px;
+    height: 280px;
+    float:left;
+}
+
+/*Right sidebar*/
+#right #news {
+    list-style-type: none;
+}
+
+#right #news li a img {
+    position:relative;
+}
+
+#right #news h3 {
+    color: #4b3e82;
+    margin-left: 10px;
+    position:absolute;
+    width: 90px;
+    display:inline-block;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+#right .links {
+  
+    list-style: square inside;
+    color: #ff6600;
+    margin-top: 10px;
+    width: 85px;
+    display: inline-block;
+    font-size: 11px;
+}
+
+#right .links a{
+    color: #0000cc;
+}
+
+#footer{
+    font-size: 12px;
+    text-align: center;
+    color: white;
+    background: #59518c;
+    clear:both;
+    line-height: 32px;
+}

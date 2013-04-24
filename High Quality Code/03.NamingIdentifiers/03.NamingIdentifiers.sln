@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.RefactoringClass_123", "01.RefactoringClass\01.RefactoringClass_123.csproj", "{188E19E2-2140-47DB-8DD4-7E9BB12B4243}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.RefactoringHauptKlasse", "02.RefactoringHauptKlasse\02.RefactoringHauptKlasse.csproj", "{03BE5859-59F0-40FE-AF82-75B7B3A2C8A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.RefactoringJavascriptFunction", "03.RefactoringJavascriptFunction\03.RefactoringJavascriptFunction.csproj", "{947F7793-C87B-4F55-B59D-FC1F1DF2BE15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.RefactoringSourceProject", "RefactoringSourceProject\04.RefactoringSourceProject.csproj", "{458A8C85-0145-4CC2-AB3C-BEE9E4035023}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{188E19E2-2140-47DB-8DD4-7E9BB12B4243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{188E19E2-2140-47DB-8DD4-7E9BB12B4243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{188E19E2-2140-47DB-8DD4-7E9BB12B4243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{188E19E2-2140-47DB-8DD4-7E9BB12B4243}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03BE5859-59F0-40FE-AF82-75B7B3A2C8A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03BE5859-59F0-40FE-AF82-75B7B3A2C8A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03BE5859-59F0-40FE-AF82-75B7B3A2C8A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03BE5859-59F0-40FE-AF82-75B7B3A2C8A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{947F7793-C87B-4F55-B59D-FC1F1DF2BE15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{947F7793-C87B-4F55-B59D-FC1F1DF2BE15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{947F7793-C87B-4F55-B59D-FC1F1DF2BE15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{947F7793-C87B-4F55-B59D-FC1F1DF2BE15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{458A8C85-0145-4CC2-AB3C-BEE9E4035023}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{458A8C85-0145-4CC2-AB3C-BEE9E4035023}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{458A8C85-0145-4CC2-AB3C-BEE9E4035023}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{458A8C85-0145-4CC2-AB3C-BEE9E4035023}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
