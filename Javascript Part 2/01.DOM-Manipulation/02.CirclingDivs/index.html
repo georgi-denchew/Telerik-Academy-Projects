@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>02.CirclingDivs</title>
+</head>
+<body>
+    <script>
+        (function () {
+            'use strict';
+
+            function createDiv() {
+                var divElement = document.createElement('div');
+                var style = divElement.style;
+
+                style.width = '50px';
+                style.height = '50px';
+                style.backgroundColor = '#0000ee';
+                style.color = '#bb0000';
+                style.position = 'absolute';
+                style.borderRadius = '50%';
+                style.borderColor = 'ff0000';
+                style.borderWidth = '2px';
+                style.borderStyle = 'solid';
+
+                return divElement;
+            }
+
+            function Circle(radius, x, y) {
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+
+                this.element = document.createElement('div');
+                var style = this.element.style;
+
+                style.width = radius * 2 + 'px';
+                style.height = radius * 2 + 'px';
+                style.position = 'absolute';
+                style.top = x - radius + 'px';
+                style.left = y - radius + 'px';
+                style.borderRadius = '50%';
+                style.borderColor = 'black';
+                style.borderWidth = '1px';
+                style.borderStyle = 'solid';
+            }
+
+            Circle.prototype.draw = function (element, degrees) {
+                var x = this.x + this.radius * Math.cos(degrees * Math.PI / 180),
+                  y = this.y + this.radius * Math.sin(degrees * Math.PI / 180);
+
+                element.style.left = x - parseInt(element.style.width, 10) / 2 + 'px';
+                element.style.top = y - parseInt(element.style.height, 10) / 2 + 'px';
+            };
+
+            var container = document.createDocumentFragment(),
+              divList = [],
+              divCount = 5,
+              circle = new Circle(150, 250, 250);
+
+            container.appendChild(circle.element);
+
+            for (var i = 0; i < divCount; i += 1) {
+                var div = createDiv();
+                container.appendChild(div);
+                divList.push(div);
+                var degrees = i * 360 / divCount;
+                div.setAttribute('data-degrees', degrees);
+                circle.draw(div, degrees);
+            }
+
+            document.body.appendChild(container);
+
+            setInterval(function () {
+                for (var i = 0; i < divCount; i += 1) {
+                    div = divList[i];
+                    degrees = (parseFloat(div.getAttribute('data-degrees')) + 1) % 360;
+                    div.setAttribute('data-degrees', degrees);
+                    circle.draw(div, degrees);
+                }
+            }, 100);
+        })();
+    </script>
+</body>
+</html>

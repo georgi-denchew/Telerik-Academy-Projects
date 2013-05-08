@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.MathematicalOperations", "02.MathematicalOperations\02.MathematicalOperations.csproj", "{E0032721-32FC-4E63-81AD-E1D29273FFDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.RootLogaritmSinus", "03.RootLogaritmSinus\03.RootLogaritmSinus.csproj", "{FF6ADC9D-1D01-42DB-AC16-11AC9493F564}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortingAlgorithms", "SortingAlgorithms\SortingAlgorithms.csproj", "{D53EA4F6-B670-4AEA-9ADE-70B0ACE925C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0032721-32FC-4E63-81AD-E1D29273FFDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0032721-32FC-4E63-81AD-E1D29273FFDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0032721-32FC-4E63-81AD-E1D29273FFDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0032721-32FC-4E63-81AD-E1D29273FFDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF6ADC9D-1D01-42DB-AC16-11AC9493F564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF6ADC9D-1D01-42DB-AC16-11AC9493F564}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF6ADC9D-1D01-42DB-AC16-11AC9493F564}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF6ADC9D-1D01-42DB-AC16-11AC9493F564}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D53EA4F6-B670-4AEA-9ADE-70B0ACE925C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D53EA4F6-B670-4AEA-9ADE-70B0ACE925C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D53EA4F6-B670-4AEA-9ADE-70B0ACE925C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D53EA4F6-B670-4AEA-9ADE-70B0ACE925C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

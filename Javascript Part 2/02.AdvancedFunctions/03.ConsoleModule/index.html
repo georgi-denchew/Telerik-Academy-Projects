@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        var specialConsole = (function () {
+            var consoleString;
+            
+            function formatMessage(arguments) {
+                
+                var i;
+                var result = arguments[0].toString();
+                var replacementString = "";
+                
+                if (arguments.length === 1){
+                    return result;
+                }
+                else {
+                    for (i = 1; i < arguments.length; i++) {
+                        replacementString = "{" + (i - 1).toString() + "}";
+                        result = result.replace(replacementString, arguments[i]);
+                    }
+                    return result;
+                }
+            }
+
+            function writeLine() {
+                console.log(formatMessage(arguments));
+            }
+
+            function writeError() {
+                console.error(formatMessage(arguments));
+            }
+
+            function writeWarning() {
+                console.warn(formatMessage(arguments));
+            }
+
+            return {
+                writeLine: writeLine,
+                writeError: writeError,
+                writeWarning: writeWarning
+            }
+        })();
+        specialConsole.writeLine("Hi, {0}, {1}, {2}, {3} {4} {5} {6} {7} {8} {9} {10}", "Peter", "Meter", "Shtepsel", "Gretel", 4, 5, 6, 7, 8, 9, "teeen");
+        specialConsole.writeError("errrorrr {0}", "213");
+        specialConsole.writeWarning("You shall not pass, you {0}!", "SOB");
+    </script>
+</body>
+</html>

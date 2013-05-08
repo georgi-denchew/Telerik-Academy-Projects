@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        input {
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="Add div element to circle" id="add-to-circle" />
+    <input type="button" value="Add div element to rectangle" id="add-to-rectangle" />
+    <script>
+        var module = (function () {
+
+            function getRandomColor() {
+                var symbols = '0123456789ABCDEF'.split(''),
+                    j,
+                    color = "#";
+
+                for (j = 0; j < 6; j += 1) {
+                    color += symbols[Math.floor(Math.random() * 15)];
+                }
+
+                return color;
+            }
+
+            function createDiv() {
+                var divElement = document.createElement('div'),
+                    style = divElement.style;
+
+                style.width = '50px';
+                style.height = '50px';
+                style.backgroundColor = getRandomColor();
+                style.color = getRandomColor();
+                style.position = 'absolute';
+                style.borderRadius = '50%';
+                style.borderColor = getRandomColor();
+                style.borderWidth = '1px';
+                style.borderStyle = 'solid';
+
+                return divElement;
+            }           
+
+            function Circle(radius, x, y) {
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+                this.parent = document.createElement('div');
+                this.children = [];
+
+                var style = this.parent.style;
+                style.width = radius * 2 + 'px';
+                style.height = radius * 2 + 'px';
+                style.top = x - radius + 'px';
+                style.left = y - radius + 'px';
+                style.position = 'absolute';
+                style.borderRadius = '50%';
+                style.borderColor = 'black';
+                style.borderWidth = '1px';
+                style.borderStyle = 'solid';
+            }
+
+            Circle.prototype.addElement = function (element) {
+                this.parent.appendChild(element);
+                this.children.push(element);
+                element.setAttribute('data-degrees', 0);
+                return this;
+            };
+
+            Circle.prototype.move = function () {
+                for (var i = 0, length = this.children.length; i < length; i += 1) {
+                    var currentElement = this.children[i];
+                    degrees = (parseFloat(currentElement.getAttribute('data-degrees')) + 1) % 360;
+                    currentElement.setAttribute('data-degrees', degrees);
+
+                    var x = this.radius * Math.cos(degrees * Math.PI / 180),
+                                  y = this.radius * Math.sin(degrees * Math.PI / 180);
+                    
+                    currentElement.style.left = x - parseInt(currentElement.style.width, 10) / 2 + this.radius + 'px';
+                    currentElement.style.top = y - parseInt(currentElement.style.height, 10) / 2 + this.radius + 'px';
+                }
+            };
+
+            Circle.prototype.draw = function () {
+                document.body.appendChild(this.parent);
+                return this;
+            };
+
+            function Rectangle(width, height, x, y) {
+                this.width = width;
+                this.height = height;
+                this.x = x;
+                this.y = y;
+                this.perimeter = this.width * 2 + this.height * 2;
+                this.children = [];
+                this.parent = document.createElement('div');
+
+                var style = this.parent.style;
+
+                style.width = this.width + 'px';
+                style.height = this.height + 'px';
+                style.position = 'absolute';
+                style.top = this.y + 'px';
+                style.left = this.x + 'px';
+                style.borderColor = '#000';
+                style.borderStyle = 'solid';
+                style.borderWidth = '1px';
+            }
+
+            Rectangle.prototype.addElement = function (element) {
+                this.parent.appendChild(element);
+                this.children.push(element);
+                element.setAttribute('data-atPerimeter', 0);
+                return this;
+            };
+
+            Rectangle.prototype.move = function () {
+                for (var i = 0, length = this.children.length; i < length; i += 1) {
+                    var currentElement = this.children[i];
+                    currentPerimeterPosition = (parseFloat(currentElement.getAttribute('data-atPerimeter')) + 1) % this.perimeter;
+
+                    currentElement.setAttribute('data-atPerimeter', currentPerimeterPosition);
+
+                    var x;
+                    var y;
+
+                    if (currentPerimeterPosition < this.width) {
+                        x = currentPerimeterPosition;
+                        y = 0;
+                    }
+
+                    else if (currentPerimeterPosition < this.width  + this.height) {
+                        x = this.width;
+                        y = currentPerimeterPosition - this.width;
+                    }
+                    
+                    else if (currentPerimeterPosition < this.width * 2 + this.height) {
+                        x = this.width - (currentPerimeterPosition - this.width - this.height);
+                        y = this.height;
+                    }
+
+                    else if (currentPerimeterPosition < this.width * 2 + this.height * 2) {
+                        x = 0;
+                        y = this.height - (currentPerimeterPosition - this.width * 2 - this.height);
+                    }
+
+                    else {
+                        x = 0;
+                        y = 0;
+                    }
+
+                    currentElement.style.left = x - parseInt(currentElement.style.width, 10) /  2 + 'px';
+                    currentElement.style.top = y - parseInt(currentElement.style.height, 10) / 2 + 'px';
+                }
+            };
+
+            Rectangle.prototype.draw = function () {
+                document.body.appendChild(this.parent);
+                return this;
+            };
+
+            var circle = new Circle(100, 200, 150);
+            circle.addElement(createDiv());
+            circle.draw();
+
+            var rectangle = new Rectangle(200, 200, 350, 100);
+            rectangle.addElement(createDiv());
+            rectangle.draw();
+
+            window.requestAnimation = window.requestAnimationFrame ||
+                window.webkitRequestAnimationFrame ||
+                window.mozRequestAnimationFrame;
+
+            (function animationLoop() {
+                window.requestAnimation(animationLoop);
+                draw();
+            })();
+
+            function draw() {
+                circle.move();
+                rectangle.move();
+            }
+
+            document.querySelector('#add-to-circle').addEventListener('click', function () {
+                circle.addElement(createDiv());
+            });
+
+            document.querySelector('#add-to-rectangle').addEventListener('click', function () {
+                rectangle.addElement(createDiv());
+            });
+        })();
+    </script>
+</body>
+</html>

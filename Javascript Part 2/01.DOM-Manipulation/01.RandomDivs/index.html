@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<!--    Write a script that creates a number of div elements.
+            Each div element must have the following
+            Random width and height between 20px and 100px
+        Random background color
+        Random font color
+        Random position on the screen (position:absolute)
+        A strong element with text "div" inside the div
+        Random border-radius
+        Random border color
+        Random border-width between 1px and 20px-->
+
+    <title>01. Random Divs</title>
+    <style type="text/css">
+        input {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <label for="divsCount">Enter divs number:</label>
+    <input type="number" id="divsCount" />
+    <input type="button" value="CreateDivs" onclick="divCreator()" />
+    <script >
+
+        function divCreator() {
+            var divElement;
+            var i;
+            var divsCount = document.getElementById('divsCount');
+            var length = divsCount.value;
+            var dFrag = document.createDocumentFragment();
+
+            for (i = 0; i < length; i++) {
+
+                divElement = document.createElement("div");
+                divElement.style.width = (Math.floor(Math.random() * 81) + 20) + 'px';
+                divElement.style.height = (Math.floor(Math.random() * 81) + 20) + 'px';
+                divElement.style.backgroundColor = getRandomColor();
+                divElement.style.color = getRandomColor();
+                divElement.style.borderStyle = "solid";
+                divElement.style.borderColor = getRandomColor();
+                divElement.style.borderWidth = Math.floor(Math.random() * 20) + 1 + 'px';
+                divElement.style.borderRadius = Math.floor(Math.random() * 50) + 1 + 'px';
+                divElement.style.position = getRandomPosition();
+                divElement.style.display = 'inline-block';
+                strongElement = document.createElement("strong");
+                strongElement.textContent = "div";
+                divElement.appendChild(strongElement);
+                dFrag.appendChild(divElement);
+            }
+
+            document.body.appendChild(dFrag);
+        }
+
+        function getRandomPosition() {
+            var random = Math.floor(Math.random() * 2) + 1;
+
+            if (random === 1) {
+                console.log('1');
+                return "absolute";
+            }
+            else {
+                console.log('2');
+                return "relative";
+            }
+        }
+
+        function getRandomColor() {
+            var symbols = '0123456789ABCDEF'.split('');
+            var j;
+            var color = "#";
+
+            for (j = 0; j < 6; j++) {
+                color += symbols[Math.floor(Math.random() * 15)];
+            }
+
+            return color;
+        }
+
+    </script>
+</body>
+</html>

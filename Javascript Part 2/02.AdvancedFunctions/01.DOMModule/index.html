@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        #wrapper {
+            padding: 20px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper"></div>
+    <script>
+        var module = (function () {
+            var i;
+            var MAX_BUFFER_SIZE = 100;
+            var dFrag = document.createDocumentFragment();
+            var bufferElements = [];
+            var buffer = {
+                selector: undefined,
+                elements: []
+            };
+
+            function addChildElement(selector, element) {
+                var parent = document.querySelector(selector);
+                parent.appendChild(element);
+            }
+
+            function removeChildElement(selector, element) {
+                var parent = document.querySelector(selector);
+                parent.removeChild(element);
+            }
+
+            function attachEvent(selector, eventType, eventHandler) {
+                var eventElements = document.querySelectorAll(selector);
+
+                for (i = 0; i < eventElements.length; i += 1) {
+                    eventElements[i].addEventListener(eventType, eventHandler);
+                }
+            }
+
+            function addToBuffer(selector, element) {
+                var selectorElement = document.querySelector(selector);
+                var bufferExists = false;
+                var position;
+
+                for (i = 0; i < bufferElements.length; i += 1) {
+
+                    if (bufferElements[i].selector === selector) {
+                        bufferExists = true;
+                        position = i;
+                        break;
+                    }
+                }
+
+                if (bufferExists) {
+                    bufferElements[position].elements.push(element);
+                }
+                else {
+                    buffer.selector = selector;
+                    buffer.elements.push(element);
+                    bufferElements.push(buffer);
+                    position = bufferElements.length - 1;
+                }
+
+                if (bufferElements[position].elements.length >= MAX_BUFFER_SIZE) {
+
+                    for (i = 0; i < bufferElements[position].elements.length; i += 1) {
+                        
+                        //When I try to append the element directly more than once it doesn't append,
+                        //that's why I clone the element
+                        var appendElement = bufferElements[position].elements[i].cloneNode(true);
+                        dFrag.appendChild(appendElement);
+                    }
+
+                    //Clearing the elemetns, appended to documentFragment, so that we don't add them again next time
+                    bufferElements[position].elements = [];
+
+                    //Appending the documentFragment and clearing it for the same reason as above
+                    selectorElement.appendChild(dFrag);
+                    dFrag = document.createDocumentFragment();
+                }
+            }
+
+            function getElements(selector) {
+                var resultElements = document.querySelectorAll(selector);
+
+                return resultElements;
+            }
+
+            return {
+                addChildElement: addChildElement,
+                removeChildElement: removeChildElement,
+                attachEvent: attachEvent,
+                addToBuffer: addToBuffer,
+                getElements: getElements
+            };
+        })();
+
+        //TESTS
+        var wrapper = document.querySelector("#wrapper");
+        var p = document.createElement("p");
+        p.textContent = "paragraph";
+        p.style.color = "#889944";
+        p.style.display = "inline-block";
+        p.style.margin = "5px";
+
+        var span = document.createElement("span");
+        span.textContent = "span";
+        span.style.color = "#00f";
+
+        for (var i = 0; i < 102; i++) {
+
+            module.addToBuffer("#wrapper", p);
+        }
+
+        module.addChildElement("#wrapper", span);
+        module.addChildElement("#wrapper", p);
+        module.removeChildElement("#wrapper", p);
+    </script>
+</body>
+</html>

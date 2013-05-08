@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>05.TagCloud</title>
+    <style type="text/css">
+        
+        #tags {
+            border: 1px solid black;
+            padding: 20px;
+        }
+    </style>
+    <!-- Had no time to finish the task - the container styles, more specificly -->
+</head>
+<body>
+    <div id="tags"></div>
+    <script>
+        (function () {
+            var tags = ["cms", "javascript", "js", "ASP.NET MVC", ".net",
+                ".net", "css", "wordpress", "xaml", "js", "http", "web",
+                "asp.net", "asp.net MVC", "ASP.NET MVC", "wp",
+                "javascript", "js", "cms", "html", "javascript",
+                "http", "http", "CMS"];
+
+            
+            function generateTagCloud(tags, minFont, maxFont) {
+                var length = tags.length;
+                var i;
+                var tag;
+                var container = document.querySelector('#tags');
+
+                for (i = 0; i < length; i++) {
+                    var span = document.createElement('span');
+                    span.textContent = tags[i];
+                    span.style.fontSize = Math.floor(Math.random() * maxFont) + minFont + 'px';
+                    span.style.fontSize = 
+                    container.appendChild(span);
+                }
+            }
+
+            generateTagCloud(tags, 17, 42);
+        })();
+    </script>
+</body>
+</html>

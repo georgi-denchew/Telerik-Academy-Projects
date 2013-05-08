@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        body {
+            width: 100%;
+        }
+        header {
+            font-size: 30px;
+            line-height: 42px;
+            padding: 10px;
+            background: #ccc;
+            color: #666;
+            display: inline-block;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>You can find the examples to this task in the console (press F12 and navigate to Console)</header>
+    
+    <script>
+        (function () {
+
+            'use strict';
+            var i;
+
+            //These are something like an abstract class and method
+            //We have no default functionality for them
+
+            function PropulsionUnit() {
+            }
+
+            PropulsionUnit.prototype.produceAcceleration = function () {
+            };
+
+            // I know that attaching methods with .prototype works faster,
+            // but they won't work with private properties
+
+            function Wheels(rad) {
+                PropulsionUnit.apply(this, arguments);
+                var radius = rad,
+                    perimeter = 2 * Math.PI * radius;
+
+                this.produceAcceleration = function () {
+                    return perimeter;
+                };
+
+                this.getRadius = function () {
+                    return radius;
+                };
+            }
+
+            Wheels.prototype = new PropulsionUnit();
+            Wheels.prototype.constructor = Wheels;
+
+            function PropellingNozzle(p, aft) {
+                PropulsionUnit.apply(this, arguments);
+                var power = p,
+                    acceleration,
+                    afterburner;
+
+                if (aft !== "on" && aft !== "off") {
+                    console.error("Invalid value - {0}, should be assigned \"on\" or \"off\"", aft);
+                } else {
+                    afterburner = aft;
+                }
+
+                this.produceAcceleration = function () {
+
+                    if (afterburner === "on") {
+                        acceleration = power * 2;
+                    } else {
+                        acceleration = power;
+                    }
+                    return acceleration;
+                };
+
+                this.switchAfterburner = function () {
+                    if (afterburner === "on") {
+                        afterburner = "off";
+                    } else if (afterburner === "off") {
+                        afterburner = "on";
+                    }
+                };
+
+                this.getPower = function () {
+                    return power;
+                };
+
+                this.getAfterburner = function () {
+                    return afterburner;
+                };
+            }
+
+            PropellingNozzle.prototype = new PropulsionUnit();
+            PropellingNozzle.prototype.constructor = PropellingNozzle;
+
+            function Propeller(finsCount, direction) {
+                PropulsionUnit.apply(this, arguments);
+
+                var fins = finsCount,
+                    spinDirection;
+                if (direction !== 'clockwise' && direction !== 'counter-clockwise') {
+                    console.error('Invalid value - {0} should be assigned \"on\" or \"off\"', direction);
+                } else {
+                    spinDirection = direction;
+                }
+
+                this.getFins = function () {
+                    return fins;
+                };
+
+                this.getSpinDirection = function () {
+                    return spinDirection;
+                };
+
+                this.produceAcceleration = function () {
+                    var acceleration;
+
+                    if (spinDirection === 'counter-clockwise') {
+                        acceleration = fins * -1;
+                    } else if (spinDirection === 'clockwise') {
+                        acceleration = fins;
+                    }
+                    return acceleration;
+                };
+
+                this.switchToClockwiseDirection = function () {
+                    spinDirection = 'clockwise';
+                };
+
+                this.switchToCounterClockwiseDirection = function () {
+                    spinDirection = 'counter-clockwise';
+                };
+            }
+
+            Propeller.prototype = new PropulsionUnit();
+            Propeller.prototype.constructor = Propeller;
+
+            function Vehicle() {
+                var args = arguments,
+                    speed = 0,
+                    argumentsLength = arguments.length;
+
+                this.getSpeed = function () {
+                    return speed;
+                };
+
+                this.accelerate = function () {
+
+                    for (i = 0; i < argumentsLength; i += 1) {
+                        if (args[i] instanceof PropulsionUnit) {
+                            speed += args[i].produceAcceleration();
+                        }
+                    }
+                };
+            }
+
+            function LandVehicle() {
+                Vehicle.apply(this, arguments);
+            }
+
+            LandVehicle.prototype = new Vehicle();
+            LandVehicle.prototype.constructor = LandVehicle;
+
+            function AirVehicle(propellingNozzle) {
+                Vehicle.apply(this, arguments);
+                this.propellingNozzle = propellingNozzle;
+                this.switchAfterburner = function () {
+                    propellingNozzle.switchAfterburner();
+                };
+            }
+
+            AirVehicle.prototype = new Vehicle();
+            AirVehicle.prototype.constructor = AirVehicle;
+
+            function WaterVehicle(prop, propCount) {
+                this.propellers = [];
+
+                //The following is lame, but if it's written this.propeller = prop
+                //whenever i change the "prop", the "propeller" also applies the changes
+                //uncomment the line after the next to see what i mean --> changing the
+                //propeller will affect both 'waterVehicle' and 'amphibiousVehicle';
+
+                //var propeller = prop;
+                this.propeller = new Propeller(prop.getFins(), prop.getSpinDirection());
+                var propellersCount = propCount;
+
+                for (i = 0; i < propellersCount; i += 1) {
+                    this.propellers.push(this.propeller);
+                }
+
+                Vehicle.apply(this, this.propellers);
+
+                this.switchToClockwiseDiretion = function () {
+                    for (i = 0; i < propellersCount; i += 1) {
+                        this.propellers[i].switchToClockwiseDirection();
+                    }
+                };
+                this.switchToCounterClockwiseDirection = function () {
+                    for (i = 0; i < propellersCount; i += 1) {
+                        this.propellers[i].switchToCounterClockwiseDirection();
+                    }
+                };
+            }
+
+            WaterVehicle.prototype = new Vehicle();
+            WaterVehicle.prototype.constructor = WaterVehicle;
+
+            function AmphibiousVehicle() {
+                var propeller = arguments[0],
+                    firstWheel = arguments[1],
+                    secondWheel = arguments[2],
+                    thirdWheel = arguments[3],
+                    fourthWheel = arguments[4],
+                    vehicleMode = "land";
+
+                this.landVehicle = new LandVehicle(firstWheel, secondWheel, thirdWheel, fourthWheel);
+                this.waterVehicle = new WaterVehicle(propeller, 1); //the task says "it should have both A (signle form) propeller
+
+                this.getSpeed = function () {
+                    if (vehicleMode === "land") {
+                        return this.landVehicle.getSpeed();
+                    } else if (vehicleMode === "water") {
+                        return this.waterVehicle.getSpeed();
+                    }
+                };
+
+                this.getVehicleMode = function () {
+                    return vehicleMode;
+                };
+
+                this.switchToLandMode = function () {
+                    vehicleMode = "land";
+                };
+                this.switchToWaterMode = function () {
+                    vehicleMode = "water";
+                };
+
+                this.accelerate = function () {
+                    if (vehicleMode === "land") {
+                        this.landVehicle.accelerate();
+                    } else if (vehicleMode === "water") {
+                        this.waterVehicle.accelerate();
+                    }
+                };
+
+                this.switchToClockwiseDirection = function () {
+                    this.waterVehicle.switchToClockwiseDiretion();
+                };
+
+                this.switchToCounterClockwiseDirection = function () {
+                    this.waterVehicle.switchToCounterClockwiseDirection();
+                };
+            }
+
+
+            //TESTS
+            console.log("Here are some tests:");
+
+            var wheel = new Wheels(10),
+                landVehicle = new LandVehicle(wheel, wheel, wheel, wheel);
+
+            console.log(landVehicle);
+            console.log("Current speed of the land vehicle: " + landVehicle.getSpeed());
+            console.log("Radius of the wheels (they are all the same): "
+                + wheel.getRadius());
+
+            landVehicle.accelerate();
+
+            console.log("Current speed after \"accelerating\" one time: "
+                + landVehicle.getSpeed());
+            console.log('\n');
+
+            var propellingNozzle = new PropellingNozzle(100, "on"),
+                airVehicle = new AirVehicle(propellingNozzle);
+
+            console.log(airVehicle);
+            console.log("Current speed of the air vehicle: " + airVehicle.getSpeed());
+            console.log("Properties of propelling nozzle: power: " +
+                airVehicle.propellingNozzle.getPower() + "; afterburner state: "
+                + airVehicle.propellingNozzle.getAfterburner());
+
+            airVehicle.accelerate();
+
+            console.log("Speed after accelerating with afterburner "
+                + airVehicle.propellingNozzle.getAfterburner() + ": "
+                + airVehicle.getSpeed());
+
+            airVehicle.propellingNozzle.switchAfterburner();
+            airVehicle.accelerate();
+
+            console.log("Speed after another acceleration this time with afterburner "
+                + airVehicle.propellingNozzle.getAfterburner() +
+                ": " + airVehicle.getSpeed());
+            console.log("\n");
+
+            var prop = new Propeller(100, "clockwise"),
+                waterVehicle = new WaterVehicle(prop, 5);
+
+            console.log(waterVehicle);
+            console.log("Current speed of the water vehicle: " + waterVehicle.getSpeed());
+            console.log("Number of fins per propeller: " +
+                waterVehicle.propellers[0].getFins() + "; Number of propellers: "
+                + waterVehicle.propellers.length);
+            console.log("Spin direction of the fins: "
+                + waterVehicle.propellers[0].getSpinDirection());
+
+            waterVehicle.accelerate();
+
+            console.log("Speed after accelerating: " + waterVehicle.getSpeed());
+
+            waterVehicle.switchToCounterClockwiseDirection();
+            waterVehicle.accelerate();
+
+            console.log("Speed after accelerating with " +
+                waterVehicle.propellers[0].getSpinDirection() + " direction: "
+                + waterVehicle.getSpeed());
+            console.log("\n");
+
+            var amphibiousVehicle = new AmphibiousVehicle(prop,
+                wheel, wheel, wheel, wheel);
+
+            console.log(amphibiousVehicle);
+            console.log("Current vehicle mode: " + amphibiousVehicle.getVehicleMode());
+            console.log("Current speed of the amphibious vehicle: " +
+                amphibiousVehicle.getSpeed());
+
+            amphibiousVehicle.accelerate();
+
+            console.log("Radius of the wheels: " + wheel.getRadius());
+            console.log("Speed after accelerating: " + amphibiousVehicle.getSpeed());
+
+            amphibiousVehicle.switchToWaterMode();
+
+            console.log("Speed after switching to water mode: " +
+                amphibiousVehicle.getSpeed());
+
+            amphibiousVehicle.accelerate();
+
+            console.log("Speed after accelerating: " + amphibiousVehicle.getSpeed());
+
+            amphibiousVehicle.switchToCounterClockwiseDirection();
+            amphibiousVehicle.accelerate();
+
+            console.log("Speed after switching fins direction and accelerating again: "
+                + amphibiousVehicle.getSpeed());
+        })();
+    </script>
+</body>
+</html>

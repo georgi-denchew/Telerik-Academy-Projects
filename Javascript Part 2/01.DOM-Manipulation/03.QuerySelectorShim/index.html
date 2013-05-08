@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>03.QuerySelectorShim</title>
+</head>
+<body>
+    <script>
+
+        (function () {
+            'use strict';
+
+            if (!document.querySelector) {
+                querySelectorShim();
+            }
+
+            function querySelecotrShim() {
+                document.querySelector = function querySelector(commandLine) {
+                    switch (commandLine.charAt(0)) {
+                        case '#': return document.getElementById(commandLine.substring(1));
+                        case '.': return document.getElementsByClassName(commandLine.substring(1))[0];
+                        default: return document.getElementsByTagName(commandLine)[0];
+                    }
+                }
+
+                document.querySelectorAll = function querySelectorAll(commandLine) {
+                    switch (commandLine.charAt(0)) {
+                        case '#': return document.getElementById(commandLine.substring(1));
+                        case '.': return document.getElementsByClassName(commandLine.substring(1));
+                        default: return document.getElementsByTagName(commandLine);
+                    }
+                };
+            }
+        })();
+
+    </script>
+</body>
+</html>

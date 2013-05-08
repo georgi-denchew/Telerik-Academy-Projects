@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.ClassSize", "01.Size\01.ClassSize.csproj", "{219F1CF0-BCB5-45C8-88BB-362B506E2374}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.PrintStatistics", "02.PrintStatictis\02.PrintStatistics.csproj", "{50F5DA73-C348-401B-995A-14EC32845CB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{219F1CF0-BCB5-45C8-88BB-362B506E2374}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{219F1CF0-BCB5-45C8-88BB-362B506E2374}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{219F1CF0-BCB5-45C8-88BB-362B506E2374}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{219F1CF0-BCB5-45C8-88BB-362B506E2374}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50F5DA73-C348-401B-995A-14EC32845CB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50F5DA73-C348-401B-995A-14EC32845CB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50F5DA73-C348-401B-995A-14EC32845CB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50F5DA73-C348-401B-995A-14EC32845CB3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
