@@ -1,0 +1,59 @@
+﻿img {
+    max-width: 99%;
+}
+
+#wrapper {
+    width: 960px;
+    margin: 0 auto;
+}
+
+#image_container {
+    width: 800px;
+    height: 495px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#image_container > img {
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.6) 2px 2px;
+}
+
+#thumbnails_container {
+    top: 300px;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+#thumbnails_container img {
+    margin : 2px;
+}
+
+#left_button {
+    position: absolute;
+    left: 15%;
+    top: 40%;
+}
+
+#left_button > img {
+    opacity: 0.7;
+}
+
+#left_button > img:hover {
+    opacity: 1;
+}
+
+#right_button {
+    position: absolute;
+    right: 15%;
+    top: 40%;
+}
+
+#right_button > img {
+    opacity: 0.7;
+}
+
+#right_button > img:hover {
+    opacity: 1;
+}

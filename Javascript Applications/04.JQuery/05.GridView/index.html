@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/styles.css" rel="stylesheet" />
+    <script src="scripts/jquery-1.10.1.min.js"></script>
+    <script src="scripts/gridView.js"></script>
+</head>
+<body>
+    <div id="description">
+        Description: Every grid can have only one header.
+         Therefore when the header is once added, it's name field and button are removed.
+        <strong>A grid can have only one nested grid</strong>, even though it can have lots of rows.
+        Each row is able to contain a grid, but if one actually contains a grid,
+        the other sibling rows can't.
+         <div id="grid_color">grid color</div>
+        <div id="first_row_color">first row color</div>
+        <div id="second_row_color">second row color</div>
+    </div>
+    <div id="wrapper">
+        <div class="grid">
+            <input type="text" placeholder="Enter header text" class="header_row_content" />
+            <input type="button" class="header_row_generator" value="Create Header Row" />
+            <input type="text" placeholder="Enter row text" class="new_row_content" />
+            <input type="button" class="new_row_generator" value="Create New Row" />
+            <div class="row">
+                first row
+                <input type="button" value="Create Nested Grid View" class="nested_grid_generator" />
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+</body>
+</html>

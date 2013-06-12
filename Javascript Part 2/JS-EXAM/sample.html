@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="scripts/localStorageShim.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/image-repository.js"></script>
+    <link href="styles/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div>FIRST GALLERY</div>
+    <div id="gallery-container"></div>
+    <span id="image-container"></span>
+    
+    <div>SECOND GALLERY</div>
+    <div id="second-gallery-container"></div>
+    <script type="text/javascript">
+
+        //------------------STARTING TESTS----------------------
+
+        //TASK 01 TESTS
+
+        var gallery = controls.getImageGallery("#gallery-container");
+        gallery.addImage("<br/>", "images/ninja.png");
+
+        var firstGalleryAlbum = gallery.addAlbum("First Album");
+        firstGalleryAlbum.addImage("<br/>", "images/ninja.png");
+        firstGalleryAlbum.addImage("ninja3", "images/ninja.png");
+        firstGalleryAlbum.addImage("ninja2", "images/ninja.png");
+        firstGalleryAlbum.addImage("ninja3", "images/ninja.png");
+        gallery.render();
+        gallery.addImage("ninja2", "images/ninja.png"); // adding images after the album - they are still rendered ontop
+        gallery.addImage("ninja3", "images/ninja.png");
+        gallery.render();
+        gallery.render(); //checking if rendering the same content more than once - works fine!
+
+        //END OF TASK 01 TESTS
+
+        //TASK 02 TESTS
+
+        var nestedSecondGalleryAlbum = firstGalleryAlbum.addAlbum("Second Album - Nested");
+        nestedSecondGalleryAlbum.addImage("nested ninja", "images/ninja.png");
+        nestedSecondGalleryAlbum.addImage("nested ninja", "images/ninja.png");
+        nestedSecondGalleryAlbum.addImage("nested ninja", "images/second-ninja.jpg");
+        nestedSecondGalleryAlbum.addImage("nested ninja", "images/ninja.png");
+        nestedSecondGalleryAlbum.addImage("nested ninja", "images/ninja.png");
+        gallery.addImage("ninja", "images/second-ninja.jpg")
+        gallery.render();
+
+        //END OF TASK 02 TESTS
+
+        //CLICK ON THE TITLES FOR TASK 03 TESTS
+
+        //TASK 04 AND TASK 05 TESTS
+        var imageGalleryData = gallery.serialize(); //'That's the "getImageGalleryMethod" for both task 04 and task 05!!!!
+        imageGalleryRepository.save("gallery2", imageGalleryData);
+
+        var receivedGallery = imageGalleryRepository.load("gallery2");
+        console.log(receivedGallery);
+        //END OF TASK 04 AND TASK 05 TESTS
+
+        //TASK 06 TESTS --->> WHEN AN ITEM IN THE SECOND GALLERY IS CLICKED,
+        //IT IS DISPLAYED ONTOP (THE SAME POSITION AS IF IT WAS IN THE FIRST GALLERY)
+        var secondGallery = controls.buildImageGallery("#second-gallery-container", receivedGallery);
+        secondGallery.render();
+        //END OF TASK 06 TESTS
+
+        //TASK 07 TESTS --> CLICK ON THE IMAGES --> THE DIFFERENT NINJA IMAGE IS THERE 
+        //TO SHOW THAT ONLY ONE IMAGE CAN SHOW UP AT A TIME
+
+        //Sort function doesn't work (task 08)
+
+    </script>
+</body>
+</html>

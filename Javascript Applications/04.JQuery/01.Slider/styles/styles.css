@@ -1,0 +1,105 @@
+﻿body, html, ul, li, a, header, article, img {
+    margin: 0;
+    padding: 0;
+}
+
+#slider_container {
+    margin: 0 auto;
+    margin-top: 20px;
+    overflow: hidden;
+    width: 666px;
+}
+
+#slider_list {
+    position: relative;
+    left: -666px;
+    width: 9999px;
+    list-style-type: none;
+}
+
+    #slider_list li {
+        padding: 20px;
+        margin: 0 10px;
+        width: 600px;
+        float: left;
+        background: #ddd;
+        border-radius: 10px;
+        border: 3px solid #aaa;
+    }
+
+    #slider_list header {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    #slider_list img {
+        margin-top: 10px;
+        max-width: 600px;
+    }
+
+    #slider_list article {
+        margin-top: 10px;
+        text-align: justify;
+    }
+
+/*#slider_container {
+    float: left;
+    width: 800px;
+    overflow: hidden;
+}
+
+#slider_list {
+    position: relative;
+    left: -800px;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    width: 2400px;
+}
+
+#slider_list li {
+    float: left;
+    width: 800px;
+}
+
+
+     header {
+        text-align: center;
+        font-size: 1.4rem;
+    }
+
+    li > img {
+        margin-top: 2%;
+        max-width: 80%;
+        margin-left: 10%;
+    }*/
+
+
+
+
+
+
+/*BUTTONS*/
+
+
+
+#left_button, #right_button {
+    position: absolute;
+    border-radius: 100px;
+    top: 250px;
+    width: 31px;
+    height: 31px;
+    opacity: 0.6;
+}
+
+    #left_button:hover, #right_button:hover {
+        opacity: 1;
+    }
+
+#left_button {
+    left: 20%;
+}
+
+#right_button {
+    right: 20%;
+}

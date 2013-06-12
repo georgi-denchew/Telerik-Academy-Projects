@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/styles.css" rel="stylesheet" />
+    <script src="scripts/ObjectCreateAndExtend.js"></script>
+    <script src="scripts/SliderControl.js"></script>
+    <script src="http://localhost:33740/scripts/ObjectCreateAndExtend.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <a href="#" id="left_button"><img src="imgs/left_arrow.png" alt="left arrow"/></a>
+        <div id="image_container"><img src="imgs/wilde_image.jpg" title="Wilde" /></div>
+        <div id="thumbnails_container"></div>
+        <a href="#" id="right_button"><img src="imgs/right_arrow.png" alt="right arrow"/></a>
+    </div>
+    <script>
+        
+    </script>
+    <script>
+        //Examples
+        var thumbnailsContainer = sliderControl.getThumbnailContainer();
+        thumbnailsContainer.init("#thumbnails_container", "#image_container", "#left_button", "#right_button");
+        var wildeImage = sliderControl.Image();
+        wildeImage.init("Wilde", "imgs/wilde_thumbnail.jpg", "imgs/wilde_image.jpg");
+        thumbnailsContainer.addThumbnail(wildeImage);
+        var cooleyImage = sliderControl.Image();
+        cooleyImage.init("Cooley", "imgs/cooley_thumbnail.jpg", "imgs/cooley_image.jpg");
+        thumbnailsContainer.addThumbnail(cooleyImage);
+        var dyerImage = sliderControl.Image();
+        dyerImage.init("Dyer", "imgs/dyer_thumbnail.jpg", "imgs/dyer_image.jpg");
+        thumbnailsContainer.addThumbnail(dyerImage);
+        thumbnailsContainer.displayThumbnails();
+    </script>
+</body>
+</html>

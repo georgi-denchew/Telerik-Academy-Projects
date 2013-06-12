@@ -1,0 +1,750 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, nav, ul, li, a, p, blockquote, a, img, small, strong,
+dl, dt, dd, ol, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, figcaption, figcaption, footer, header, hgroup, menu, nav, section,
+summary, time, audio, video {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+html{
+    font-size: 14px;
+}
+
+body {
+    font-family: OpenSans;
+    font-size: 14px;
+    color: white;
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+    blockquote:before, blockquote:after, q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*Clearfix*/
+
+#web_header_container {
+    display: block;
+}
+
+#web_header_container:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+
+/*==========================================*/
+/*              COMMON                      */
+/*==========================================*/
+
+
+
+/*==========================================*/
+/*              WEB HEADER                  */
+/*==========================================*/
+
+#web_header_container{    
+    background-image: url(../imgs/header-bg.png);
+    padding-top: 51px;
+}
+
+#web_header {
+    margin: 0 auto;
+    width: 960px;
+    height: 43.57rem;
+    color: #fff;
+    text-shadow: 1px 1px 1px #086b99;
+    background: url(../imgs/header-img.png) no-repeat bottom;
+}
+
+#web_header h1 {
+    font-family: 'Myriad Pro';
+    font-size: 3.42rem;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    margin-right: 5px;
+}
+
+#web_nav, #web_nav ul {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+}
+
+#web_nav ul li {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+}
+
+#web_nav ul li a {
+    color: #fff;
+    font-size: 1rem;
+    font-family: OpenSans-Semibold;
+    padding: 0.7rem 1.07rem;
+}
+
+
+.selected {
+    background: #186387;
+    border: 1px solid #446f83;
+    box-shadow: rgba(68, 111, 131, 1) 0px 0px inset;
+    border-radius: 5px;
+    font-family: OpenSans-Extrabold;
+}
+
+#web_header h2 {
+    text-align: center;
+    margin-top: 7.86rem;
+    font-size: 5.14rem;
+    font-family: OpenSans-Extrabold;
+}
+
+#web_header h2 .and {
+    font-family: OpenSans-Light;
+}
+
+#web_header h3 {
+    text-transform: capitalize;
+    margin-top: 0.5rem;
+    text-align: center;
+    font-family: OpenSans-Light;
+    font-size: 2.57rem;
+    position: relative;
+}
+
+#right-button, #left-button {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+}
+
+/*==========================================*/
+/*              SECOND HEADER               */
+/*==========================================*/
+
+#second_header {
+    width: 960px;
+    margin: 0 auto;
+}
+
+#second_header .coll-3 {
+    background: url(../imgs/article-img.png) no-repeat 4.71rem 5.5rem;
+    width: 28%;
+    margin-right: 8%;
+    padding-top: 16.21rem;
+    position: relative;
+}
+
+#second_header .coll-3:last-of-type {
+    margin-right: 0;
+}
+
+#second_header .coll-3 h4 {
+    text-transform:capitalize;
+    font-family: OpenSans-Light;
+    font-size: 1.71rem;
+    color: #a3a2a2;
+}
+
+#second_header .coll-3 p {
+    color: #555e58;
+    font-family: OpenSans;
+    font-size: 1rem;
+    margin-top: 1.07rem;
+    overflow:hidden;
+    height: 11.07rem;
+}
+    #second_header .coll-3 > a {
+        margin-top: 1.43rem;
+        padding: 0.71rem 1.07rem;
+        font-family: OpenSans;
+        font-size: 1rem;
+        border: 1px solid #e0dddd;
+        border-radius: 5px;
+        color: #9a9999;
+        text-shadow: 1px 1px 1px #d4d3d3;
+        position: absolute;
+        right: 0;
+    }
+
+    #second_header .coll-3 a:hover {
+        color: #fff;
+        text-shadow: 1px 1px 1px #436574;
+        background-color: #186f96;
+        box-shadow: rgba(58, 117, 140, 0.3) 1px 1px inset;
+    }
+
+    #second_header blockquote {
+        color: #555e58;
+        text-align: center;
+        margin-top: 10.36rem;
+        font-family: OpenSans-Light;
+        font-size: 1.71rem;
+    }
+    
+    #second_header #bold {
+        font-family: OpenSans-Extrabold;
+        font-size: 2.14rem;
+    }
+/*==========================================*/
+/*              NEWS AND UPDATES            */
+/*==========================================*/
+
+#news_and_updates_container {
+    
+    background-color: #829aa7;
+}
+
+#news_and_updates {
+    margin-top: 8.07rem;
+    padding-top: 8.57rem;
+}
+
+#news_and_updates h2 {
+    color: #fff;
+    text-align: center;
+    font-size: 5.14rem;
+    font-family: OpenSans-Extrabold;
+}
+
+#news_and_updates h2 .and {
+    color: #fff;
+    font-family: OpenSans-Light;
+}
+
+#news_and_updates h3 {
+    color: #fff;
+    text-transform: capitalize;
+    margin-top: 0.5rem;
+    text-align: center;
+    font-family: OpenSans-Light;
+    font-size: 2.57rem;
+}
+
+    #news_and_updates .coll-3 {
+        margin-top: 3.36rem;
+        margin-right: 8%;
+        width: 27%;
+        padding-top: 6.93rem;
+        background: url(../imgs/news-circle.png) no-repeat 6.07rem 0;
+        margin-bottom: 2.14rem;
+        position: relative;
+    }
+    
+#news_and_updates .coll-3:last-of-type{
+    margin-right: 0;
+}
+
+#news_and_updates .coll-3 h4 {
+    text-shadow: 1px 1px 1px #556060;
+    font-size: 1.57rem;
+    font-family: OpenSans-Semibold;
+    color: #fff;
+}
+
+#news_and_updates .coll-3 .posted {
+    text-shadow: 1px 1px 1px #5d6869;
+    color: #b0bab4;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    margin-top: 0.71rem;
+}
+
+#news_and_updates p {
+    margin-top: 1.07rem;
+    text-shadow: 1px 1px 1px #576364;
+}
+
+    #news_and_updates .coll-3 > a {
+        margin-top: 1.86rem;
+        background: #68726c;
+        box-shadow: rgba(119, 131, 124, 0.9) 1px 1px inset;
+        border: 1px solid #535955;
+        border-radius: 5px;
+        padding: 0.79rem 1.14rem;
+        font-size: 1rem;
+        color: #3d433f;
+        text-shadow: 1px 1px 1px #76837b;
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+        position: absolute;
+        right: 0;
+    }
+
+    #news_and_updates .coll-3 > a:hover {
+        color: #fff;
+        background: #186f96;
+        border:1px solid #45768b;
+        box-shadow: rgba(68, 117, 140, 0.5) 1px 5px inset;
+    }
+
+    #news_and_updates #view_blogs {
+        color: #fff;
+        font-size: 2.14rem;
+        font-family: OpenSans-Light;
+        padding: 1.36rem 1.86rem;
+        background: #565e59;
+        border: 1px solid #404642;
+        box-shadow: rgba(116, 128, 112, 0.9) 1px 1px inset;
+        border-radius: 8px;
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+        margin-top: 8.5rem;
+        margin-left: 34.29rem;
+        margin-bottom: 8.57rem;
+    }
+
+    #news_and_updates #view_blogs:hover {
+        background: #36434c;
+        border: 1px solid #2d363d;
+        box-shadow: rgba(73, 90, 102, 0.9) 1px 1px inset;
+    }
+/*==========================================*/
+/*              WORK AND FEEDBACK           */
+/*==========================================*/
+#work_and_feedback_container {
+    background: #f5f5f5;
+}
+
+#work_and_feedback {
+    margin-top: 3.64rem;
+    width: 960px;
+    margin: 0 auto;
+    padding-top: 8.07rem;
+}
+
+#work_and_feedback h2 {
+    text-shadow: 1px 1px 1px #d4d6d5;
+    color: #636b66;
+    text-align: center;
+    font-size: 5.14rem;
+    font-family: OpenSans-Extrabold;
+}
+
+
+#work_and_feedback h2 .and {
+    text-shadow: 1px 1px 1px #d4d6d5;
+    color: #636b66;
+    font-family: OpenSans-Light;
+}
+
+#work_and_feedback h3 {
+    text-shadow: 1px 1px 1px #d4d6d5;
+    color: #636b66;
+    text-transform: capitalize;
+    margin-top: 0.5rem;
+    text-align: center;
+    font-family: OpenSans-Light;
+    font-size: 2.57rem;
+}
+
+#work_and_feedback #project_title {
+    margin-top: 3.64rem;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    background: url(../imgs/circles.png) no-repeat;
+    padding-top: 6.79rem;
+    color: #4a524d;
+    width: 100%;
+    text-align: center;
+    height: 10.71rem;
+    min-height: 12.14rem;
+}
+
+#work_and_feedback #project_title time {
+    font-family: OpenSans-Light;
+    font-size: 1rem;
+    text-shadow: 1px 1px 1px #cfd0cf;
+}
+
+#work_and_feedback #project_title h5 {
+    font-family: OpenSans-Extrabold;
+    font-size: 1.29rem;
+}
+
+#work_and_feedback #title > a {
+    margin-top: 0.79rem;
+    padding: 0.79rem 1.14rem;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    background: #f5f5f5;
+    border: 1px solid #e0dddd;
+    color: #9a9999;
+    text-shadow: 1px 1px 1px #d4d3d3;
+    border-radius: 5px;
+}
+
+#project_title .coll-3 {
+    float: none;
+    margin: 0 auto;
+}
+
+#work_and_feedback .view_more {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    margin-left: 22.71rem;
+    margin-top: 3.57rem;
+    color: #636b66;
+    font-family: OpenSans-Light;
+    font-size: 2.14rem;
+    padding: 0.79rem 1.14rem;
+    background: #f2f2f2;
+    border: 1px solid #e0dddd;
+    border-radius: 7px;
+    box-shadow: rgba(234, 234, 234, 0.9) 1px 1px;
+    margin-bottom: 8.57rem;
+}
+/*==========================================*/
+/*              PLANS AND PRICING           */
+/*==========================================*/
+
+#plans_and_pricing_container {
+    background: #829aa7;
+}
+
+#plans_and_pricing {
+    margin: 0 auto;
+    width: 960px;
+    padding-top: 8.57rem;
+}
+
+#plans_and_pricing h2 {
+    text-shadow: 1px 1px 2px #363f44;
+    color: #fff;
+    text-align: center;
+    font-size: 5.14rem;
+    font-family: OpenSans-Extrabold;
+}
+
+
+#plans_and_pricing h2 .and {
+    text-shadow: 1px 1px 2px #363f44;
+    color: #fff;
+    font-family: OpenSans-Light;
+}
+
+#plans_and_pricing h3 {
+    text-shadow: 1px 1px 2px #363f44;
+    color: #fff;
+    text-transform: capitalize;
+    margin-top: 0.5rem;
+    text-align: center;
+    font-family: OpenSans-Light;
+    font-size: 2.57rem;
+}
+
+#plans_and_pricing table {
+    box-shadow: rgba(81, 99, 109, 0.6) 1px 2px;
+    border: 1px solid #334049;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    margin-top: 3.64rem;
+    margin-left: 5.36rem;
+}
+
+#plans_and_pricing table td {
+    background: #465662;
+    padding: 1.93rem 5.71rem;
+}
+
+#plans_and_pricing table tr {
+    border: 1px solid #35424c;
+    box-shadow:rgba(84, 104, 118, 0.9) 1px;
+}
+
+#plans_and_pricing table thead {
+    font-family: OpenSans-Extrabold;
+    font-size: 1.57rem;
+    text-shadow: 1px 1px 1px #252c30;
+    box-shadow: rgba(74, 92, 105, 0.9) 1px 0 inset;
+}
+
+#plans_and_pricing table thead td {
+    color: #fff;
+    background: #3d4c56;
+
+}
+
+#plans_and_pricing table .price {
+    background: #4a5b67;
+    font-size: 5.14rem;
+}
+
+#plans_and_pricing .view_more {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    margin-left: 22.71rem;
+    margin-top: 3.57rem;
+    color: #fff;
+    text-shadow: 1px 1px 1px #1a2932;
+    font-family: OpenSans-Light;
+    font-size: 2.14rem;
+    padding: 0.79rem 1.14rem;
+    background: #3c4a54;
+    border: 1px solid #2d363d;
+    border-radius: 7px;
+    box-shadow: rgba(73, 90, 102, 0.9) 1px 1px inset;
+    margin-bottom: 8.57rem;
+}
+/*==========================================*/
+/*              TELERIK ACADEMY             */
+/*==========================================*/
+
+
+#telerik_academy_container {
+    background: #f5f5f5;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+#telerik_academy {
+    margin-bottom: 4.29rem;
+    padding-top: 7.14rem;
+    color: #555e58;
+}
+
+#telerik_academy .coll-3{
+    width: 28%;
+    margin-right: 8%;
+}
+
+#telerik_academy .coll-3:last-of-type {
+   margin: 0;
+}
+
+#telerik_academy h5 {
+    font-size: 2.71rem;
+    font-family:'Myriad Pro';
+
+}
+
+#telerik_academy h6{
+    font-family: OpenSans-Extrabold;
+    font-size: 1.29rem;
+    margin-top: 1.43rem;
+}
+
+#telerik_academy #copyright{
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    font-family: OpenSans-Italic;
+    color: #bfbfbf;
+    margin-top: 0.71rem;
+}
+
+#telerik_academy p {
+    margin-top: 0.79rem;
+}
+
+
+
+footer {
+    background: #f5f5f5;
+    border-top: 1px solid #fff;
+    padding-top: 4.64rem;
+    padding-bottom: 18.71rem;
+    text-align: right;
+    color: #555e58;
+}
+/*==========================================*/
+/*              FONT SCREEN                 */
+/*==========================================*/
+
+@font-face {
+    font-family: OpenSans;
+    src: url(../fonts/OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: OpenSans-Italic;
+    src: url(../fonts/OpenSans-Italic.ttf);
+}
+
+@font-face {
+    font-family: OpenSans-Semibold;
+    src: url(../fonts/OpenSans-Semibold.ttf);
+}
+
+@font-face {
+    font-family: OpenSans-Extrabold;
+    src: url(../fonts/OpenSans-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: OpenSans-Light;
+    src:url(../fonts/OpenSans-Light.ttf);
+}
+
+
+/*==========================================*/
+/*         GRID SYSTEM - STATIC
+/*==========================================*/
+
+.grid {
+    margin: auto;
+    width: 960px;
+}
+
+    .grid:after {
+        content: " ";
+        clear: both;
+        display: block;
+    }
+
+[class*=coll-] {
+    float: left;
+}
+
+
+.coll-12 {
+    width: 100%;
+}
+
+.coll-11 {
+    width: 91.46%;
+}
+
+.coll-10 {
+    width: 83%;
+}
+
+.coll-9 {
+    width: 74.54%;
+}
+
+.coll-8 {
+    width: 66.08%;
+}
+
+.coll-7 {
+    width: 57.62%;
+}
+
+.coll-6 {
+    width: 49.16%;
+}
+
+.coll-5 {
+    width: 40.7%;
+}
+
+.coll-4 {
+    width: 32.24%;
+}
+
+.coll-3 {
+    width: 23.78%;
+}
+
+.coll-2 {
+    width: 15.32%;
+}
+
+.coll-1 {
+    width: 6.86%;
+}
+
+/*==========================================*/
+/*              RESPONSIVE QUERY            */
+/*==========================================*/
+
+
+
+@media only screen and (max-width: 960px) {
+}
+
+@media only screen and (max-width: 768px) {
+
+    #telerik_academy_container {
+        display: none;
+    }
+    footer{
+        display: none;
+    }
+    #plans_and_pricing, #web_header, #second_header, #news_and_updates, #work_and_feedback,
+    #plans_and_pricing {
+        width: 728px;
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+    #web_header h1 {
+        margin-bottom: 29px;
+        display: block;
+        text-align:center;
+    }
+
+    #web_header #web_nav ul{
+        margin-left: 40px;
+    }
+
+    #web_header #web_nav ul li {
+        display: block;
+    }
+
+    
+    #web_header #web_nav ul li a {
+        display: block;
+        width: 22.85rem;
+        background: #186387;
+        border: 1px solid #446f83;
+        box-shadow: rgba(68, 111, 131, 1) 0px 0px inset;
+        border-radius: 5px;
+        text-align: center;
+    }
+     .coll-3 {
+        width: 100%;
+    }
+
+     
+    #plans_and_pricing, #web_header, #second_header, #news_and_updates, #work_and_feedback,
+    #plans_and_pricing {
+        width: 440px;
+    }
+}

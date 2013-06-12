@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        #main-canvas {
+            margin: 100px;
+            border: 3px solid #02a;
+            background: #0094ff;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="main-canvas" width="350px" height="350px"></canvas>
+    <script>
+        var canvas = document.getElementById("main-canvas"),
+         ctx = canvas.getContext("2d"),
+         MAX_WIDTH = 350,
+         MAX_HEIGHT = 350,
+         CIRCLE_RADIUS = 7;
+         currentWidth = 10,
+         currentHeight = 73,
+         widthIncrease = 1
+        heightIncrease = 1;
+
+        setInterval(function () {
+
+            ctx.beginPath();
+            ctx.fillStyle = "#00b";
+            ctx.clearRect(0, 0, 350, 350);
+            
+            console.log('hi');
+            if (currentWidth <= CIRCLE_RADIUS || currentWidth >= MAX_WIDTH - CIRCLE_RADIUS ) {
+                widthIncrease = widthIncrease * (-1);
+            }
+            
+            if (currentHeight <= CIRCLE_RADIUS || currentHeight >= MAX_HEIGHT - CIRCLE_RADIUS) {
+                heightIncrease = heightIncrease * (-1);
+            }
+
+            ctx.arc(currentWidth, currentHeight, CIRCLE_RADIUS, 0, Math.PI * 2, false);
+            ctx.fill();
+
+            currentWidth += widthIncrease;
+            currentHeight += heightIncrease;
+        }, 10, false);
+
+    </script>
+</body>
+</html>

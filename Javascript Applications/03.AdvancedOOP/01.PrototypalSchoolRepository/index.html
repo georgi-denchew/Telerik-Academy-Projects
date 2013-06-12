@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="scripts/ObjectCreateAndExtend.js"></script>
+    <script src="scripts/SchoolRepository.js"></script>
+</head>
+<body>
+    <p>Open the console to see the examples</p>
+    <script>
+        //EXAMPLES
+
+        console.log("Teacher example:");
+        var teacher = schoolRepository.CreateTeacher();
+        teacher.init("Pesho", "Peshev", 102, "Literature");
+        console.log(teacher.introduce());
+
+        console.log("StudentExample:")
+        var student = schoolRepository.CreateStudent();
+        student.init("Pesho Jr", "Peshev", 12, 2);
+        console.log(student.introduce());
+
+        var student2 = schoolRepository.CreateStudent();
+        student2.init("Gosho", "Goshev", 14, 2);
+
+        var student3 = schoolRepository.CreateStudent();
+        student3.init("Marko", "Marchev", 13, 2);
+
+        var students = [];
+        students.push(student);
+        students.push(student2);
+        students.push(student3);
+
+        var schoolClass = schoolRepository.CreateClass();
+        schoolClass.init("Class A", 10, students, teacher);
+        console.log("Class example:");
+        console.log(schoolClass);
+
+        var schoolClass2 = schoolRepository.CreateClass();
+        schoolClass2.init("Class B", 8, students, teacher);
+
+        var schoolClasses = [];
+        schoolClasses.push(schoolClass);
+        schoolClasses.push(schoolClass2);
+
+        var school = schoolRepository.CreateSchool();
+        school.init("Telerik Academy", "Sofia", schoolClasses);
+        console.log("School example:");
+        console.log(school);
+    </script>
+</body>
+</html>

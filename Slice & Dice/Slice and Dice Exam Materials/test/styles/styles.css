@@ -1,0 +1,199 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, nav, ul, li, a, p, blockquote, a, img, small, strong,
+dl, dt, dd, ol, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, figcaption, figcaption, footer, header, hgroup, menu, nav, section,
+summary, time, audio, video {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    font-family: 'Myriad Pro', sans-serif;
+    font-size: 13px;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    background-image: url(../imgs/bg.png);
+}
+
+/*==========================================*/
+/*              WEB WRAPPER                 */
+/*==========================================*/
+
+#wrapper {
+    width: 960px;
+    margin: 0 auto;
+    background : #fff;
+    box-shadow: 0 0 0 rgba(247, 247, 247, 0.3);
+}
+
+/*==========================================*/
+/*              WEB HEADER                  */
+/*==========================================*/
+
+#web_header {
+    padding-top: 55px;
+}
+
+#web_header h1 {
+    font-family: 'Myriad Pro';
+    font-size: 34px;
+}
+
+#web_header #black{
+    color: #656464;
+    text-shadow: -1px 0px 1px #dfdfdf;
+}
+
+#web_header #blue {
+    color: #549eb9;
+    text-shadow: -1px 0px 1px #b6d2de;
+}
+
+#search {
+    width: 200px;
+    border: 1px solid #efefef;
+    background: url(../imgs/glass.png) no-repeat 180px 3px;
+}
+
+#web_nav {
+    margin-top: 55px;
+    font-size: 0;
+}
+
+#web_nav ul {
+        display: block;
+}
+
+#web_header #web_nav ul li {
+    height: 47px;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+#web_header #web_nav ul li a:hover{
+    border-top: 3px solid #549eb9;
+}
+
+#web_header #web_nav ul li a{
+    line-height: 47px;
+    font-size: 12px;
+    padding: 16px;
+    color: #c6c6c6;
+    border-top: 3px solid #f7f7f7;
+    border-right: 2px dotted #efefef;
+}
+
+
+/*==========================================*/
+/*              WEB PORTFOLIO               */
+/*==========================================*/
+
+/*==========================================*/
+/*            GRID                          */
+/*==========================================*/
+
+.grid{
+    margin: auto;
+    width: 960px;
+}
+
+.grid:after{
+    content     : " ";
+    clear       : both;
+    display     : block;
+}
+
+[class*=coll-]{
+	float: left;
+}
+
+
+.coll-12 {
+    width: 100%;
+}
+
+.coll-11 {
+    width: 91.46%;
+}
+
+.coll-10 {
+    width: 83%;
+}
+
+.coll-9 {
+    width: 74.54%;
+}
+
+.coll-8 {
+    width: 66.08%;
+    
+}
+
+.coll-7 {
+    width: 57.62%; 
+}
+
+.coll-6 {
+    width: 49.16%; 
+}
+
+.coll-5 {
+    width: 40.7%; 
+}
+
+.coll-4 {
+    width: 32.24%; 
+}
+
+.coll-3 {
+    width: 23.78%;
+}
+
+.coll-2 {
+    width: 15.32%; 
+}
+
+.coll-1 {
+    width: 6.86%; 
+}
+
+/*==========================================*/
+/*              WEB CONTENT                 */
+/*==========================================*/
+
+#web_content {
+    margin: 30px;
+}
+
+/*==========================================*/
+/*              WEB FOOTER                  */
+/*==========================================*/
+
+/*==========================================*/
+/*              RESPONSIVE QUERY            */
+/*==========================================*/
+/*==========================================*/
+/*              WEB CONTENT                 */
+/*==========================================*/
+
+.active  {
+    border-top: 3px solid #549eb9!important;
+}

@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>TODO List</title>
+    <link href="styles/styles.css" rel="stylesheet" />
+    
+</head>
+<body>
+    <div id="wrapper">
+        <input type="button" value="Remove List Item" id="remove_button" />
+        <input type="text" placeholder="Enter item name" id="text_input" />
+        <input type="button" value="Add List Item" id="add_button" />
+        <div id="display_container">
+            <label for="display">Display</label>
+            <input type="radio" id="display" name="display list" checked="checked" />
+            <label for="hide">Hide</label>
+            <input type="radio" id="hide" name="display list" />
+        </div>
+        <div id="list_container">
+            <header>TODO List</header>
+            <ul id="todo_list">
+            </ul>
+        </div>
+    </div>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

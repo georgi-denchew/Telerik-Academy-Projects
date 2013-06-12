@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="scripts/jquery-1.10.1.min.js"></script>
+    <link href="styles/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <table id="students_table">
+        <thead>
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Grade</td>
+            </tr>
+        </thead>
+    </table>
+    <script>
+        var StudentControl = (function () {
+            var Student = {
+                init: function (firstName, lastName, grade) {
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                    this.grade = grade;
+                },
+            };
+
+            var Table = {
+                init: function (selector, students) {
+                    this.table = $(selector);
+                    this.students = students;
+                },
+                fillTable: function () {
+                    var fragment = $(document.createDocumentFragment());
+
+                    for (var i = 0, len = self.students.length; i < len; i++) {
+                        var row = $(document.createElement('tr'));
+                        row.append($(document.createElement('td')).text(self.students[i].firstName));
+                        row.append($(document.createElement('td')).text(self.students[i].lastName));
+                        row.append($(document.createElement('td')).text(self.students[i].grade));
+
+                        fragment.append(row);
+                    }
+
+                    this.table.append(fragment);
+                }
+            };
+
+            return {
+                createStudent: function () {
+                    return Object.create(Student);
+                },
+                createTable: function () {
+                    return Object.create(Table);
+                }
+            };
+        })();
+    </script>
+    <script>
+        // Examples
+        var student1 = StudentControl.createStudent();
+        student1.init("Joey", "Tribbiani", 2);
+
+        var student2 = StudentControl.createStudent();
+        student2.init("Phoebe", "Buffay", 3);
+
+        var student3 = StudentControl.createStudent();
+        student3.init("Ross", "Geller", 12);
+
+        var student4 = StudentControl.createStudent();
+        student4.init("Monica", "Geller", 8);
+
+        var student5 = StudentControl.createStudent();
+        student5.init("Rachel", "Green", 10);
+
+        var student6 = StudentControl.createStudent();
+        student6.init("Chandler", "Bing", 11);
+
+        var students = [];
+        students.push(student1);
+        students.push(student2);
+        students.push(student3);
+        students.push(student4);
+        students.push(student5);
+        students.push(student6);
+
+        var table = StudentControl.createTable();
+        table.init("#students_table", students);
+        table.fillTable();
+    </script>
+</body>
+</html>

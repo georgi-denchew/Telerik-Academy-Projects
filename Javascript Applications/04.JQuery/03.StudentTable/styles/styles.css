@@ -1,0 +1,18 @@
+﻿table {
+    padding: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background: #abc;
+    border-radius: 4px;
+    color: #222;
+}
+
+table thead {
+    font-weight: bold;
+    color: #000;
+}
+
+tbody td:last-of-type {
+    text-align: right;
+}

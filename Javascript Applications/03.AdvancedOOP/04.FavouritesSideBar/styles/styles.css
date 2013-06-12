@@ -1,0 +1,44 @@
+﻿a {
+    text-decoration:none;
+    color: #29f;
+    margin: 0 5px;
+}
+
+#sidebar_container{
+    display: inline-block;
+}
+
+#sidebar_container > li {
+    position: relative;
+    display: inline-block;
+}
+
+#sidebar_container > li > a {
+    color: #000;
+}
+
+#sidebar_container > li > ul {
+    display: none;
+}
+
+#sidebar_container > li > ul > li {
+    margin-left: -50%;
+}
+
+#sidebar_container  > li:hover ul {
+    position: absolute;
+    display: block;
+}
+
+a:hover {
+    color: #f55;
+}
+
+.folder {
+    width: 100px;
+}
+
+ul {
+    list-style-type: none;
+    text-align: center;
+}

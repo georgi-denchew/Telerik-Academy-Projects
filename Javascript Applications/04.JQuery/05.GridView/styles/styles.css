@@ -1,0 +1,42 @@
+﻿#description {
+    display: inline-block;
+    width: 300px;
+}
+
+#grid_color {
+    background: #ddd;
+}
+
+#second_row_color {
+    background: #777;
+}
+
+#first_row_color {
+    background: #aaa;
+}
+
+#wrapper {
+    border-radius: 4px;
+    padding: 20px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.grid {
+    padding: 15px;
+    background: #ddd;
+    border-radius: 4px;
+}
+
+.row {
+    line-height: 25px;
+    background: #777;
+    padding: 2px;
+    border: 1px solid #555;
+    margin-top: 2px;
+    border-radius: 4px;
+}
+
+    .row:nth-of-type(2n+1) {
+        background: #aaa;
+    }

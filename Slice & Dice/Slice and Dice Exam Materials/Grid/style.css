@@ -1,0 +1,132 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, nav, ul, li, a, p, blockquote, a, img, small, strong,
+dl, dt, dd, ol, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, figcaption, figcaption, footer, header, hgroup, menu, nav, section,
+summary, time, audio, video {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/*==========================================*/
+/*              GRID SYSTEM                 */
+/*==========================================*/
+
+.grid {
+    width: 960px;
+}
+
+.grid:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.coll {
+    float: left;
+}
+
+.coll-1{
+    width: 80px;
+}
+
+.coll-2{
+    width: 160px;
+}
+
+.coll-3 {
+    width: 240px;
+}
+
+.coll-4 {
+    width: 320px;
+}
+
+.coll-5 {
+    width: 400px;
+}
+
+.coll-6 {
+    width: 480px;
+}
+
+.coll-7{
+    width: 560px;
+}
+
+.coll-8 {
+    width: 640px;
+}
+
+.coll-9 {
+    width: 720px;
+}
+
+.coll-10 {
+    width: 800px;
+}
+
+.coll-11 {
+    width: 880px;
+}
+
+.coll-12 {
+    width: 960px;
+}
+
+.module {
+    padding: 10px;
+}
+
+/*==========================================*/
+/*              WEB HEADER                  */
+/*==========================================*/
+
+/*==========================================*/
+/*              WEB PORTFOLIO               */
+/*==========================================*/
+
+/*==========================================*/
+/*              WEB CONTENT                 */
+/*==========================================*/
+
+/*==========================================*/
+/*              WEB FOOTER                  */
+/*==========================================*/
+
+/*==========================================*/
+/*              RESPONSIVE QUERY            */
+/*==========================================*/

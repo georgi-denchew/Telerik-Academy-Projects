@@ -1,0 +1,18 @@
+﻿body {
+}
+img{
+    border: none;
+}
+
+div {
+    border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    text-decoration: underline;
+}

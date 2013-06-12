@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="scripts/ClassCreate.js"></script>
+    <link href="styles/styles.css" rel="stylesheet" />
+    <script src="scripts/FavouritesControl.js"></script>
+</head>
+<body>
+    <p> Note: The folders have a drop-down menu, which displays the URLs they contain.</p>
+    <ul id="sidebar_container"></ul>
+    <script>
+        
+    </script>
+    <script>
+
+        //Examples
+        var google = new favouritesControl.createURL("Google", "http://google.com");
+        var yahoo = new favouritesControl.createURL("Yahoo", "http://yahoo.com");
+        var bing = new favouritesControl.createURL("Bing", "http://bing.com");
+
+        var folder = new favouritesControl.createFolder("First Folder");
+        folder.addURL(google);
+        folder.addURL(yahoo);
+        folder.addURL(bing);
+
+        var secondFolder = new favouritesControl.createFolder("Second Folder");
+        secondFolder.addURL(google);
+        secondFolder.addURL(yahoo);
+        secondFolder.addURL(bing);
+
+        var thirdFolder = new favouritesControl.createFolder("Third Folder");
+        thirdFolder.addURL(google);
+        thirdFolder.addURL(yahoo);
+        thirdFolder.addURL(bing);
+
+        var sideBar = new favouritesControl.getSideBar("#sidebar_container");
+        sideBar.addURL(google);
+        sideBar.addURL(yahoo);
+        sideBar.addURL(bing);
+
+        sideBar.addFolder(folder);
+        sideBar.addFolder(secondFolder);
+        sideBar.addFolder(thirdFolder);
+
+        sideBar.display();
+    </script>
+</body>
+</html>

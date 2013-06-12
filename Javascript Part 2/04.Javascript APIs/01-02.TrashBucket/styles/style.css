@@ -1,0 +1,45 @@
+﻿body {
+}
+
+.draggable {
+    position: absolute;
+    top: 123px;
+    left: 500px;
+}
+
+#scoreboard {
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #ccc;
+    font-family: 'Comic Sans MS';
+    position: absolute;
+    display: inline-block;
+    top: 50px;
+    right: 10px;
+    padding: 10px;
+}
+
+#scoreboard ul {
+    list-style: none;
+}
+
+
+#label {
+    top: 200px;
+    left: 300px;
+}
+
+#nickname {
+    top: 200px;
+    left: 400px;
+}
+
+#submit_score {
+    top: 200px;
+    left: 565px;
+}
+
+#submit_score, #nickname, #label {
+    position: absolute;
+    display: none;
+}

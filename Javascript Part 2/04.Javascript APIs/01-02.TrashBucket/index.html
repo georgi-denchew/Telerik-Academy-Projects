@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="styles/style.css" />
+    <title></title>
+    <style type="text/css">
+    </style>
+</head>
+<body onload="ShowScoreboard()">
+    <img id="container" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="restoreImg(event)" src="imgs/closed_bucket.ico" alt="bucket" />
+    <div id="scoreboard"></div>
+
+    <img class="draggable" id="Img1" draggable="true" ondragstart="drag(event)" src="imgs/trash.ico" alt="trash" />
+    <img class="draggable" id="Img2" draggable="true" ondragstart="drag(event)" src="imgs/trash.ico" alt="trash" />
+    <img class="draggable" id="Img3" draggable="true" ondragstart="drag(event)" src="imgs/trash.ico" alt="trash" />
+    <img class="draggable" id="Img4" draggable="true" ondragstart="drag(event)" src="imgs/trash.ico" alt="trash" />
+    <img class="draggable" id="Img5" draggable="true" ondragstart="drag(event)" src="imgs/trash.ico" alt="trash" />
+    <img class="draggable" id="Img6" draggable="true" ondragstart="drag(event)" src="imgs/trash.ico" alt="trash" />
+    <img class="draggable" id="Img7" draggable="true" ondragstart="drag(event)" src="imgs/trash.ico" alt="trash" />
+    <img class="draggable" id="Img8" draggable="true" ondragstart="drag(event)" src="imgs/trash.ico" alt="trash" />
+    <img class="draggable" id="Img9" draggable="true" ondragstart="drag(event)" src="imgs/trash.ico" alt="trash" />
+
+    <form method="get" action="index.html">
+        <label id="label" for="nickname">Enter nickname:</label>
+        <input type="text" id="nickname" />
+        <input type="submit" id="submit_score" value="Submit score" onclick="SubmitScore()" />
+    </form>
+
+
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

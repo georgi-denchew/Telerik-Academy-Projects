@@ -1,0 +1,45 @@
+﻿html {
+    font-size: 20px;
+    background: #abc;
+}
+
+#wrapper {
+    padding: 25px;
+}
+
+#display_container {
+    margin-top: 5px;
+    position: absolute;
+}
+
+#list_container{
+    border-radius: 5px;
+    padding: 1rem;
+    background: #ccc;
+    margin: 0 auto;
+    width: 15%;
+}
+
+#list_container header {
+    text-align: center;
+}
+
+#list_container ul {
+    width: 20%;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+input[type="button"] {
+    border-radius: 1px;
+    border: none;
+}
+
+input[type="button"]:hover {
+    box-shadow: rgba(255, 106, 0, 0.3) 1px 1px 10px inset;
+}
+
+#text_input {
+    padding-left: 2px;
+    background: #eee;
+}

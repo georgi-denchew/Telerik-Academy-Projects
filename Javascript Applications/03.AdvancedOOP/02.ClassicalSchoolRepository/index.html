@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="scripts/ClassCreate.js"></script>
+    <script src="scripts/schoolRepository.js"></script>
+</head>
+<body>
+    <p>Open the console to see the examples</p>
+    <script>
+
+        //Examples
+        var teacher = new schoolRepository.Teacher("Pesho", "Peshev", 59, "Physics");
+        console.log("Teacher example:");
+        console.log(teacher.introduce());
+
+        var student = new schoolRepository.Student("Gosho", "Goshev", 9, 7);
+        console.log("Student example:");
+        console.log(student.introduce());
+
+        var student2 = new schoolRepository.Student("Misho", "Goshev", 11, 7);
+        var student3 = new schoolRepository.Student("Gisho", "Goshev", 12, 7);
+
+        var students = [];
+        students.push(student);
+        students.push(student2);
+        students.push(student3);
+
+        var schoolClass = new schoolRepository.SchoolClass("Class C", 10, students, teacher);
+        console.log("Class example:");
+        console.log(schoolClass);
+
+        var schoolClass2 = new schoolRepository.SchoolClass("Class E", 12, students, teacher);
+        var schoolClass3 = new schoolRepository.SchoolClass("Class D", 8, students, teacher);
+
+        var schoolClasses = [];
+        schoolClasses.push(schoolClass);
+        schoolClasses.push(schoolClass2);
+        schoolClasses.push(schoolClass3);
+
+        var school = new schoolRepository.School("Telerik Academy", "Sofia", schoolClasses);
+        console.log("School example:");
+        console.log(school);
+
+    </script>
+</body>
+</html>

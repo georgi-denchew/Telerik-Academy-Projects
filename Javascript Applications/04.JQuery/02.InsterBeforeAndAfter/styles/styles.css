@@ -1,0 +1,57 @@
+﻿body, form, label, input, section {
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+body {
+    width: 500px;
+    margin: 0 auto;
+}
+
+form {
+    padding: 15px;
+    margin: 10px;
+    background :#abb;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+form header {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+form, section{
+    width: 335px;
+    display: inline-block;
+}
+
+section {
+    margin-top: 10px;
+}
+
+#description {
+    font-size: 0.9rem;
+}
+
+label[for="before"], label[for="after"] {
+    margin-right: 5px;
+    float: right;
+}
+
+input{
+    position: relative;
+    right: 0;
+    float: right;
+}
+
+#generator {
+    margin-top: 10px;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+#generator:hover {
+    background: #ddd;
+}

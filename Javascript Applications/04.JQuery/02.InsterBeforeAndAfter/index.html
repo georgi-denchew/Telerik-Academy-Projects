@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/styles.css" rel="stylesheet" />
+    <script src="scripts/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+    <form action="/" method="post">
+        <header>Enter New Element</header>
+        <div id="description">Description: Enter the new content in the first field.
+             Then enter the existing content, next to which the new one should be placed. </div>
+        <section>
+            <label for="content">Enter new content:</label>
+            <input type="text" id="content" />
+        </section>
+        <section>
+            <label for="position_related">Enter position-related conent:</label>
+            <input type="text" id="position_related" />
+        </section>
+        <section>
+            <span>Position:</span>
+            <label for="after">After</label>
+            <input type="radio" name="position" value="after" id="after" />
+            <label for="before">Before</label>
+            <input type="radio" name="position" value="before" checked="checked" id="before" />
+        </section>
+        <input type="button" value="Generate Content" id="generator" />
+    </form>
+    <p>Text1</p>
+    <p>Text2</p>
+    <p>Text3</p>
+    <p>Text4</p>
+
+    <script src="scripts/addNewElement.js"></script>
+</body>
+</html>
