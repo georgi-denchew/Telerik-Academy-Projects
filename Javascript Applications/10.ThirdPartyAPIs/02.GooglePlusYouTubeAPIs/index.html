@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        #youtube {
+            display: none;
+        }
+    </style>
+    <script type="text/javascript">
+        (function () {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/client:plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
+        function signinCallback(authResult) {
+            if (authResult['access_token']) {
+                document.getElementById('signinButton').setAttribute('style', 'display: none');
+                document.getElementById('youtube').style.display = 'block';
+            } else if (authResult['error']) {
+            }
+        }
+    </script>
+    <script src="https://apis.google.com/js/plusone.js"></script>
+</head>
+<body>
+    <span>For some uknown reason this doesn't work in google chrome (at least on my PC) - same for the lecture demos.
+        If you experience the same issues test this with Firefox.
+    </span>
+    <span id="signinButton">
+        <span
+            class="g-signin"
+            data-callback="signinCallback"
+            data-clientid="405321143079.apps.googleusercontent.com"
+            data-cookiepolicy="single_host_origin"
+            data-requestvisibleactions="http://schemas.google.com/AddActivity"
+            data-scope="https://www.googleapis.com/auth/plus.login"></span>
+    </span>
+    <div id="youtube">
+        <div id="player"></div>
+        <g:plus action="share" href="http://www.youtube.com/watch?feature=player_embedded&v=OV0bLtUoQKU" id="share-tag"></g:plus>
+        <br />
+        <span>ID: </span>
+        <input type="text" id="load-video" value="Wz-c_8pP9pA" />
+        <button id="single-video">Load video</button>
+        <button id="pause">Pause video</button>
+        <button id="play">Play video</button>
+        <button id="stop">Stop video</button>
+        <br />
+        <span>Playlist: </span>
+        <textarea id="playlist">BvkJ6ueX-DQ,nFyqNmFAMU0,RAHaG7yXmeg</textarea>
+        <button id="load-playlist">Load playlist</button>
+        <button id="previous">Previous</button>
+        <button id="next">Next</button>
+        <br />
+        <label>Enter volume</label>
+        <input type="number" max="100" min="0" value="100" id="volume" />
+        <button id="set_volume">Set volume</button>
+        <button id="mute">Mute video</button>
+        <button id="unmute">Unmute video</button>
+        <label for="quality">Quality:</label>
+        <select id="quality">
+            <option value="hd1080">1080p</option>
+            <option value="hd720">720p</option>
+            <option value="large">480p</option>
+            <option value="normall">360p</option>
+            <option value="small" selected="selected">240p</option>
+        </select>
+    </div>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="Scripts/youtube.js"></script>
+    <script type="text/javascript"> //put this after the last share tag
+        (function () {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
+    </script>
+</body>
+</html>

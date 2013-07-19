@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.BinaryPasswords", "01.BinaryPasswords\01.BinaryPasswords.csproj", "{1C96015D-A479-49E7-957D-C19002CDB1FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.ColorfulRabbits", "02.ColorfulRabbits\02.ColorfulRabbits.csproj", "{3D64AE86-A075-426E-B278-FA00ED398B82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.Clovers", "03.Clovers\03.Clovers.csproj", "{809FD27D-C4D4-49CB-9BB1-D63241F07387}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C96015D-A479-49E7-957D-C19002CDB1FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C96015D-A479-49E7-957D-C19002CDB1FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C96015D-A479-49E7-957D-C19002CDB1FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C96015D-A479-49E7-957D-C19002CDB1FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D64AE86-A075-426E-B278-FA00ED398B82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D64AE86-A075-426E-B278-FA00ED398B82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D64AE86-A075-426E-B278-FA00ED398B82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D64AE86-A075-426E-B278-FA00ED398B82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{809FD27D-C4D4-49CB-9BB1-D63241F07387}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{809FD27D-C4D4-49CB-9BB1-D63241F07387}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{809FD27D-C4D4-49CB-9BB1-D63241F07387}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{809FD27D-C4D4-49CB-9BB1-D63241F07387}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

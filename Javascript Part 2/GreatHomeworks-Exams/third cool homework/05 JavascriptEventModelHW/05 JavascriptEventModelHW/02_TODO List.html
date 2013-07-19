@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+        function initialize() {
+            var TODOList = document.getElementById('TODOList');
+            var ADDButton = document.getElementById('ADDButton');
+            ADDButton.addEventListener('click', function () {
+                var taskTODO = document.getElementById('taskTODO');
+                if (taskTODO != null) {
+                    var li = document.createElement('li');
+                    var html = '';
+                    html += '<div class="content"><input type="checkbox" id="btnSelected"></checkbox><span>' + taskTODO.value + '</span></div>';
+                    li.innerHTML = html;
+                    TODOList.appendChild(li);
+                }
+            });
+
+            var btnDelete = document.getElementById('btnDelete');
+            btnDelete.addEventListener('click', function () {
+                var selectedList = TODOList.querySelectorAll('#btnSelected');
+                for (var i = 0; i < selectedList.length; i++) {
+                    if (selectedList[i].checked) {
+                        selectedList[i].parentElement.parentElement.parentElement.removeChild(selectedList[i].parentElement.parentElement);
+                    }
+                }
+            });
+
+            var btnHide = document.getElementById('btnHide');
+            btnHide.addEventListener('click', function () {
+                var selectedList = TODOList.querySelectorAll('#btnSelected');
+                for (var i = 0; i < selectedList.length; i++) {
+                    if (selectedList[i].checked) {
+                        selectedList[i].parentElement.parentElement.style.display = 'none';
+                        selectedList[i].checked = false;
+                    }
+                }
+            });
+
+            var btnShow = document.getElementById('btnShow');
+            btnShow.addEventListener('click', function () {
+                var selectedList = TODOList.querySelectorAll('li');
+                for (var i = 0; i < selectedList.length; i++) {
+                    if (selectedList[i].style.display === 'none') {
+                        selectedList[i].style.display = 'list-item';
+                    }
+                }
+            });
+        }
+    </script>
+    <style>
+        li {
+            list-style-type: none;
+        }
+        .selected {
+            background-color: green;
+        }
+    </style>
+</head>
+<body onload="initialize()">
+    <div id="wrapper">
+        <div>
+            <input type="text" id="taskTODO"/>
+            <input type="button" id="ADDButton" value="Add Task"/>
+        </div>
+        <ul id="TODOList">
+            
+        </ul>
+        <div>
+            <input type="button" id="btnDelete" value="Delete Selected"/>
+            <input type="button" id="btnHide" value="Hide Selected"/>
+            <input type="button" id="btnShow" value="Show All"/>
+        </div>
+    </div>
+</body>
+</html>

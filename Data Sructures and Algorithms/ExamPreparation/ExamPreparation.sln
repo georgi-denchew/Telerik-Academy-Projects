@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.MessageInABottle", "01.MessageInABottle\01.MessageInABottle.csproj", "{0EA549AF-83D7-4E70-92C7-9C9CA3C44988}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.AcademyTasks", "02.AcademyTasks\02.AcademyTasks.csproj", "{FD5528B4-9ABB-4529-AB57-CB7B76FEEF8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.RiskWinsRiskLoses", "04.RiskWinsRiskLoses\04.RiskWinsRiskLoses.csproj", "{31B0F090-2B10-42AD-A5A1-72A2BE6EAE60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0EA549AF-83D7-4E70-92C7-9C9CA3C44988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EA549AF-83D7-4E70-92C7-9C9CA3C44988}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EA549AF-83D7-4E70-92C7-9C9CA3C44988}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EA549AF-83D7-4E70-92C7-9C9CA3C44988}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD5528B4-9ABB-4529-AB57-CB7B76FEEF8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD5528B4-9ABB-4529-AB57-CB7B76FEEF8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD5528B4-9ABB-4529-AB57-CB7B76FEEF8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD5528B4-9ABB-4529-AB57-CB7B76FEEF8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31B0F090-2B10-42AD-A5A1-72A2BE6EAE60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31B0F090-2B10-42AD-A5A1-72A2BE6EAE60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31B0F090-2B10-42AD-A5A1-72A2BE6EAE60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31B0F090-2B10-42AD-A5A1-72A2BE6EAE60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

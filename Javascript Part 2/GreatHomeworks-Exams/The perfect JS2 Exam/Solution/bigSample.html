@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <script src="script.js"></script>
+    <style type="text/css">
+        img {
+            border: none;
+        }
+        ul {
+            padding:0;
+        }
+        li {
+            padding: 0;
+            list-style-type: none;
+            text-align: center;
+        }
+        a {
+            color: black;
+            text-decoration: none;
+        }
+            a:hover {
+                text-decoration: underline;
+            }
+        .gallery_img_list {
+            display : inline-block;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: 5px;
+            padding: 5px;
+        }
+        .gallery_img {
+            width : 50px;
+            height: 50px;
+        }
+        .gallery_album_title {
+            font-weight:bold;
+        }
+        .gallery_album_list_item {
+            max-width: 500px;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: 5px;
+            padding: 5px;
+        }
+        #gallery_image_big_display {
+            position: absolute;
+            width : 200px;
+            height: 200px;
+
+            top: 100px;
+            left: 600px;
+        }
+        .gallery_album_list_item_sort_asc, .gallery_album_list_item_sort_desc {
+            display : inline-block;
+            margin: 5px;
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sample image gallery:</h1>
+    <div id="gallery-holder" class="gallery"></div>
+    <h1>Image gallery that is saved and after that loaded from the localstorage</h1>
+    <div id="ninjas-gallery" class="gallery"></div>
+    <script>
+        // Create a example gallery
+        var gallery = controls.getImageGallery("#gallery-holder");
+
+        gallery.addImage("JS Ninja", "sampleImage.jpg");
+        gallery.addImage("JS Ninja", "sampleImage2.jpg");
+        gallery.addImage("JS Ninja", "sampleImage.jpg");
+
+        var sortAlbum = gallery.addAlbum("Album for sort <br />");
+        var AlbumForSortSubAlbum3 = sortAlbum.addAlbum("AlbumForSortSubAlbum3");
+        var AlbumForSortSubAlbum1 = sortAlbum.addAlbum("AlbumForSortSubAlbum1");
+        AlbumForSortSubAlbum1.addImage("JS Ninja", "sampleImage.jpg");
+        AlbumForSortSubAlbum1.addImage("JS Ninja", "sampleImage2.jpg");
+        var AlbumForSortSubAlbum11 = AlbumForSortSubAlbum1.addAlbum("Ninjas");
+        AlbumForSortSubAlbum11.addImage("JS Ninja", "sampleImage.jpg");
+        AlbumForSortSubAlbum11.addImage("JS Ninja", "sampleImage2.jpg");
+
+        var AlbumForSortSubAlbum2 = sortAlbum.addAlbum("AlbumForSortSubAlbum2");
+        var AlbumForSortSubAlbum5 = sortAlbum.addAlbum("AlbumForSortSubAlbum5");
+        var AlbumForSortSubAlbum4 = sortAlbum.addAlbum("AlbumForSortSubAlbum4");
+
+        var ninjasAlbum = gallery.addAlbum("Ninjas");
+        ninjasAlbum.addImage("JS Ninja", "sampleImage.jpg");
+        ninjasAlbum.addImage("JS Ninja", "sampleImage2.jpg");
+        ninjasAlbum.addImage("JS Ninja", "sampleImage.jpg");
+        
+        var kidsAlbum = ninjasAlbum.addAlbum("Kids Ninjas");
+        kidsAlbum.addImage("Kid Ninja", "sampleImage.jpg");
+        kidsAlbum.addImage("Kid Ninja", "sampleImage2.jpg");
+
+        var kidsAlbum2013 = kidsAlbum.addAlbum("Kids Ninjas 2013");
+        kidsAlbum2013.addImage("Kid Ninja 2013", "sampleImage.jpg");
+        kidsAlbum2013.addImage("Kid Ninja 2013", "sampleImage2.jpg");
+
+        var qaAlbum = gallery.addAlbum("QA - Empty album");
+
+        gallery.render();
+
+        // Save to localstorage and load back
+        var imageGalleryData = gallery.getImageGalleryData();
+        imageGalleryRepository.save("ninjas-gallery", imageGalleryData);
+
+        var imageGalleryDataLoaded = imageGalleryRepository.load("ninjas-gallery");
+        var ninjasGallery = controls.buildImageGallery("#ninjas-gallery", imageGalleryDataLoaded);
+        ninjasGallery.render();
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.PriorityQueue", "01.PriorityQueue\01.PriorityQueue.csproj", "{8C03110D-F328-47CF-8507-77AB8356F420}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.ProductCollection", "02.ProductCollection\02.ProductCollection.csproj", "{C23C72D1-174C-4D76-BF93-82A955A1625E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.WordFinder", "03.WordFinder\03.WordFinder.csproj", "{AFED4837-147F-43D8-9F20-9C87070117B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C03110D-F328-47CF-8507-77AB8356F420}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C03110D-F328-47CF-8507-77AB8356F420}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C03110D-F328-47CF-8507-77AB8356F420}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C03110D-F328-47CF-8507-77AB8356F420}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C23C72D1-174C-4D76-BF93-82A955A1625E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C23C72D1-174C-4D76-BF93-82A955A1625E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C23C72D1-174C-4D76-BF93-82A955A1625E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C23C72D1-174C-4D76-BF93-82A955A1625E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFED4837-147F-43D8-9F20-9C87070117B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFED4837-147F-43D8-9F20-9C87070117B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFED4837-147F-43D8-9F20-9C87070117B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFED4837-147F-43D8-9F20-9C87070117B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

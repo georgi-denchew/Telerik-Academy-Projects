@@ -1,0 +1,9 @@
+﻿li {
+    border-radius: 4px;
+    margin: 2px;
+    border: 1px solid #ccc;
+}
+
+.treeView > li li {
+    display: none;
+}

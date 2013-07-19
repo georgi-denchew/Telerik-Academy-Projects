@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.0.2.min.js"></script>
+    <link href="Styles/styles.css" rel="stylesheet" />
+    <script type="text/javascript" src="Scripts/treeView.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".treeView").treeView();
+        });
+    </script>
+</head>
+<body>
+    <ul class="treeView">
+        <li>1 has nested elements
+            <ul>
+                <li>1 has nested elements
+                    <ul>
+                        <li>1 has nested elements
+                            <ul>
+                        <li>1</li>
+                        <li>2</li>
+                    </ul>
+                        </li>
+                        <li>2</li>
+                    </ul>
+                </li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </li>
+        <li>2 has nested elements
+            <ul>
+                <li>1</li>
+                <li>2</li>
+            </ul>
+        </li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+</body>
+</html>

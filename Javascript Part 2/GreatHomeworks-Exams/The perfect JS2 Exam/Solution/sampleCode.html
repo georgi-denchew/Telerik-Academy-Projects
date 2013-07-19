@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <script src="script.js"></script>
+    <style type="text/css">
+        img {
+            border: none;
+        }
+        ul {
+            padding:0;
+        }
+        li {
+            padding: 0;
+            list-style-type: none;
+            text-align: center;
+        }
+        a {
+            color: black;
+            text-decoration: none;
+        }
+            a:hover {
+                text-decoration: underline;
+            }
+        .gallery_img_list {
+            display : inline-block;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: 5px;
+            padding: 5px;
+        }
+        .gallery_img {
+            width : 50px;
+            height: 50px;
+        }
+        .gallery_album_title {
+            font-weight:bold;
+        }
+        .gallery_album_list_item {
+            max-width: 500px;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: 5px;
+            padding: 5px;
+        }
+        #gallery_image_big_display {
+            position: absolute;
+            width : 200px;
+            height: 200px;
+
+            top: 100px;
+            left: 600px;
+        }
+        .gallery_album_list_item_sort_asc, .gallery_album_list_item_sort_desc {
+            display : inline-block;
+            margin: 5px;
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Task01: Sample image gallery</h1>
+    <div id="task01-gallery-holder" class="gallery"></div>
+    
+    <h1>Task02: Sample image gallery</h1>
+    <div id="task02-gallery-holder" class="gallery"></div>
+    
+    <h1>Task03: Just click on some album title</h1>
+
+    <h1>Task04, Task05, Task06: Image gallery that is saved and after that loaded from the localstorage</h1>
+    <div id="ninjas-gallery" class="gallery"></div>
+
+    
+    <h1>Task07: Just click on some image :)</h1>
+    
+    <h1>Task08: Sample image gallery</h1>
+    <div id="task08-gallery-holder" class="gallery"></div>
+    <script>
+        // Create a example gallery
+        // Task01 sample code
+        var gallery = controls.getImageGallery("#task01-gallery-holder");
+        gallery.addImage("JS Ninja", "sampleImage.jpg");
+        gallery.addImage("JS Ninja", "sampleImage2.jpg");
+        gallery.addImage("JS Ninja", "sampleImage.jpg");
+        var ninjasAlbum = gallery.addAlbum("Ninjas");
+            ninjasAlbum.addImage("JS Ninja", "sampleImage.jpg");
+            ninjasAlbum.addImage("JS Ninja", "sampleImage2.jpg");
+            ninjasAlbum.addImage("JS Ninja", "sampleImage.jpg");
+
+        gallery.render();
+
+        // Task02 sample code
+        var gallery2 = controls.getImageGallery("#task02-gallery-holder");
+        gallery2.addImage("JS Ninja", "sampleImage.jpg");
+        gallery2.addImage("JS Ninja", "sampleImage2.jpg");
+        gallery2.addImage("JS Ninja", "sampleImage.jpg");
+        var ninjasAlbum2 = gallery2.addAlbum("Ninjas");
+            ninjasAlbum2.addImage("JS Ninja", "sampleImage.jpg");
+            ninjasAlbum2.addImage("JS Ninja", "sampleImage2.jpg");
+            ninjasAlbum2.addImage("JS Ninja", "sampleImage.jpg");
+            var kidsAlbum = ninjasAlbum2.addAlbum("Kids Ninjas");
+            kidsAlbum.addImage("Kid Ninja", "sampleImage.jpg");
+            kidsAlbum.addImage("Kid Ninja", "sampleImage2.jpg");
+                var kidsAlbum2013 = kidsAlbum.addAlbum("Kids Ninjas 2013");
+                kidsAlbum2013.addImage("Kid Ninja 2013", "sampleImage.jpg");
+                kidsAlbum2013.addImage("Kid Ninja 2013", "sampleImage2.jpg");
+
+        var qaAlbum = gallery2.addAlbum("QA - Empty album");
+
+        gallery2.render();
+
+        // Save to localstorage and load back
+        // Task04, Task05, Task06 Example code
+        var imageGalleryData = gallery2.getImageGalleryData();
+        imageGalleryRepository.save("ninjas-gallery", imageGalleryData);
+
+        var imageGalleryDataLoaded = imageGalleryRepository.load("ninjas-gallery");
+        var ninjasGallery = controls.buildImageGallery("#ninjas-gallery", imageGalleryDataLoaded);
+        ninjasGallery.render();
+        
+        // Task08 Example code
+        var gallery3 = controls.getImageGallery("#task08-gallery-holder");
+        var sortAlbum = gallery3.addAlbum("Album for sort <br />");
+        var AlbumForSortSubAlbum3 = sortAlbum.addAlbum("AlbumForSortSubAlbum3");
+            var AlbumForSortSubAlbum1 = sortAlbum.addAlbum("AlbumForSortSubAlbum1");
+            AlbumForSortSubAlbum1.addImage("JS Ninja", "sampleImage.jpg");
+            AlbumForSortSubAlbum1.addImage("JS Ninja", "sampleImage2.jpg");
+            var AlbumForSortSubAlbum11 = AlbumForSortSubAlbum1.addAlbum("Ninjas");
+                AlbumForSortSubAlbum11.addImage("JS Ninja", "sampleImage.jpg");
+                AlbumForSortSubAlbum11.addImage("JS Ninja", "sampleImage2.jpg");
+
+        var AlbumForSortSubAlbum2 = sortAlbum.addAlbum("AlbumForSortSubAlbum2");
+        var AlbumForSortSubAlbum5 = sortAlbum.addAlbum("AlbumForSortSubAlbum5");
+        var AlbumForSortSubAlbum4 = sortAlbum.addAlbum("AlbumForSortSubAlbum4");
+
+        gallery3.render();
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Carousel</title>
+    <style>
+        .carousel {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-panels {
+            position: relative;
+            width: 10000%;
+        }
+
+        /* TODO: Clearfix */
+        .carousel-panel {
+            float: left;
+            width: 1%;
+        }
+
+        .carousel-arrow-left,
+        .carousel-arrow-right {
+            position: absolute;
+            z-index: 1;
+        }
+
+        .carousel-arrow-left { left: 0; }
+        .carousel-arrow-right { right: 0; }
+
+        /* TODO: http://goo.gl/wlhXJ */
+        .carousel-animated .carousel-panels {
+            -webkit-transition: left .6s cubic-bezier(.86, 0, .07, 1);
+               -moz-transition: left .6s cubic-bezier(.86, 0, .07, 1);
+                 -o-transition: left .6s cubic-bezier(.86, 0, .07, 1);
+                    transition: left .6s cubic-bezier(.86, 0, .07, 1);
+        }
+
+        .carousel-my {
+            margin: 0 auto;
+            padding: 10px 0;
+            width: 400px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <article class="carousel carousel-animated carousel-my">
+        <button class="carousel-arrow-left">&lt;</button>
+
+        <div class="carousel-panels">
+            <section class="carousel-panel">1. Lorem ipsum dolor sit amet</section>
+            <section class="carousel-panel">2. Lorem ipsum dolor sit amet</section>
+            <section class="carousel-panel">3. Lorem ipsum dolor sit amet</section>
+        </div>
+
+        <button class="carousel-arrow-right">&gt;</button>
+    </article>
+
+    <article class="carousel carousel-animated carousel-my">
+        <button class="carousel-arrow-left">&lt;</button>
+
+        <div class="carousel-panels">
+            <section class="carousel-panel">1. Lorem ipsum dolor sit amet</section>
+            <section class="carousel-panel">2. Lorem ipsum dolor sit amet</section>
+            <section class="carousel-panel">3. Lorem ipsum dolor sit amet</section>
+        </div>
+
+        <button class="carousel-arrow-right">&gt;</button>
+    </article>
+
+    <script>
+    ;(function() {
+        'use strict'
+
+        function _each(elements, callback) {
+            var i
+
+            for (i = 0; i < elements.length; i++) {
+                callback.call(elements[i], i)
+            }
+        }
+
+        _each(document.querySelectorAll('.carousel'), function() {
+            var panels = this.querySelector('.carousel-panels')
+
+              , totalPanels = panels.querySelectorAll('.carousel-panel').length
+              , currentPanel = 0
+
+            function change(delta) {
+                currentPanel = (currentPanel + delta + totalPanels) % totalPanels
+
+                panels.style.left = -(currentPanel * 100) + '%'
+            }
+
+            this.querySelector('.carousel-arrow-left').addEventListener('click', function() {
+                change(-1)
+            })
+
+            this.querySelector('.carousel-arrow-right').addEventListener('click', function() {
+                change(1)
+            })
+        })
+    }())
+    </script>
+</body>
+</html>

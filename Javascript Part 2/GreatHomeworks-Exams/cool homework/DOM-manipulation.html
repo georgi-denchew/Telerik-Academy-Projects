@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Random Divs</title>
+    <style>
+        @-webkit-keyframes rotate {
+            from { -webkit-transform: rotate(0); }
+              to { -webkit-transform: rotate(360deg); }
+        }
+
+        @-moz-keyframes rotate {
+            from { -moz-transform: rotate(0); }
+              to { -moz-transform: rotate(360deg); }
+        }
+
+        @-o-keyframes rotate {
+            from { -o-transform: rotate(0); }
+              to { -o-transform: rotate(360deg); }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0); }
+              to { transform: rotate(360deg); }
+        }
+
+        div {
+            position: absolute;
+            padding: 1em;
+            border-style: solid;
+            text-align: center;
+            -webkit-animation: rotate linear infinite;
+               -moz-animation: rotate linear infinite;
+                 -o-animation: rotate linear infinite;
+                    animation: rotate linear infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="http://git.io/KMgc1w"></script>
+    <script>
+    ;(function() {
+        'use strict';
+
+        var makeDiv = (function() {
+            var _properties =
+                { height: function() {
+                    return J.random(20, 100) + 'px'
+                }
+
+                , width: function() {
+                    return J.random(20, 100) + 'px'
+                }
+
+                , backgroundColor: function() {
+                    return J.randomColor()
+                }
+
+                , color: function() {
+                    return J.randomColor()
+                }
+
+                , top: function() {
+                    return J.random(100) + '%'
+                }
+
+                , left: function() {
+                    return J.random(100) + '%'
+                }
+
+                , borderWidth: function() {
+                    return J.random(1, 20) + 'px'
+                }
+
+                , borderColor: function() {
+                    return J.randomColor()
+                }
+
+                , borderRadius: function() {
+                    return J.random(50) + '%'
+                }
+
+                , transformOriginX: function() {
+                    return J.random(50, 200) + '%'
+                }
+
+                , animationDuration: function() {
+                    return J.random(300, 5000) + 'ms'
+                }
+            }
+
+            return function() {
+                var div = J('<div />')
+
+                J.each(_properties, function(prop) {
+                    div.css(prop, this())
+                })
+
+                return div
+            }
+        }())
+
+          , body = J('body')
+
+        J.each(J.range(1, 150), function() {
+            var strong = J('<strong />').text('#div' + this)
+
+              , div = makeDiv().append(strong)
+
+            body.append(div)
+        })
+    }())
+    </script>
+</body>
+</html>

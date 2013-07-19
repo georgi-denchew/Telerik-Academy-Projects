@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>01. Carousel</title>
+    <style type="text/css">
+        #wrapper {
+            width: 750px;
+            margin: 0 auto;
+        }
+        #wrapper div {
+            text-align: center;
+            text-shadow: 2px 2px #fff;
+        }
+        #slider {
+            width: 740px;
+            height: 480px;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 10px;
+            margin: 10px 0;
+            background: #fff;
+            box-shadow: 10px 10px 15px #888;
+        }
+        button {
+            width: 50px;
+            height: 50px;
+            font-size: 1.7em;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="container">            
+            <div id="slider">
+                <img id="slider-img" src="images/1.jpg" width="740" height="480">
+            </div>
+            <div id="buttons">
+                <button id="leftButton">&lt;</button>
+                <button id="rightButton">&gt;</button>  
+            </div>  
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var img = document.getElementById("slider-img");
+        var leftButton = document.getElementById("leftButton");
+        var rightButton = document.getElementById("rightButton");
+        var index = 1;
+
+        function nextImg() {
+            var imagesCount = 7;
+                        
+            index++;
+
+            if (index > imagesCount) {
+                index = 1;
+            }
+
+            img.src = "images/" + index + ".jpg";
+        }
+
+        function previousImg() {
+            index--;
+
+            if (index < 1) {
+                index = 7;
+            }
+
+            img.src = "images/" + index + ".jpg";
+        }
+
+        rightButton.addEventListener("click", nextImg, false);
+        leftButton.addEventListener("click", previousImg, false);
+    </script>
+</body>
+</html>

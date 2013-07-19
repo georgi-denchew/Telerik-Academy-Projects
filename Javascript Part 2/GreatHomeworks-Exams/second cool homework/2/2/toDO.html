@@ -1,0 +1,71 @@
+<!doctype html>
+<html ng-app>
+<head>
+    <meta charset="utf-8" />
+    <title>To Do</title>
+    <style>
+        ul { list-style-type: none; }
+
+        label { cursor: pointer; }
+
+        .done-true {
+            text-decoration: line-through;
+            color: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <div ng-controller="TodoCtrl">
+        <span>{{ getRemaining() }} of {{ todos.length }} remaining</span>
+
+        [<a href="#" ng-click="archive()">clear done</a>]
+
+        <ul>
+            <li ng-repeat="todo in todos">
+                <label>
+                    <input type="checkbox" ng-model="todo.done" />
+
+                    <span class="done-{{ todo.done }}">{{ todo.text }}</span>
+                </label>
+            </li>
+        </ul>
+
+        <form ng-submit="add()">
+            <input type="text" ng-model="todoText" placeholder="Add new todo here" />
+
+            <input type="submit" value="Add" />
+        </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+    <script>
+        function TodoCtrl($scope) {
+            $scope.todos =
+                [ { text: 'Learn Angular', done: true }
+                , { text: 'Build an Angular app', done: false }
+            ]
+
+            function _filter() {
+                return $scope.todos.filter(function(todo) {
+                    return !todo.done
+                })
+            }
+
+            $scope.add = function() {
+                $scope.todos.push({ text: $scope.todoText, done: false })
+
+                $scope.todoText = ''
+            }
+
+            $scope.getRemaining = function() {
+                return _filter().length
+            }
+
+            $scope.archive = function() {
+                $scope.todos = _filter()
+            }
+        }
+    </script>
+</body>
+</html>

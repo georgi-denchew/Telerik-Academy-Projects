@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.0.2.js"></script>
+    <script src="Scripts/cities.js"></script>
+    <link href="Styles/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <div id="wrapper">
+        <div id="map-canvas"></div>
+        <span id="buttons">
+            <input type="button" value="Previous" id="previous_button" />
+            <input type="button" value="Next" id="next_button" />
+            <label>Select city:</label>
+            <select>
+                <option value="0">Sofia</option>
+                <option value="1">Berlin</option>
+                <option value="2">Vienna</option>
+                <option value="3">Prague</option>
+                <option value="4" selected="selected">Moskow</option>
+                <option value="5">Rome</option>
+                <option value="6">Madrid</option>
+                <option value="7">London</option>
+                <option value="8">Washington</option>
+                <option value="9">Tokyo</option>
+            </select>
+        </span>
+    </div>
+    <script src="Scripts/onlineMapTourism.js"></script>
+</body>
+</html>
