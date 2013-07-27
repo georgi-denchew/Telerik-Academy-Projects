@@ -1,0 +1,87 @@
+var Player = Class.create(
+    {
+        init: function (positionX, positionY, width, height, canvas, playerType) {
+
+            this._super.init(positionX, positionY, width, height, canvas);
+            this._playerType = playerType;
+            this._speedX = 0;
+            this._speedY = 0;
+            this._playerDrawer = 0;
+            this._stepAnimation = 1;
+
+            // It is supposed to be changed from another class
+            this.previousSteppedFloorIndex = 0;
+            var self = this;
+
+            this._animationMethod = setInterval(function () { myTimer() }, 200);
+
+            function myTimer()
+            {                
+                self._stepAnimation *= -1;
+            }
+
+            if (this._playerType == 1)
+            {
+                this._playerDrawer = new mexicanPlayerDrawer();
+            }
+            if (this._playerType == 2)
+            {
+                this._playerDrawer = new japanesePlayerDrawer();
+            }
+            if (this._playerType == 3)
+            {
+                this._playerDrawer = new ninjaPlayerDrawer();
+            }
+        },
+
+        draw: function ()
+        {
+            if (this._speedX==0)
+            {
+                if (Math.abs(this._speedY) <= 1)
+                {
+                    this._playerDrawer.drawStill(this._super._super.positionX, this._super._super.positionY, this._super._super._canvas);
+                }
+                else
+                {
+                    this._playerDrawer.drawJump(this._super._super.positionX, this._super._super.positionY, this._super._super._canvas);
+                }
+                
+            }
+            else if(this._speedX > 0)
+            {
+                if (this._speedY == 0) {
+                    if (this._stepAnimation == 1)
+                    {
+                        this._playerDrawer.drawRightStepOne(this._super._super.positionX, this._super._super.positionY, this._super._super._canvas);
+                    }
+                    else
+                    {
+                        this._playerDrawer.drawRightStepTwo(this._super._super.positionX, this._super._super.positionY, this._super._super._canvas);
+                    }
+                }
+                else
+                {
+                    this._playerDrawer.drawJumpRight(this._super._super.positionX, this._super._super.positionY, this._super._super._canvas);
+                }
+            }
+            else
+            {
+                if (this._speedY == 0)
+                {
+                    if (this._stepAnimation == 1)
+                    {
+                        this._playerDrawer.drawLeftStepOne(this._super._super.positionX, this._super._super.positionY, this._super._super._canvas);
+                    }
+                    else {
+                        this._playerDrawer.drawLeftStepTwo(this._super._super.positionX, this._super._super.positionY, this._super._super._canvas);
+                    }
+                }
+                else {
+                    this._playerDrawer.drawJumpLeft(this._super._super.positionX, this._super._super.positionY, this._super._super._canvas);
+                }
+            }
+        }
+    });
+
+Player.inherit(gameObject);

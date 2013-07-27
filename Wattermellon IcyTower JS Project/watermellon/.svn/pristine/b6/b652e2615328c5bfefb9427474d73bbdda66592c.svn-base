@@ -1,0 +1,32 @@
+body
+{
+    background-color:#27baf1;
+    text-align:center;
+}
+body header
+{
+    text-align:center;
+}
+body header img
+{
+    display:inline-block;
+    height:50px;
+    vertical-align:middle;
+}
+body header h1
+{
+    display:inline-block;
+}
+
+body #gameContainer
+{
+    display:inline-block;
+    top: 80px;
+}
+body footer
+{
+    clear: both;
+    position: relative;
+    height: 3em;
+    margin-top: 3em;
+}

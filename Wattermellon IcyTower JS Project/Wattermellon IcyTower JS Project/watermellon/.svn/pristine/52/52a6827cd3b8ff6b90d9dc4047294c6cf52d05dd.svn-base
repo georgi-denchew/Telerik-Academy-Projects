@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="QUnit/qunit-1.11.0.css">
+  <script src="scripts/jquery-1.10.1.js"></script>
+    <script src="scripts/localStorageManager.js"></script>
+    <script src="scripts/oop.js"></script>
+    <script src="scripts/base-classes.js"></script>
+    <script src="scripts/button.js"></script>
+    <script src="scripts/label.js"></script>
+    <script src="scripts/floor.js"></script>
+    <script src="scripts/drawMaxicanPlayer.js"></script>
+    <script src="scripts/player.js"></script>
+    <script src="scripts/playerDrawers.js"></script>
+    <script src="scripts/containers.js"></script>
+    <script src="scripts/gameContainer.js"></script>
+</head>
+<body>
+  <div id="qunit">
+  </div>
+  
+  <script type="text/javascript" src="QUnit/qunit-1.11.0.js"></script>
+  <script type="text/javascript" src="scripts/tests.js"></script>
+</body>
+</html>

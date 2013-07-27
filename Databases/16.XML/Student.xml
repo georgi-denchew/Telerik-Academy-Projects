@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<students name="Students" xmlns:students="urn:unexisting.com:Students">
+  <student>
+    <name>
+      Pesho Peshev
+    </name>
+    <sex>
+      male
+    </sex>
+    <birth-date>
+      01.01.1991
+    </birth-date>
+    <phone>
+      0987654321
+    </phone>
+    <email>
+      pesho@gmail.com
+    </email>
+    <course>
+      PHP
+    </course>
+    <specialty>
+      Software Engineering
+    </specialty>
+    <faculty-number>
+      111111111
+    </faculty-number>
+    <exams>
+      <exam>
+        <name>
+          PHP Beginners
+        </name>
+        <tutor>
+          Nakov
+        </tutor>
+        <score>
+          10
+        </score>
+      </exam>
+    <exam>
+        <name>
+          PHP Advanced
+        </name>
+        <tutor>
+          Nakov
+        </tutor>
+        <score>
+          8
+        </score>
+      </exam>
+    <exam>
+        <name>
+          PHP Expert
+        </name>
+        <tutor>
+          Nakov
+        </tutor>
+        <score>
+          9
+        </score>
+      </exam>
+    </exams>
+  </student>
+<student>
+    <name>
+      Mariika Pesheva
+    </name>
+    <sex>
+      female
+    </sex>
+    <birth-date>
+      02.02.1992
+    </birth-date>
+    <phone>
+      0986999888
+    </phone>
+    <email>
+      mariika@gmail.com
+    </email>
+    <course>
+      HTML
+    </course>
+    <specialty>
+      Software Engineering
+    </specialty>
+    <faculty-number>
+      222222222
+    </faculty-number>
+    <exams>
+      <exam>
+        <name>
+          HTML Beginners
+        </name>
+        <tutor>
+          Nakov
+        </tutor>
+        <score>
+          10
+        </score>
+      </exam>
+    <exam>
+        <name>
+          HTML Advanced
+        </name>
+        <tutor>
+          Nakov
+        </tutor>
+        <score>
+          8
+        </score>
+      </exam>
+    <exam>
+        <name>
+          HTML Expert
+        </name>
+        <tutor>
+          Nakov
+        </tutor>
+        <score>
+          9
+        </score>
+      </exam>
+    </exams>
+  </student>
+</students>

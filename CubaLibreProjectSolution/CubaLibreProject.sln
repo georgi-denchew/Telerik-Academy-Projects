@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{6C6D24E3-1E55-4BB1-9163-2E752914537C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLServer.Models.EntityFramework", "SQLServer.Models.EntityFramework\SQLServer.Models.EntityFramework.csproj", "{53F66244-C871-4E2E-A856-A3488C675428}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLServer.Data.EntityFramework", "SQLServer.Data.EntityFramework\SQLServer.Data.EntityFramework.csproj", "{83F5A1DD-3F04-4CF9-BC9B-A5F3837C9552}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySQL.Models.OpenAccess", "MySQL.Models.OpenAccess\MySQL.Models.OpenAccess.csproj", "{C50145E6-A244-4F1F-B41F-90D1925B4A00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDBController", "..\MongoDBController\MongoDBController.csproj", "{868301F3-FB2E-44F0-8B5C-A2DAE2266D79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLite.Models.EntityFramework", "SQLite.Models.EntityFramework\SQLite.Models.EntityFramework.csproj", "{39AD6112-829F-4669-9B0E-995EABE726C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C6D24E3-1E55-4BB1-9163-2E752914537C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C6D24E3-1E55-4BB1-9163-2E752914537C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C6D24E3-1E55-4BB1-9163-2E752914537C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C6D24E3-1E55-4BB1-9163-2E752914537C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53F66244-C871-4E2E-A856-A3488C675428}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53F66244-C871-4E2E-A856-A3488C675428}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53F66244-C871-4E2E-A856-A3488C675428}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53F66244-C871-4E2E-A856-A3488C675428}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83F5A1DD-3F04-4CF9-BC9B-A5F3837C9552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83F5A1DD-3F04-4CF9-BC9B-A5F3837C9552}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83F5A1DD-3F04-4CF9-BC9B-A5F3837C9552}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83F5A1DD-3F04-4CF9-BC9B-A5F3837C9552}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C50145E6-A244-4F1F-B41F-90D1925B4A00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C50145E6-A244-4F1F-B41F-90D1925B4A00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C50145E6-A244-4F1F-B41F-90D1925B4A00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C50145E6-A244-4F1F-B41F-90D1925B4A00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{868301F3-FB2E-44F0-8B5C-A2DAE2266D79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{868301F3-FB2E-44F0-8B5C-A2DAE2266D79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{868301F3-FB2E-44F0-8B5C-A2DAE2266D79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{868301F3-FB2E-44F0-8B5C-A2DAE2266D79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39AD6112-829F-4669-9B0E-995EABE726C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39AD6112-829F-4669-9B0E-995EABE726C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39AD6112-829F-4669-9B0E-995EABE726C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39AD6112-829F-4669-9B0E-995EABE726C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

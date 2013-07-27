@@ -1,0 +1,1 @@
+{ "_id" : ObjectId("51ee95cb76c3b4239814b134"), "ProductId" : 15, "ProductName" : "Lion", "VendorName" : "Nestle Corp.", "TotalQuantitySold" : 30, "TotalIncomes" : "450.00" }

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<search-results>
+	<result-set>
+		<username>peter</username>
+		<title>Intro C# Book</title>
+		<URL>http://www.introprogramming.info/intro-csharp-book/</URL>
+		<tags>algorithms, book, data-structures, intro, nakov, programming</tags>
+		<notes>Fundamental book of programming. A must read!</notes>
+	</result-set>
+	<result-set>
+		<username>peter</username>
+		<title>Intro C# Book</title>
+		<URL>http://www.introprogramming.info/intro-csharp-book/</URL>
+		<tags>algorithms, book, data-structures, intro, nakov, programming</tags>
+		<notes>Fundamental book of programming. A must read!</notes>
+	</result-set>
+	<result-set>
+		<username>maria</username>
+		<title>Telerik Academy</title>
+		<URL>http://academy.telerik.com</URL>
+		<tags>academy, telerik</tags>
+	</result-set>
+</search-results>

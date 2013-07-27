@@ -1,0 +1,1 @@
+{ "_id" : ObjectId("51ee95cb76c3b4239814b144"), "ProductId" : 20, "ProductName" : "Bounty", "VendorName" : "Mars Corp", "TotalQuantitySold" : 44, "TotalIncomes" : "132.00" }

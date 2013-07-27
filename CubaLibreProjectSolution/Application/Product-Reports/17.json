@@ -1,0 +1,1 @@
+{ "_id" : ObjectId("51ee95cb76c3b4239814b13c"), "ProductId" : 17, "ProductName" : "Snickers", "VendorName" : "Mars Corp", "TotalQuantitySold" : 32, "TotalIncomes" : "544.00" }

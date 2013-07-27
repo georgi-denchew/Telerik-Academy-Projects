@@ -1,0 +1,14 @@
+Page:
+	fix styles and layout
+	add share button for fb/twitter/g+
+
+
+Game:
+	Start writting it!
+	Implement settings to be saved locally
+	more stuff to come soon
+
+Still need to meet the following requirements:
+	
+	Data Storage
+	Third-party API - share info on Facbook, Twitter etc. (probably score)

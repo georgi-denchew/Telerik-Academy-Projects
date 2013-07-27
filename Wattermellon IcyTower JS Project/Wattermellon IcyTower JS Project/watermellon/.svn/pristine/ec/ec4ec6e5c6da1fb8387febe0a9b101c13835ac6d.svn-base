@@ -1,0 +1,34 @@
+﻿//////////////////mexicanStay
+function mexicanStay(x, y, ctx) {
+	
+};
+
+//////////////////mexicanRunRight
+function mexicanRunRight(x, y, ctx) {
+    
+};
+
+//////////////////mexicanRunRightNextStep
+function mexicanRunRightNextStep(x, y, ctx) {
+    
+}
+
+//////////////////mexicanRunLeft
+function mexicanRunLeft(x, y, ctx) {
+    
+};
+
+//////////////////mexicanRunLeftNextStep
+function mexicanRunLeftNextStep(x, y, ctx) {
+   
+};
+
+//////////////////mexicanBeforeJump
+function mexicanBeforeJump(x, y, ctx) {
+    
+}
+
+//////////////////mexicanJumping
+function mexicanJumping(x, y, ctx) {
+    
+}

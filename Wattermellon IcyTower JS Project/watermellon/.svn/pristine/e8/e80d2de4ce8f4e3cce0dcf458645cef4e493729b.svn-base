@@ -1,0 +1,26 @@
+var Player = Class.create(
+    {
+        init: function (positionX, positionY, width, height, canvas, playerType) {
+
+            this._super.init(positionX, positionY, width, height, canvas);
+            this._playerType = playerType;
+            this._speedX = 0;
+            this._speedY = 0;
+            this._playerDrawer = 0;
+            if (this._playerType == 1)
+            {
+                this._playerDrawer = new mexicanPlayerDrawer();
+            }
+
+        },
+
+        draw: function ()
+        {
+            console.log(this._super._super.positionX + " "+ this._super._super.positionY);
+            this._playerDrawer.drawStill(this._super._super.positionX, this._super._super.positionY, this._super._super._canvas);
+
+        }
+
+    });
+
+Player.inherit(gameObject);

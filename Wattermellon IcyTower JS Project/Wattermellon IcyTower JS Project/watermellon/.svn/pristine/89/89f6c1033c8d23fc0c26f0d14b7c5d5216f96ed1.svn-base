@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Icy Tower JS</title>
+    <link rel="stylesheet" type="text/css" href="styles/mainPage.css">
+    <script src="scripts/jquery-1.10.1.js"></script>
+    <script src="scripts/localStorageManager.js"></script>
+    <script src="scripts/oop.js"></script>
+    <script src="scripts/base-classes.js"></script>
+    <script src="scripts/button.js"></script>
+    <script src="scripts/label.js"></script>
+    <script src="scripts/floor.js"></script>
+    <script src="scripts/drawMaxicanPlayer.js"></script>
+    <script src="scripts/player.js"></script>
+    <script src="scripts/playerDrawers.js"></script>
+    <script src="scripts/containers.js"></script>
+    <script src="scripts/gameContainer.js"></script>
+	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+</head>
+<body data-root="${rootContext}">
+	<script src="scripts/socialButtons.js"></script>
+    <header>
+        <h1>Icy Tower JS</h1>
+        <img src="images/logo.jpg" />
+    </header>
+
+    <canvas tabindex="1" id="gameContainer" width="550" height="500">Your browser does not support canvas drawing. Get a new browser please!</canvas>
+
+    <footer>
+		<!-- cannot be displayed on localhost -->
+		<div class="fb-root" data-href="INPUT URL HERE" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+		<div fb-xfbml-state="rendered" class="fb-like fb_edge_widget_with_comment fb_iframe_widget" data-show-faces="true" data-send="true" data-href="http://stoilov-it.com/resources/IcyTowerJs/game.html"><span style="height: 29px; width: 450px;"><iframe src="https://www.facebook.com/plugins/like.php?api_key=113869198637480&amp;locale=bg_BG&amp;sdk=joey&amp;channel_url=https%3A%2F%2Fs-static.ak.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D25%23cb%3Df27f1ca7ae703a6%26origin%3Dhttps%253A%252F%252Fdevelopers.facebook.com%252Ffe2a7d03f99536%26domain%3Ddevelopers.facebook.com%26relation%3Dparent.parent&amp;href=http%3A%2F%2Fstoilov-it.com%2Fresources%2FIcyTowerJs%2Fgame.html&amp;node_type=link&amp;width=450&amp;layout=standard&amp;colorscheme=light&amp;show_faces=true&amp;send=true&amp;extended_social_context=false" class="fb_ltr" title="Like this content on Facebook." style="border: medium none; overflow: hidden; height: 29px; width: 450px;" name="f1eceda974b67e" id="f1c967eb2a72ce6" scrolling="no"></iframe></span></div>
+		<div class="g-plusone" data-size="tall" ... ></div>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-url="INPUT URL HERE" data-text="Having fun with">Tweet</a>
+		<a href="http://stoilov-it.com">back to the main site</a>
+	</footer>
+    <script src="scripts/main.Js"></script>
+</body>
+</html>

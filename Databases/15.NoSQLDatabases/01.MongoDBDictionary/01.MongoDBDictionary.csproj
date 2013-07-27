@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DictionaryClient.cs" />
+    <Compile Include="MongoDBDictionaryClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Word.cs" />
   </ItemGroup>

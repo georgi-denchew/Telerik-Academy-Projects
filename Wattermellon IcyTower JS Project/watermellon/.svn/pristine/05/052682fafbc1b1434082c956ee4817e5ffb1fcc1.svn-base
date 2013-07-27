@@ -1,0 +1,70 @@
+test("test player movement", function() {
+	var canvas = document.createElement('canvas');
+	canvas.width  = 550;
+	canvas.height = 500;
+	var ctx = canvas.getContext("2d");
+    var container = new gameContainer(550, 500, ctx, 0, 1, 'rgb(0,0,0)');
+	//alert(JSON.stringify(container));
+	container._player._speedY-=20;
+	var expected = container._player._super._super.positionY-20;
+	container.movePlayer();
+	var actual = container._player._super._super.positionY;
+	equal(actual, expected);
+});
+
+
+test("test player move when player is close to top of the screen", function() {
+	var canvas = document.createElement('canvas');
+	canvas.width  = 550;
+	canvas.height = 500;
+	var ctx = canvas.getContext("2d");
+    var container = new gameContainer(550, 500, ctx, 0, 1, 'rgb(0,0,0)');
+	//alert(JSON.stringify(container));
+	container._player._super._super.positionY=90;
+	var expected = 100;
+	container.moveObjects();
+	var actual = container._player._super._super.positionY;
+	equal(actual, expected);
+});
+
+test("test objects move when player is close to top of the screen", function() 
+{
+	var canvas = document.createElement('canvas');
+	canvas.width  = 550;
+	canvas.height = 500;
+	var ctx = canvas.getContext("2d");
+    var container = new gameContainer(550, 500, ctx, 0, 1, 'rgb(0,0,0)');
+	//alert(JSON.stringify(container));
+	container._player._super._super.positionY=90;
+	
+	container._super._uiElements = new Array();
+	container._super._uiElements.push(new Floor(0, 90, container._super.width, 20, container._super._canvas, 'rgb(0,0,0)'));
+
+	var expected = 100;
+	container.moveObjects();
+	var actual = container._super._uiElements[0]._super._super.positionY;
+	equal(actual, expected);
+});
+
+test("test score incrementation", function() 
+{
+	var canvas = document.createElement('canvas');
+	canvas.width  = 550;
+	canvas.height = 500;
+	var ctx = canvas.getContext("2d");
+    var container = new gameContainer(550, 500, ctx, 0, 1, 'rgb(0,0,0)');
+	//alert(JSON.stringify(container));
+	container._player._super._super.positionY=200;
+	
+	container._super._uiElements = new Array();
+	
+	container._super._uiElements = new Array();
+	container._super._uiElements.push(new Floor(0, 210, container._super.width, 20, container._super._canvas, 'rgb(0,0,0)'));
+
+	container._player._speedY=10;
+	
+	var expected = 10;
+	container.movePlayer();
+	var actual = container._gameScore;
+	equal(actual, expected);
+});

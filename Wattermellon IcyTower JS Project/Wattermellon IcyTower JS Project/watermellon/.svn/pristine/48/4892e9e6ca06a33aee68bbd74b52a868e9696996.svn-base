@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Icy Tower JS</title>
+    <link rel="stylesheet" type="text/css" href="styles/mainPage.css">
+    <script src="scripts/jquery-1.10.1.js"></script>
+    <script src="scripts/localStorageManager.js"></script>
+    <script src="scripts/oop.js"></script>
+    <script src="scripts/base-classes.js"></script>
+    <script src="scripts/button.js"></script>
+    <script src="scripts/label.js"></script>
+    <script src="scripts/floor.js"></script>
+    <script src="scripts/drawMaxicanPlayer.js"></script>
+    <script src="scripts/Player.js"></script>
+    <script src="scripts/playerDrawers.js"></script>
+    <script src="scripts/containers.js"></script>
+    <script src="scripts/gameContainer.js"></script>
+</head>
+<body data-root="${rootContext}">
+    <header>
+        <h1>Icy Tower JS</h1>
+        <img src="images/logo.jpg" />
+    </header>
+    
+
+    <canvas tabindex="1" id="gameContainer" width="550" height="500">Your browser does not support canvas drawing. Get a new browser please!</canvas>
+
+    <footer>footer</footer>
+    <script src="scripts/main.Js"></script>
+</body>
+</html>

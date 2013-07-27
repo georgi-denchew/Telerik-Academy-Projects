@@ -1,0 +1,164 @@
+var gameContainer = Class.create(
+    {
+        init: function (width, height, canvas, img, playerType)
+        {
+            this._super.init(width, height, canvas, 0)
+            this._gameEnded = false;
+            this._leftKeyPressed = false;
+            this._rightKeyPressed = false;
+            this._actionKeyPressed = false;
+
+            var floor = new Floor(0, 230, this._super.width, 20, this._super._canvas, "rgb(255,255,255)");
+
+            this._super.addUiElement(floor)
+
+            var self = this;
+
+            this._risingSpeed = 0;
+
+            this._gameMethod = setInterval(function () { myTimer() }, 4);
+
+            //this._dificultyRise = setInterval(function () { increaseDifficulty() }, 1000);
+
+            this._player= new Player(100, 100, 40, 40, this._super._canvas, 1);
+
+
+            function myTimer()
+            {
+                
+                self.movePlayer();
+                self.moveObjects();
+                self.redraw();
+            }
+
+            function increaseDifficulty() {
+
+
+                //self.moveObjects();
+
+                self._risingSpeed+=0.01;
+            }
+        },
+
+        redraw: function ()
+        {
+            
+            if (this._gameEnded)
+            {
+                alert("ended");
+                //drawEndGame(this._super._canvas);
+            }
+            else
+            {
+                this._super.redraw();
+            }
+            this._player.draw();
+        },
+
+        moveObjects: function ()
+        {
+            var runInOffset = 0;
+            if (this._player._super._super.positionY <= 100)
+            {
+                runInOffset = 100 - this._player._super._super.positionY;
+                this._player._super._super.positionY += runInOffset;
+            }
+            //console.log(this._player._super._super.positionY);
+            //console.log(this._risingSpeed);
+            //console.log(runInOffset);
+            for (var element in this._super._uiElements)
+            {
+                if (this._super._uiElements[element] instanceof gameObject)
+                {
+                    this._super._uiElements[element]._super._super.positionY += this._risingSpeed + runInOffset;
+                }
+                
+            }
+        },
+
+        movePlayer: function()
+        {
+            var hasSteppedOnFloor = false;
+
+            // We don't need to check if the player has stepped on
+            // a new floor while he's still going upwards --> fix to the infinite jump bug
+            if (this._player._speedY >= 0) {
+                for (var element in this._super._uiElements) {
+                    if (this._super._uiElements[element] instanceof gameObject) {
+                        if (Math.abs(this._super._uiElements[element]._super._super.positionY - (this._player._super._super.positionY + 100)) <= 5) {
+                            //alert("hi");
+                            hasSteppedOnFloor = true;
+                            self._actionKeyPressed = false;
+                            break;
+
+                        }
+                    }
+                }
+            }
+
+            if (!hasSteppedOnFloor || this._player._speedY < 0)
+            {
+                this._player._super._super.positionY += this._player._speedY;
+            }            
+
+            // Partial collision fix - must get rid of "magic" number 10
+            // I don't what's the reason for that 10 pixel difference
+            if (this._player._super._super.positionX + this._player._speedX >= - 10 &&
+                this._player._super._super.positionX + this._player._speedX <=
+                this._super.width - this._player._super._super.width * 2 - 10
+                ) {
+                this._player._super._super.positionX += this._player._speedX;
+            }
+            //initiate dummy gravity
+
+            this._player._speedY += 1;
+            if (this._player._speedY > 5)
+            {
+                this._player._speedY = 5;
+            }
+        },
+
+
+        handleKeyDown: function (e)
+        {
+            if (e.keyCode==39)
+            {
+                this._rightKeyPressed = true;
+                this._player._speedX = 1;
+            }
+            if (e.keyCode == 37) {
+                this._leftKeyPressed = true;
+                this._player._speedX = -1;
+            }
+            
+        },
+
+        handleKeyUp: function (e) {
+            if (e.keyCode == 39) {
+                this._rightKeyPressed = false;
+                this._player._speedX=0;
+            }
+            if (e.keyCode == 37) {
+                this._leftKeyPressed = false;
+                this._player._speedX=-0;
+            }
+            //alert(e.keyCode);
+        },
+
+        handleKeyPress: function (evt)
+        {
+            if (!self._actionKeyPressed) {
+                var k = evt ? evt.which : window.event.keyCode;
+                //alert(k);
+                if (k == 32) {
+                    this._player._speedY = -20;
+                }
+                self._actionKeyPressed = true;
+            }
+        }
+
+       
+    });
+
+
+gameContainer.inherit(Container);

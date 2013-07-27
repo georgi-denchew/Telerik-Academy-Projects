@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityDiagrams>
+  <entityDiagramsDiagram dslVersion="2.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SupermarketEntitiesMySQL" fillColor="62, 62, 65" isDefault="true">
+    <DomainModelMoniker name="/SupermarketEntitiesMySQL" />
+    <nestedChildShapes>
+      <classShape Id="48fa8a42-828e-4274-a5f4-d373ea44084e" absoluteBounds="3, 1, 1.5, 1.9550732421875" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SupermarketEntitiesMySQL/Vendor" />
+        <nestedChildShapes>
+          <elementListCompartment Id="55e39fca-e736-4b1b-b064-3df80bd3b7dc" absoluteBounds="3.015, 1.51, 1.4700000000000002, 0.63399251302083326" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="3f5d45cc-119f-4790-85f7-23492763a87d" absoluteBounds="3.015, 2.1539925130208335, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="9477c61b-1e12-428b-b786-f55ead33d980" absoluteBounds="3.015, 2.4133821614583333, 1.4700000000000002, 0.44169108072916652" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="c656144c-8d99-4e67-9cf7-b9a9298c7f7b" absoluteBounds="0.75, 2, 1.5, 2.7242789713541664" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SupermarketEntitiesMySQL/Product" />
+        <nestedChildShapes>
+          <elementListCompartment Id="f610a415-9502-4a01-910c-e4b1b84e3e9d" absoluteBounds="0.765, 2.51, 1.4700000000000002, 1.2108968098958333" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="56dec9e3-96b8-4e35-b38d-454a7da09e0d" absoluteBounds="0.765, 3.7308968098958335, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="d81a6f60-5a10-421e-8d3f-95ee769723f5" absoluteBounds="0.765, 3.9902864583333333, 1.4700000000000002, 0.633992513020833" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="7bd44cb6-f026-48cc-a23b-a11bb0475785" absoluteBounds="3, 3.75, 1.5, 1.9550732421874995" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SupermarketEntitiesMySQL/Measure" />
+        <nestedChildShapes>
+          <elementListCompartment Id="a96d815d-25a0-410e-87f8-817fb5b01d12" absoluteBounds="3.015, 4.26, 1.4700000000000002, 0.63399251302083326" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="284a0425-7b02-459e-afcb-c07b866eb9b2" absoluteBounds="3.015, 4.9039925130208335, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="07f6a233-873e-4e16-980a-0cdd5931d15b" absoluteBounds="3.015, 5.1633821614583333, 1.4700000000000002, 0.44169108072916652" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <associationConnector edgePoints="[(2.25 : 2.47753662109375); (3 : 2.47753662109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+        <AssociationMoniker Id="c4bc2547-542b-467f-943e-9fc21c9e45b4" />
+        <relativeChildShapes />
+        <nodes>
+          <classShapeMoniker Id="c656144c-8d99-4e67-9cf7-b9a9298c7f7b" />
+          <classShapeMoniker Id="48fa8a42-828e-4274-a5f4-d373ea44084e" />
+        </nodes>
+      </associationConnector>
+      <associationConnector edgePoints="[(2.25 : 4.23713948567708); (3 : 4.23713948567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+        <AssociationMoniker Id="ee363301-e2c7-4623-928e-f8ac4eed47d9" />
+        <relativeChildShapes />
+        <nodes>
+          <classShapeMoniker Id="c656144c-8d99-4e67-9cf7-b9a9298c7f7b" />
+          <classShapeMoniker Id="7bd44cb6-f026-48cc-a23b-a11bb0475785" />
+        </nodes>
+      </associationConnector>
+    </nestedChildShapes>
+  </entityDiagramsDiagram>
+</EntityDiagrams>

@@ -1,0 +1,108 @@
+function doKeyDown(e)
+{
+
+    container.handleKeyDown(e);
+
+}
+
+function doKeyUp(e) {
+
+    container.handleKeyUp(e);
+
+}
+
+function doKeyPress(e) {
+    //console.log(e.keyCode);
+    container.handleKeyPress(e);
+
+}
+
+//NOTE: this is experimental and does not contain much useful stuff. If it gets uploaded, you might want to ignore/delete this
+
+
+var c = document.getElementById("gameContainer");
+c.addEventListener("keydown", doKeyDown, true);
+c.addEventListener("keypress", doKeyPress, true);
+c.addEventListener("keyup", doKeyUp, true);
+var ctx = c.getContext("2d");
+var container = constructMainMenu(ctx);
+
+
+//initiateGame();
+$("#gameContainer").click(function (e)
+{
+    var x = Math.floor(e.pageX - $("#gameContainer").offset().left);
+    var y = Math.floor(e.pageY - $("#gameContainer").offset().top);
+    var result = container.handleClick(x, y);
+    if (result!=0)
+    {
+        if (result==1)
+        {
+            //call gameContainer
+            container = new gameContainer(550, 500, ctx, 0, 3);
+        }
+        else if (result == 2)
+        {
+            container = constructSettingsMenu(ctx);
+        }
+        else if (result == 3)
+        {
+            container = constructAboutPage(ctx);
+        }
+        else if (result == 4)
+        {
+            container = constructMainMenu(ctx);
+        }
+        container.redraw();
+    }
+});
+
+function getMousePos(canvas, evt)
+{
+    var rect = canvas.getBoundingClientRect();
+    return {
+        x: evt.clientX - rect.left,
+        y: evt.clientY - rect.top
+    };
+}
+
+c.addEventListener('mousemove', function (evt)
+{
+    var mousePos = getMousePos(c, evt);
+    var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
+    container.handleHover(mousePos.x, mousePos.y);
+}, false);
+
+console.log(ctx.height);
+container.redraw();
+//alert("hi");
+
+
+
+
+function keyDown(event)
+{
+    return false;
+}
+
+function initiateGame()
+{
+    var myVar = setInterval(function () { myTimer() }, 20);
+
+    var x = 0;
+    var y = 0;
+    console.log(c.width + " " + c.height);
+
+    function myTimer()
+    {
+        ctx.clearRect(0, 0, c.width, c.height);
+            ctx.fillStyle = "rgb(255,255,255)";
+            ctx.fillRect(x , y, 20, 20);
+            x++;
+            y++;
+            if (x >= c.width || y >= c.height)
+            {
+                window.clearInterval(myVar);
+            }
+    }
+}

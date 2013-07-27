@@ -1,0 +1,55 @@
+function constructMainMenu(canvas)
+{
+    var container = new Container(550, 500, ctx, 0);
+
+    var img = new Image();
+    img.onload = function ()
+    {
+        container.img = img;
+        container.redraw();
+    };
+    img.src = "images/UnityPlayer.png";
+
+    var newGameButton = new Button(200, 100, 200, 50, ctx, "New Game", 1);
+    container.addUiElement(newGameButton);
+    var SettingsButton = new Button(200, 200, 200, 50, ctx, "Settings", 2);
+    container.addUiElement(SettingsButton);
+    var AboutButton = new Button(200, 300, 200, 50, ctx, "About", 3);
+    container.addUiElement(AboutButton);
+
+    return container;
+}
+
+function constructSettingsMenu(canvas)
+{
+    var container = new Container(550, 500, ctx, 0);
+
+    var img = new Image();
+    img.onload = function () {
+        container.img = img;
+        container.redraw();
+    };
+    img.src = "images/icon_small_settings1.png";
+
+    var backButton = new Button(50, 30, 100, 25, ctx, "< Back", 4);
+    container.addUiElement(backButton);
+
+    return container;
+}
+
+function constructAboutPage(canvas)
+{
+    var container = new Container(550, 500, ctx, 0);
+
+    var img = new Image();
+    img.onload = function () {
+        container.img = img;
+        container.redraw();
+    };
+    img.src = "images/About.png";
+
+    var backButton = new Button(50, 30, 100, 25, ctx, "< Back", 4);
+    container.addUiElement(backButton);
+
+    return container;
+}

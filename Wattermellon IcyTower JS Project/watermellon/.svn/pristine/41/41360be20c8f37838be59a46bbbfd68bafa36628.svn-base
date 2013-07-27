@@ -1,0 +1,162 @@
+var Button = Class.create(
+    {
+        init: function (positionX, positionY, width, height, canvas, content, clickResut)
+        {
+            this._super.init(positionX, positionY, width, height, canvas);
+            this._content = content;
+            this._clickResult = clickResut;
+            this._defaultColor = 'rgb(0,128,0)';
+            this._hoverColor = 'rgb(128,0,0)';
+        },
+        //Please note: text centering is broken
+        //Also, this needs refactoring and color changing(current ones aren't very pretty)
+        draw: function ()
+        {
+            //The button is two half circles and a rectangle
+            pi = Math.PI;
+
+            this._super._canvas.beginPath();
+            this._super._canvas.strokeStyle = 'rgb(0,0,0)';
+            this._super._canvas.arc(this._super.positionX + this._super.height / 2,
+                this._super.positionY + this._super.height / 2,
+                this._super.height / 2,
+                pi / 2, 3 * pi / 2, false);
+
+            this._super._canvas.stroke();
+            this._super._canvas.strokeRect(this._super.positionX + this._super.height / 2,
+                this._super.positionY,
+                this._super.width - this._super.height,
+                this._super.height);
+
+            this._super._canvas.beginPath();
+            this._super._canvas.arc(this._super.positionX + this._super.width - this._super.height/2,
+                this._super.positionY + this._super.height / 2,
+                this._super.height / 2,
+                3 * pi / 2, pi / 2, false);
+
+            this._super._canvas.stroke();
+
+            //Fill 'er up
+            this._super._canvas.beginPath();
+            if (!this._super.hovered)
+            {
+                this._super._canvas.fillStyle = this._defaultColor;
+            }
+            else
+            {
+                this._super._canvas.fillStyle = this._hoverColor;
+            }
+            
+            this._super._canvas.arc(this._super.positionX + this._super.height / 2,
+                this._super.positionY + this._super.height / 2,
+                this._super.height / 2,
+                pi / 2, 3 * pi / 2, false);
+
+            this._super._canvas.fill();
+            this._super._canvas.fillRect(this._super.positionX + this._super.height / 2,
+                this._super.positionY,
+                this._super.width-this._super.height,
+                this._super.height);
+
+            this._super._canvas.beginPath();
+            this._super._canvas.arc(this._super.positionX + this._super.width - this._super.height / 2,
+                this._super.positionY + this._super.height / 2,
+                this._super.height / 2,
+                3 * pi / 2, pi / 2, false);
+
+            this._super._canvas.fill();
+
+            //let's start adding gradients
+            grad = this._super._canvas.createRadialGradient(this._super.positionX + this._super.height/2,
+                this._super.positionY + this._super.height / 2,
+                this._super.height / 2,
+                this._super.positionX + this._super.height/2,
+                this._super.positionY + this._super.height / 2,
+                1);
+            grad.addColorStop(0.0, 'rgba(0,0,0,1)');
+            grad.addColorStop(1.0, 'rgba(0,0,0,0)');
+            this._super._canvas.fillStyle = grad;
+            this._super._canvas.beginPath();
+            this._super._canvas.arc(this._super.positionX + this._super.height / 2,
+                this._super.positionY + this._super.height / 2,
+                this._super.height / 2,
+                pi / 2, 3 * pi / 2, false);
+
+            this._super._canvas.closePath();
+            this._super._canvas.fill();
+
+            //second end
+            grad = this._super._canvas.createRadialGradient(this._super.positionX - this._super.height / 2 +this._super.width,
+                this._super.positionY + this._super.height / 2,
+                this._super.height / 2,
+                this._super.positionX - this._super.height / 2 + this._super.width,
+                this._super.positionY + this._super.height / 2,
+                1);
+            //grad = this._super._canvas.createRadialGradient(190, 30, 30, 190, 30, 1);
+            grad.addColorStop(0.0, 'rgba(0,0,0,1)');
+            grad.addColorStop(1.0, 'rgba(0,0,0,0)');
+            this._super._canvas.fillStyle = grad;
+            this._super._canvas.beginPath();
+            this._super._canvas.arc(this._super.positionX + this._super.width - this._super.height / 2,
+                this._super.positionY + this._super.height / 2,
+                this._super.height / 2,
+                3 * pi / 2, pi / 2, false);
+
+            this._super._canvas.closePath();
+            this._super._canvas.fill();
+
+            //fill the rectangle
+            grad = this._super._canvas.createLinearGradient(this._super.positionX,
+                this._super.positionY,
+                this._super.positionX,
+                this._super.positionY+this._super.height);
+            grad.addColorStop(0.0, 'rgba(0,0,0,1)');
+            grad.addColorStop(0.5, 'rgba(0,0,0,0)');
+            grad.addColorStop(1.0, 'rgba(0,0,0,1)');
+            this._super._canvas.fillStyle = grad;
+            this._super._canvas.fillRect(this._super.positionX + this._super.height / 2,
+                this._super.positionY,
+                this._super.width - this._super.height,
+                this._super.height);
+
+            //shine, baby
+            grad = this._super._canvas.createLinearGradient(this._super.positionX,
+                this._super.positionY,
+                this._super.positionX,
+                this._super.positionY + this._super.height);
+            grad.addColorStop(0.0, 'rgba(255,255,255,1.0)');
+            grad.addColorStop(1.0, 'rgba(255,255,255,0.0)');
+            this._super._canvas.fillStyle = grad;
+            this._super._canvas.beginPath();
+
+            this._super._canvas.arc(this._super.positionX + this._super.height / 2,
+                this._super.positionY + this._super.height / 2,
+                this._super.height / 2,
+                pi / 2, 3 * pi / 2, false);
+
+            this._super._canvas.moveTo(this._super.positionX + this._super.height/2, this._super.positionY);
+
+            this._super._canvas.lineTo(this._super.positionX - this._super.height+this._super.width, this._super.positionY);
+
+            this._super._canvas.arc(this._super.positionX + this._super.width - this._super.height / 2,
+                this._super.positionY + this._super.height / 2,
+                this._super.height / 2,
+                3 * pi / 2, pi / 2, false);
+
+            this._super._canvas.lineTo(this._super.positionX + this._super.height/2, this._super.positionY + this._super.height);
+            this._super._canvas.fill();
+
+
+            this._super._canvas.font = this._super.height/2+"px Arial";
+            this._super._canvas.strokeText(this._content,
+                this._super.positionX + this._super.height / 2,
+                this._super.positionY + this._super.height / 2+5);
+        },
+
+        handleClick: function ()
+        {
+            return this._clickResult;
+        },
+    });
+
+Button.inherit(uiElement);
