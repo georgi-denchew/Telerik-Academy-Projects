@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.0.3.js"></script>
+    <script src="Scripts/mustache.js"></script>
+    <script src="Scripts/class.js"></script>
+    <script src="Scripts/http-requester.js"></script>
+    <script src="Scripts/list-view.js"></script>
+    <style>
+        #names {
+            float: left;
+        }
+
+        #marks {
+            float: right;
+        }
+
+        td {
+            width: 140px;
+            padding: 5px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <script type="x-mustache-template" id="person-template">
+        <td class="name">
+            <strong>{{firstName}} {{lastName}}</strong>
+            {{#marks}}
+            <p>
+                {{subject}}: <strong>{{score}}</strong>
+            </p>
+            {{/marks}}
+            {{^marks}}
+            <p>
+                This student has no marks, yet
+            </p>
+            {{/marks}}
+        </td>
+    </script>
+    <div id="names"></div>
+    <div id="marks"></div>
+
+    <script>
+
+        var personTemplate = Mustache.compile(document.getElementById("person-template").innerHTML);
+
+        httpRequester.getJSON("http://localhost:3173/api/students/get", function (people) {
+
+            var listView = controls.getListView(people, 4);
+
+            var listViewHtml = listView.render(personTemplate);
+
+            document.getElementById("names").innerHTML = listViewHtml;
+        });
+    </script>
+
+    <script>
+    </script>
+</body>
+</html>

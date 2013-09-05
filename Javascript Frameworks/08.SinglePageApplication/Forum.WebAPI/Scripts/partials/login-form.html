@@ -1,0 +1,22 @@
+﻿<div id="tabstrip">
+    <ul>
+        <li class="k-state-active">Log in</li>
+        <li>Register</li>
+    </ul>
+    <div id="login">
+        <label for="tb-login-username">Username: </label>
+        <input data-bind="value: username" type="text" id="tb-login-username" />
+        <label for="tb-login-password">Password: </label>
+        <input data-bind="value: password" type="text" id="tb-login-password" />
+        <button class="k-button" id="btn-login" data-bind="click: login">login</button>
+    </div>
+    <div id="register">
+        <label for="tb-register-username">Username: </label>
+        <input data-bind="value: username" type="text" id="tb-register-username" />
+        <label for="tb-register-nickname">Nickname: </label>
+        <input data-bind="value: nickname" type="text" id="tb-register-nickname" />
+        <label for="tb-register-password">Password: </label>
+        <input data-bind="value: password" type="text" id="tb-register-password" />
+        <button class="k-button" id="btn-register" data-bind="click: register">Register</button>
+    </div>
+</div>

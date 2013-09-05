@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.0.3.js"></script>
+    <script src="Scripts/mustache.js"></script>
+    <script src="Scripts/class.js"></script>
+    <script src="Scripts/http-requester.js"></script>
+    <script src="Scripts/list-view.js"></script>
+    <style>
+        td {
+            width: 140px;
+            padding: 5px;
+            text-align: right;
+        }
+
+        .name {
+            position: relative;
+        }
+
+        .marks{
+            position: absolute;
+            right: 50px;
+            top: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <script type="x-mustache-template" id="person-template">
+        <td>
+            <button class="name">{{firstName}} {{lastName}}</button>
+        </td>
+    </script>
+    <script type="x-mustache-template" id="marks-template">
+            <p>
+                {{#.}}
+                {{subject}}: <strong>{{score}}</strong>
+                {{/.}}
+            </p>
+    </script>
+    <div id="students"></div>
+    <div id="marks"></div>
+    <script>
+
+        
+
+        httpRequester.getJSON("http://localhost:3173/api/students/get", function (people) {
+
+            var listView = controls.getListView(people, 4);
+            var personTemplate = Mustache.compile(document.getElementById("person-template").innerHTML);
+            var listViewHtml = listView.render(personTemplate);
+
+            document.getElementById("students").innerHTML = listViewHtml;
+        });
+
+        (function () {
+            $("#students").on("click", ".name", function (ev) {
+                var names = ev.target.innerHTML.split(' ');
+                var firstName = names[0];
+                var lastName = names[1];
+
+                var url = "firstName=" + firstName + "&lastName=" + lastName;
+                httpRequester.getJSON("http://localhost:3173/api/students/marks?" + url, function (marks) {
+
+                    var listView = controls.getListView(marks, 4);
+                    var marksTemplate = Mustache.compile(document.getElementById("marks-template").innerHTML);
+                    var listViewHtml = listView.render(marksTemplate);
+
+                    document.getElementById("marks").innerHTML = listViewHtml;
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+﻿#login-info {
+    height: 1%;
+}
+
+#open-games-wrapper {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+#active-games-wrapper {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+}
+
+#messages-wrapper {
+    
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+}
+
+#scoreboard-wrapper {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+}
+
+#game-field {
+    display: inline-block;
+    margin-left: 350px;
+}
+
+#game-field table {
+    width: 600px;
+}
+table td {
+    width: 60px;
+}
+
+#error-field {
+    color: #f00;
+    text-align: center;
+}
+
+#game-field table td:hover {
+    cursor: pointer;
+}
+    #game-field table td a {
+        width: 100%;
+        height: 100%;
+        font-size: 0.9em;
+        color: #fff;
+        text-decoration: none;
+    }
+
+#wrapper {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.hero{
+    color: white;
+}
+
+.hero:hover{
+    text-decoration: none;
+}
+
+.characteristics {
+    margin: 0;
+}

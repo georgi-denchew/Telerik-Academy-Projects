@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/class.js"></script>
+    <script src="Scripts/underscore.js"></script>
+    <script src="Scripts/student.js"></script>
+</head>
+<body>
+    <script>
+        var students = [
+            new Student("Pesho", "Goshev", 20, [2, 3, 5]),
+            new Student("Patko", "Toshev", 20, [4, 8, 5]),
+            new Student("Bat", "Smotlev", 28, [6, 5, 10]),
+            new Student("Aleksandur", "Peshev", 17, [1, 2, 3])
+        ];
+
+        function logToConsole(students) {
+            _.each(students, function (st) {
+                console.log(st.toString());
+            });
+        };
+
+        // ------------------------------
+        // Task 01 - first name before last ordered by descending
+        function firstLastName (students) {
+            var firstNameBeforeLast = _.filter(students, function (st) {
+                return st.firstName < st.lastName;
+            });
+
+            return _.sortBy(firstNameBeforeLast, function(st){
+                return st.firstName * -1;
+            });
+        };
+        
+        var firstNameBeforeLast = firstLastName(students);
+        console.log("First name before last alphabetically by descending");
+        logToConsole(firstNameBeforeLast);
+
+        // ------------------------------
+        // Task 02 - age between 18 and 24
+        function ageBetween18And24(students) {
+            var result = _.filter(students, function (st) {
+                return st.age >= 18 && st.age <= 24;
+            });
+
+            return result;
+        };
+
+        var aged = ageBetween18And24(students);
+        console.log("Aged between 12 and 24:");
+        logToConsole(aged);
+
+        // ------------------------------
+        // Task 03 - highest marks
+
+        function studentWithHighestMarks(students) {
+            var result = _.max(students, function (st) {
+                var sum = 0;
+                var grades = _.each(st.marks, function (m) {
+                    sum += m;
+                });
+
+                return sum / st.marks.length;
+
+            });
+
+            return result;
+        };
+
+        var highestMarksStudent = studentWithHighestMarks(students);
+        console.log("Student with highest grades:");
+        console.log(highestMarksStudent.firstName + " " + highestMarksStudent.lastName);
+    </script>
+</body>
+</html>

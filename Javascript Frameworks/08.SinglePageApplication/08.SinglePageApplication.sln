@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20617.1 PREVIEW
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forum.Models", "Forum.Models\Forum.Models.csproj", "{186B5A41-DDA3-42A9-99B7-1B640F120B4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forum.DataLayer", "Forum.DataLayer\Forum.DataLayer.csproj", "{F17EEFB2-CC63-4C19-8E63-0204EE13D650}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forum.WebApiAndClient", "Forum.WebAPI\Forum.WebApiAndClient.csproj", "{228F042D-CC4C-4281-B6CC-0D0B09213EA6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{186B5A41-DDA3-42A9-99B7-1B640F120B4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{186B5A41-DDA3-42A9-99B7-1B640F120B4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{186B5A41-DDA3-42A9-99B7-1B640F120B4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{186B5A41-DDA3-42A9-99B7-1B640F120B4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F17EEFB2-CC63-4C19-8E63-0204EE13D650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F17EEFB2-CC63-4C19-8E63-0204EE13D650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F17EEFB2-CC63-4C19-8E63-0204EE13D650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F17EEFB2-CC63-4C19-8E63-0204EE13D650}.Release|Any CPU.Build.0 = Release|Any CPU
+		{228F042D-CC4C-4281-B6CC-0D0B09213EA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{228F042D-CC4C-4281-B6CC-0D0B09213EA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{228F042D-CC4C-4281-B6CC-0D0B09213EA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{228F042D-CC4C-4281-B6CC-0D0B09213EA6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

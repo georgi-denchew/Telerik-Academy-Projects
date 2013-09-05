@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <link href="Content/themes/base/jquery-ui.css" rel="stylesheet" />
+    <link href="styles/bootstrap.css" rel="stylesheet" />
+    <link href="styles/styles.css" rel="stylesheet" />
+    <script src="Scripts/libs/jquery-2.0.2.js"></script>
+    <script src="Scripts/libs/require.js" data-main="Scripts/app"></script>
+</head>
+<body>
+    <div id="wrapper"></div>
+
+    <script type="x-mustache-template" id="scores-template">
+        <li>{{nickname}} - {{score}} pts</li>
+    </script>
+
+    <script type="x-mustache-template" id="messages-template">
+        <li>
+            {{text}}
+        </li>
+    </script>
+
+    <script type="x-mustache-template" id="open-games-template">
+        <li>
+            <a href="#/join-game/{{id}}">
+                <strong>{{title}}</strong>
+                <span>- by {{creator}}</span>
+            </a>
+        </li>
+    </script>
+
+    <script type="x-mustache-template" id="active-games-template">
+        <li>
+            <a href="#/open-game/{{id}}/{{status}}">
+                <strong>{{title}}</strong>
+                <span> - by {{creator}}</span>
+            </a>
+        </li>
+    </script>
+
+    <script type="x-mustache-template" id="square-template">
+        <a href="#" class="hero" data-unit-id="{{id}}">
+            <p class="characteristics">type: {{type}}</p>
+            <p class="characteristics">att: {{attack}}</p>
+            <p class="characteristics">def: {{armor}}</p>
+            <p class="characteristics">health: {{hitPoints}}</p>
+        </a>
+    </script>
+
+</body>
+</html>

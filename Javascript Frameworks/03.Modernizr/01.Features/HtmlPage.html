@@ -1,0 +1,152 @@
+﻿
+<!doctype html>
+<html>
+<head>
+    <title>UAParser.js - Lightweight JavaScript-based User Agent String Parser</title>
+    <meta charset="utf-8">
+    <script src="scripts/ua-parser.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery-1.6.2.js"></script>
+
+    <script type="text/javascript" src="scripts/modernizr-latest.js"></script>
+
+    <script type="text/javascript">
+        jQuery(function ($) {
+            var target = $('#features > tbody');
+            var traverse = function (object, prefix) {
+                prefix = prefix ? prefix + '.' : '';
+                for (property in object) {
+                    if (typeof object[property] == 'object') {
+                        traverse(object[property], prefix + property);
+                    } else if (typeof object[property] == 'boolean') {
+                        var
+                            tr = $('<tr />'),
+                            name = $('<th />', {
+                                text: prefix + property
+                            }),
+                            value = $('<td />', {
+                                text: object[property] ? 'Supported' : 'Not supported'
+                            });
+                        target.append(tr.append(name).append(value));
+                    }
+                }
+            };
+            traverse(Modernizr, 'Modernizr');
+        });
+    </script>
+
+    <style>
+        #wrapper {
+            width: 33%;
+            margin-left: 33%;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <h1><a href="">Features</a></h1>
+            <h2>Information about your Browser and PC</h2>
+        </header>
+        <section>
+            <table>
+                <tr>
+                    <th>Browser</th>
+                    <th>Engine</th>
+                    <th>OS</th>
+                    <th>Device</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <h2>Modernizr Features</h2>
+            <table id="features">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Support</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+    </div>
+    </section>
+    <script>
+        var pre = document.getElementsByTagName('pre')[0];
+        var sel = document.getElementsByTagName('select')[0];
+        var txt = document.getElementsByTagName('input')[0];
+        var parser = new UAParser();
+        var fill = function (el, prop) {
+            if (typeof prop === 'object') {
+                el.innerHTML = '';
+                el.appendChild(prop);
+            } else if (typeof prop === 'string') {
+                el.innerHTML = prop;
+                el.style.color = "green";
+            } else {
+                el.innerHTML = "No data";
+                el.style.color = "#ccc";
+            }
+        };
+        var imgMap = function (prop, key, arr) {
+            var img = document.createElement('img');
+            return img;
+        };
+        var fillTable = function (uastring) {
+            if (uastring) parser.setUA(uastring);
+            var browser = parser.getBrowser();
+            var engine = parser.getEngine();
+            var os = parser.getOS();
+            var device = parser.getDevice();
+            var tbl = document.getElementsByTagName('td');
+            var prop = [
+                imgMap(browser, 'name', ['ie', 'chrome', 'chromium', 'konqueror', 'safari', 'opera', 'firefox', ['fennec', 'firefox'], 'mozilla', 'midori', 'arora', 'camino', 'iceweasel', 'dolfin', 'rockmelt', 'flock']),
+                imgMap(engine, 'name', [['trident', 'ie'], ['webkit', 'safari'], ['khtml', 'konqueror'], ['presto', 'opera'], ['gecko', 'mozilla']]),
+                imgMap(os, 'name', ['meego', 'symbian', 'android', 'blackberry', 'bada', ['windows phone os', 'winphone'], 'windows', 'chromium', 'mac', 'freebsd', 'bsd', 'kubuntu', 'xubuntu', 'lubuntu', 'ubuntu', 'gentoo', 'fedora', 'mandriva', 'redhat', 'suse', 'debian', 'slackware', 'arch', 'linux', 'solaris', 'webos', 'ios', 'centos', 'pclinuxos', ['ios', 'mac'], ['rim', 'blackberry']]),
+                imgMap(device, 'type', [['undefined', 'pc'], ['tablet', 'ipad'], ['mobile', 'phone']]),
+                browser.name, engine.name, os.name, device.vendor,
+                browser.version, engine.version, os.version, device.model];
+            for (var i = 0; i < prop.length; i++) {
+                fill(tbl[i], prop[i]);
+            }
+            pre.innerHTML = 'Result for <span style="color:green">' + (uastring ? uastring.replace(/</g, '&lt;') : navigator.userAgent + '</span><span> (your browser User-Agent string)') + ' :</span>';
+        }
+        fillTable();
+        sel.addEventListener('change', function () {
+            fillTable(sel.children[sel.selectedIndex].value);
+        });
+        txt.addEventListener('keydown', function (e) {
+            if (e.keyCode == 13) {
+                fillTable(this.value);
+                return false;
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-3767301-5']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</body>
+</html>

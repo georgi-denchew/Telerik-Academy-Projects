@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20617.1 PREVIEW
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "01.Features(1)", "http://localhost:19645", "{6E5A4AA3-C5BD-4B94-913B-2431B32FDC5E}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_19645"
+		Debug.AspNetCompiler.PhysicalPath = "01.Features\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_19645\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_19645"
+		Release.AspNetCompiler.PhysicalPath = "01.Features\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_19645\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "01.Features\"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "02.CanvasGeolocationLocalStorage(1)", "http://localhost:22250", "{D9EB7E04-7CFE-4EA6-83B8-9C2CBAB3895E}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_22250"
+		Debug.AspNetCompiler.PhysicalPath = "02.CanvasGeolocationLocalStorage\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_22250\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_22250"
+		Release.AspNetCompiler.PhysicalPath = "02.CanvasGeolocationLocalStorage\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_22250\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "02.CanvasGeolocationLocalStorage\"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "03.Datepicker", "http://localhost:22880", "{3EB81552-855E-4BE3-8A4A-34BAADE4CA45}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_22880"
+		Debug.AspNetCompiler.PhysicalPath = "03.Datepicker\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_22880\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_22880"
+		Release.AspNetCompiler.PhysicalPath = "03.Datepicker\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_22880\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "03.Datepicker\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E5A4AA3-C5BD-4B94-913B-2431B32FDC5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E5A4AA3-C5BD-4B94-913B-2431B32FDC5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9EB7E04-7CFE-4EA6-83B8-9C2CBAB3895E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9EB7E04-7CFE-4EA6-83B8-9C2CBAB3895E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EB81552-855E-4BE3-8A4A-34BAADE4CA45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EB81552-855E-4BE3-8A4A-34BAADE4CA45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

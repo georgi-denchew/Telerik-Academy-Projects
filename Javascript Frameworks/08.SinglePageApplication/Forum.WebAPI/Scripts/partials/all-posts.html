@@ -1,0 +1,11 @@
+﻿<ul class="menu" data-template="posts-template" data-bind="source: posts"></ul>
+
+<script type="text/x-kendo-template" id="posts-template">
+    <li>
+        <a href="\#post-#:id#">
+            <span data-bind="text: title"></span>
+            <span data-bind="text: postedBy"></span>
+            <span data-bind="text: postDate"></span>
+        </a>
+    </li>
+</script>

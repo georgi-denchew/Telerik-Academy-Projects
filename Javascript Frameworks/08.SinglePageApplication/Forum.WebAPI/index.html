@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="/Styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="/Styles/kendo.metro.min.css" rel="stylesheet" />
+    <script src="/Scripts/libs/jquery-2.0.3.js"></script>
+    <script src="/Scripts/libs/kendo.web.min.js"></script>
+
+    <script src="/Scripts/libs/bootstrap.js"></script>
+    <script src="/Scripts/libs/rsvp.min.js"></script>
+    <script src="/Scripts/libs/class.js"></script>
+    <script src="/Scripts/libs/sha1.js"></script>
+    <script src="/Scripts/app/httpRequester.js"></script>
+    <script src="/Scripts/app/persister.js"></script>
+
+    <script src="/Scripts/app/views.js"></script>
+    <script src="/Scripts/app/view-models.js"></script>
+    <script src="/Scripts/app/app.js"></script>
+</head>
+<body>
+    <h1 class="k-header">Forum SPA</h1>
+    <div id="wrapper">
+        <div id="app"></div>
+    </div>
+
+    <script id="row-template" type="text/x-kendo-template">
+        
+        <li>
+            <span>#: title #</span>
+            <span>#: text #</span>
+            <span>#: tags #</span>
+        </li>
+        
+    </script>
+
+</body>
+</html>

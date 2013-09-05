@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/underscore.js"></script>
+    <script src="Scripts/class.js"></script>
+    <script src="Scripts/animal.js"></script>
+</head>
+<body>
+    <script>
+        var animals = [
+            new Animal("dog", "tosho", 15),
+            new Animal("dog", "pesho", 7),
+            new Animal("dog", "gosho", 12),
+            new Animal("cat", "lumpen", 10),
+            new Animal("cat", "bat sali", 8),
+            new Animal("cat", "lumpen", 1),
+            new Animal("cat", "lumpen", 3)
+        ];
+
+        // Task 04 - group by species and sort by number of legs
+        function groupAndSortAnimals(animals) {
+            var result = _.chain(animals).sortBy(function (animal) {
+                return animal.numberOfLegs;
+            }).groupBy(function (animal) {
+                return animal.species;
+            });
+
+            return result;
+        };
+
+        var groupedAndSortedAnimals = groupAndSortAnimals(animals);
+        _.each(groupedAndSortedAnimals, function (animal) {
+            console.log(animal);
+        });
+
+        // Task 05 - find total number of legs in an array of animals      
+        function countLegs(animals) {
+            var result = _.reduce(animals, function (memo, animal) {
+                return memo + animal.numberOfLegs;
+            }, 0);
+
+            return result;
+        };
+
+        var legs = countLegs(animals);
+        console.log("Total number of legs: " + legs);
+    </script>
+</body>
+</html>

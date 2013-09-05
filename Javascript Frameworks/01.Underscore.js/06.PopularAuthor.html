@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/underscore.js"></script>
+    <script src="Scripts/class.js"></script>
+    <script src="Scripts/book.js"></script>
+</head>
+<body>
+    <script>
+        var books = [
+            new Book("harry smoter", "pesho"),
+            new Book("lord of the bracelets", "pesho"),
+            new Book("gnobbit", "gosho"),
+            new Book("a song of ice and fire", "gosho"),
+            new Book("a song of wind and water", "gosho"),
+        ];
+
+
+        // Task 06 find author with most books
+        var popularAuthor = _.chain(books).groupBy(function (book) {
+            return book.author;
+        }).max(function (books) {
+            return books.length;
+        }).first()._wrapped.author;
+
+        console.log("Author with most books: " + popularAuthor);
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="scripts/jquery-1.6.2.js"></script>
+    <script src="scripts/modernizr-latest.js"></script>
+    <script>
+        
+    </script>
+</head>
+<body>
+    <canvas id="myCanvas" width="200" height="100" style="border: 1px solid #d3d3d3;">Your browser does not support the HTML5 canvas tag.</canvas>
+
+    <script>
+        Modernizr.load({
+            test: Modernizr.canvas,
+            nope: ['scripts/flashcanvas.js'],
+            complete: function () {
+                var cv = document.getElementById("myCanvas");
+                var ctx = cv.getContext('2d');
+                ctx.beginPath();
+                ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+                ctx.stroke();
+            }
+        });
+    </script>
+</body>
+</html>

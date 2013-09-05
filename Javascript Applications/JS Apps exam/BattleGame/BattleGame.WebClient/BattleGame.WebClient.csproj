@@ -121,25 +121,34 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
     <Content Include="index.html" />
     <Content Include="packages.config" />
-    <None Include="Scripts\jquery-2.0.2.intellisense.js" />
-    <Content Include="Scripts\class.js" />
-    <Content Include="Scripts\controller.js" />
-    <Content Include="Scripts\http-requester.js" />
-    <Content Include="Scripts\jquery-2.0.2.js" />
-    <Content Include="Scripts\jquery-2.0.2.min.js" />
-    <Content Include="Scripts\jquery-ui-1.10.3.js" />
-    <Content Include="Scripts\jquery-ui-1.10.3.min.js" />
-    <Content Include="Scripts\persister.js" />
-    <Content Include="Scripts\sha1.js" />
-    <Content Include="Scripts\ui.js" />
+    <None Include="Scripts\libs\jquery-2.0.2.intellisense.js" />
+    <Content Include="Scripts\libs\almond.js" />
+    <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\libs\class.js" />
+    <Content Include="Scripts\libs\controller.js" />
+    <Content Include="Scripts\libs\http-requester.js" />
+    <Content Include="Scripts\libs\jquery-2.0.2.js" />
+    <Content Include="Scripts\libs\jquery-2.0.2.min.js" />
+    <Content Include="Scripts\libs\jquery-ui-1.10.3.js" />
+    <Content Include="Scripts\libs\jquery-ui-1.10.3.min.js" />
+    <Content Include="Scripts\libs\persister.js" />
+    <Content Include="Scripts\libs\sha1.js" />
+    <Content Include="Scripts\libs\ui.js" />
+    <Content Include="Scripts\libs\mustache.js" />
+    <Content Include="Scripts\libs\require.js" />
+    <Content Include="Scripts\libs\sammy-0.7.4.js" />
+    <Content Include="Scripts\libs\sammy-0.7.4.min.js" />
+    <Content Include="Scripts\libs\underscore.js" />
+    <Content Include="Scripts\libs\underscore.min.js" />
     <Content Include="styles\styles.css" />
     <Content Include="Web.config" />
-    <Content Include="Scripts\jquery-2.0.2.min.map" />
+    <Content Include="Scripts\libs\jquery-2.0.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\libs\underscore.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

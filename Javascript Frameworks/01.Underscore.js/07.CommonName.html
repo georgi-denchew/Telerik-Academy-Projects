@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/class.js"></script>
+    <script src="Scripts/student.js"></script>
+    <script src="Scripts/underscore.js"></script>
+</head>
+<body>
+    <script>
+        var people = [
+            new Student("Ivan", "Georgiev"),
+            new Student("Pesho", "Dimitrov"),
+            new Student("Gosho", "Ivanov"),
+            new Student("Gosho", "Petrov"),
+            new Student("Gosho", "Ivanov")
+        ];
+
+        var commonElement = _.chain(people).groupBy(function (person) {
+            return person.firstName +person.lastName;
+        }).max(function (people) {
+
+            return people.length;
+        }).first()._wrapped;
+
+        var commonName = commonElement.firstName + " " + commonElement.lastName;
+
+        console.log("Most common name: " + commonName);
+    </script>
+</body>
+</html>
