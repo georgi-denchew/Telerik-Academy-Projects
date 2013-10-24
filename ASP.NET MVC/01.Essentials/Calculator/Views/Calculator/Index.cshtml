@@ -1,0 +1,38 @@
+﻿@model Calculator.Models.CalculatorModel
+
+@{
+    ViewBag.Title = "Bit Calculator";
+
+    var typesList = Model.Types.Select(x => new SelectListItem()
+    {
+        Selected = false,
+        Text = x.Key,
+        Value = x.Value.ToString()
+    });
+
+    var sizeList = Model.KiloSize.Select(x => new SelectListItem()
+    {
+        Selected = false,
+        Text = x.Key,
+        Value = x.Value.ToString()
+    });
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Calculate", "Calculator", FormMethod.Post))
+{
+    <div class="well-small">
+        <label for="quantity">Quantity</label>
+        <input type="text" value="@Model.Quantity" name="Quantity" id="Quantity" />
+
+        <label for="types">Type:</label>
+        @Html.DropDownList("Type", typesList)
+
+        <label for="sizes">Kilo Size:</label>
+        @Html.DropDownList("Size", sizeList)
+    </div>
+    <input type="submit" value="GO" class="btn" />
+}
+
+@Html.Partial("_Calculate")

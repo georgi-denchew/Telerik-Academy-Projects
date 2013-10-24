@@ -1,0 +1,15 @@
+﻿@model Calculator.Models.CalculatorModel
+
+<h3>Result</h3>
+
+<table class="table table-striped">
+    @{
+        foreach (var item in Model.Types)
+        {
+            <tr>
+                <td>@item.Key</td>
+                <td>@item.Value</td>
+            </tr>
+        }
+    }
+</table>

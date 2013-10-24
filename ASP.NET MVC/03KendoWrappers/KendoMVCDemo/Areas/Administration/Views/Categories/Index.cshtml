@@ -1,0 +1,41 @@
+﻿@using KendoMVCDemo.ViewModels;
+
+@{
+    ViewBag.Title = "Categories";
+}
+
+<h2>ViewBag.Title</h2>
+
+@(Html.Kendo()
+.Grid<CategoryViewModel>()
+.Name("grid-categories")
+.Columns(columns =>
+    {
+        columns.Bound(model => model.Id);
+        columns.Bound(model => model.Name);
+        columns.Command(command =>
+    {
+        command.Edit();
+        command.Destroy();
+    });
+    })
+.ToolBar(toolbar =>
+    {
+        toolbar.Create();
+    })
+.Pageable()
+.Sortable(sort =>
+    {
+        sort.SortMode(GridSortMode.SingleColumn);
+    })
+.DataSource(data =>
+    {
+        data.Ajax()
+            .Model(m => m.Id(c => c.Id))
+            .PageSize(5)
+            .Read("ReadCategories", "Categories")
+            .Update("UpdateCategory", "Categories")
+            .Create(create => create.Action("CreateCategory", "Categories"))
+            .Destroy("DeleteCategory", "Categories");
+    })
+)

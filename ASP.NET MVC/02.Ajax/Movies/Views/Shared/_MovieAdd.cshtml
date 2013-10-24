@@ -1,0 +1,44 @@
+﻿@model IList<Movies.DataModel.Studio>
+@{
+    var selectList = Model.Select(x => new SelectListItem
+    {
+        Text = x.StudioName,
+        Value = x.StudioId.ToString(),
+    });
+}
+
+@using (Ajax.BeginForm("Add",
+new AjaxOptions
+    {
+        UpdateTargetId = "container",
+        OnSuccess = "addSuccess"
+    }))
+{
+    <div>
+        <label for="title">Title:</label>
+        <input type="text" name="Title" id="title" />
+
+        <label for="year">Year:</label>
+        <input type="number" name="Year" id="year" />
+
+        <label for="director">Director:</label>
+        <input type="text" name="Director" id="director" />
+
+        <label for="male">Leading Male Actor:</label>
+        <input type="text" name="LeadingMaleRole" id="male" />
+
+        <label for="female">Leading Female Actor:</label>
+        <input type="text" name="LeadingFemaleRole" id="female" />
+
+        <label>Studio:</label>
+        @Html.DropDownList("StudioId", selectList)
+
+    </div>
+    <input type="submit" value="Add" class="btn btn-info" />
+}
+
+<script>
+    function addSuccess() {
+        $("#movie-container").html("<p>Movie added!</p>");
+    }
+</script>

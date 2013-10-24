@@ -1,0 +1,20 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Lecturer.master.cs" Inherits="Forum.Lecturer.Lecturer" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="row-fluid">
+        <div id="lecturer-menu" class="span3 well">
+            <ul class="nav nav-list">
+                <li><asp:HyperLink ID="HyperLinkCourses" CssClass="btn" runat="server" NavigateUrl="~/Lecturer/Courses">Courses</asp:HyperLink></li>
+                <li><asp:HyperLink ID="HyperLinkUsers" CssClass="btn" runat="server" NavigateUrl="~/Lecturer/Users">Users</asp:HyperLink></li>
+                <li><asp:HyperLink ID="HyperLinkHomeworks" CssClass="btn" runat="server" NavigateUrl="~/Lecturer/Homeworks">Homeworks</asp:HyperLink></li>
+                <li><asp:HyperLink ID="HyperLinkStats" CssClass="btn" runat="server" NavigateUrl="~/Lecturer/Stats">Stats</asp:HyperLink></li>
+            </ul>
+            <asp:ValidationSummary ID="ValidationSummary" runat="server"/>
+        </div>
+
+        <div class="span6">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderLecturer" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+</asp:Content>

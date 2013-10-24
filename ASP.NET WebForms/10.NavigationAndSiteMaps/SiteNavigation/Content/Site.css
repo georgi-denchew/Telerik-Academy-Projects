@@ -1,0 +1,33 @@
+﻿body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+/* styles for removing the background from form */
+.no-color {
+  background-color: white;
+  border-style:none;
+}
+
+#SiteMapPathBreadcrump
+{
+    display: block;
+    color: #CCFFFF;
+    padding-top: 5px;
+    padding-bottom: 7px;
+    padding-left: 10px;
+    margin: 0;
+    background: #5A6F83;
+    position:relative;
+}
+
+#SiteMapPathBreadcrump a
+{
+    text-decoration: none;
+    color: #EECCFF;
+}
+
+#SiteMapPathBreadcrump a:hover
+{
+    text-decoration: underline;
+}

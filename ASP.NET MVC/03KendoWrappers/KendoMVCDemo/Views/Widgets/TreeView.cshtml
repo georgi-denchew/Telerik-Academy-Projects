@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Kendo.Mvc.UI.TreeViewItemModel>
+
+@{
+    ViewBag.Title = "TreeView";
+}
+
+<h2>ViewBag.Title</h2>
+
+
+@*@(Html.Kendo()
+.TreeView()
+.Name("tree-view")
+.Items(items =>
+    {
+        items.Add().Text("Widgets").Items(children =>
+            {
+                children.Add().Text("Calendar").Action("Calendar", "Widgets");
+                children.Add().Text("Auto Complete").Url("~/Widgets/AutoComplete");
+                children.Add().Text("DropDownList").Action("DropDownList", "Widgets");
+            });
+        items.Add().Text("Folder 2");
+    }
+))*@
+
+
+@(Html.Kendo()
+.TreeView()
+.Name("tree-view")
+.BindTo(Model)
+)

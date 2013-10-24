@@ -1,0 +1,14 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Student.master.cs" Inherits="Forum.Student.Student" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="row-fluid">
+        <div id="lecturer-menu" class="span3 well">
+            <ul class="nav nav-list">
+                <li><asp:HyperLink ID="HyperLinkCourses" CssClass="btn" runat="server" NavigateUrl="~/Student/Courses">All courses</asp:HyperLink></li>
+            </ul>
+        </div>
+        <div class="span6">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderStudent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+</asp:Content>

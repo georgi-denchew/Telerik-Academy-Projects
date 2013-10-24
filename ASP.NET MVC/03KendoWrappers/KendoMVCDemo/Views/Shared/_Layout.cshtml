@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/kendo")
+    @Styles.Render("~/Content/kendo")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Library System", "Index", "Home", null, new { @class = "brand" })
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li>@Html.ActionLink("Books", "Index", "Books", new { area = "Administration" }, new { })</li>
+                        <li>@Html.ActionLink("Categories", "Index", "Categories", new { area = "Administration" }, new { })</li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Widgets
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Calendar", "Calendar", "Widgets", new {area = "" }, new { })</li>
+                                <li>@Html.ActionLink("AutoComplete", "AutoComplete", "Widgets", new { area = "" }, new { })</li>
+                                <li>@Html.ActionLink("DropDownList", "DropDownList", "Widgets", new { area = "" }, new { })</li>
+                                <li>@Html.ActionLink("TreeView", "TreeView", "Widgets", new { area = "" }, new { })</li>
+                                <li>@Html.ActionLink("Upload", "Upload", "Widgets", new { area = "" }, new { })</li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                    @*@(Html.Kendo()
+                        .Menu()
+                        .Name("main-menu")
+                        .Direction(MenuDirection.Bottom)
+                        .Items(item =>
+                        {
+                            item.Add().Text("Home").Action("Index", "Home");
+                            item.Add().Text("About").Action("About", "Home");
+                            item.Add().Text("Widgets").Items(children =>
+                                {
+                                    children.Add().Text("Calendar").Action("Calendar", "Widgets");
+                                    children.Add().Text("AutoComplete").Action("AutoComplete", "Widgets");
+                                    children.Add().Text("DropDownList").Action("DropDownList", "Widgets");
+                                    children.Add().Text("TreeView").Action("TreeView", "Widgets");
+                                    children.Add().Text("Upload").Action("Upload", "Widgets");
+
+                                    if (User.Identity.IsAuthenticated)
+                                    {
+                                        children.Add().Text("BooksGrid").Action("Index", "Administration/Books");
+                                    }
+                                });
+                        }))*@
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

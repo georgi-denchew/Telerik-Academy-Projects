@@ -1,0 +1,40 @@
+﻿@model Movies.DataModel.Movy
+
+<dl>
+    <dt>
+        Title:
+    </dt>
+    <dd>
+        @Model.Title
+    </dd>
+    <dt>
+        Year:
+    </dt>
+    <dd>
+        @Model.Year
+    </dd>
+    <dt>
+        Director:
+    </dt>
+    <dd>
+        @Model.Director
+    </dd>
+    <dt>
+        Studio:
+    </dt>
+    <dd>
+        @Model.Studio.StudioName
+    </dd>
+    <dt>
+        Leading Male Actor:
+    </dt>
+    <dd>
+        @Model.LeadingMaleRole
+    </dd>
+    <dt>
+        Leading Female Actress:
+    </dt>
+    <dd>
+        @Model.LeadingFemaleRole
+    </dd>
+</dl>

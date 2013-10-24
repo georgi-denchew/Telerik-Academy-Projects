@@ -1,0 +1,16 @@
+﻿@using (Ajax.BeginForm("Add", "Studios",
+    new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "container"
+    }))
+{
+    <div>
+        <label for="name">Studio name:</label>
+        <input id="name" type="text" name="StudioName" />
+
+        <label for="address">Studio address:</label>
+        <input id="address" type="text" name="Studioaddress" />
+    </div>
+    <input type="submit" value="Add Studio" class="btn btn-info" />
+}

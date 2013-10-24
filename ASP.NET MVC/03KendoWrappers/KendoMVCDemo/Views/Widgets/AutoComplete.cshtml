@@ -1,0 +1,65 @@
+﻿@model IEnumerable<KendoMVCDemo.ViewModels.ShortBookViewModel>
+
+@{
+    ViewBag.Title = "AutoComplete";
+}
+
+<h2>ViewBag.Title</h2>
+
+
+
+<div>
+    Client Filtered
+
+    @(Html.Kendo()
+.AutoComplete()
+.Name("client-autocomplete")
+.BindTo(Model)
+.DataTextField("Title")
+.Placeholder("Enter Book")
+.Filter(FilterType.Contains)
+.MinLength(3)
+.Events(ev =>
+{
+    ev.Select("selectAutoComplete");
+}))
+</div>
+
+<form action="/Widgets/saykor" method="post">
+
+    <div>
+        Server Filtered
+        @(Html.Kendo()
+.AutoComplete()
+.Name("serversideautocomplete")
+.DataTextField("Title")
+.MinLength(3)
+.Placeholder("Enter book")
+.Events(ev =>
+    {
+        ev.Select("selectAutoComplete");
+    })
+.DataSource(source =>
+    {
+        source.Read(read =>
+            {
+                read.Action("GetAutocompleteData", "Widgets")
+                    .Data("onAdditionalData");
+            }).ServerFiltering(true);
+    }
+    )
+        )
+    </div>
+    <input type="submit" value="Submit" />
+</form>
+<script>
+    function selectAutoComplete(e) {
+        console.log(this.dataItem(e.item.index()).Id);
+    }
+
+    function onAdditionalData() {
+        return {
+            text: $('#serversideautocomplete').val()
+        };
+    }
+</script>

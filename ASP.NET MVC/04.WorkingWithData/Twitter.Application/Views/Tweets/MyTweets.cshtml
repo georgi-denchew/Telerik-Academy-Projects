@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Twitter.Models.Tweet>
+@{
+    ViewBag.Title = "MyTweets";
+}
+
+<h2>MyTweets</h2>
+
+
+
+<div>
+    @using (Ajax.BeginForm("TweetsByTag", "Tweets", new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "placeholder"
+    }, new { @class = "form-search" }))
+    {
+        <div class="input-append">
+            <input type="text" name="tag" class="span2 search-query" placeholder="search by tag" />
+            <input type="submit" class="btn" value="search" />
+        </div>
+    }
+</div>
+@Html.ActionLink("New Tweet", "Add", new { }, new { })
+<div id="placeholder">
+
+    @Html.Partial("_TweetsList", Model);
+</div>

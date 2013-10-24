@@ -1,0 +1,26 @@
+﻿body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+/* styles for removing the background from form */
+.no-color {
+    background-color: white;
+    border-style: none;
+}
+
+
+.lecturer-menu {
+    width: 100px;
+}
+
+.rem-bullets {
+    padding:0;
+    margin:0 10px;
+    list-style-type: none!important;
+}
+.rem-bullets li {
+    padding:0;
+    margin:0;
+}
+

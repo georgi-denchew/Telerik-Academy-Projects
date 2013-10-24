@@ -1,0 +1,58 @@
+﻿@using KendoMVCDemo.Areas.Administration.ViewModels
+@using KendoMVCDemo.Models
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@(Html.Kendo()
+.Grid<DetailedBookViewModel>()
+.Name("grid-books")
+.Columns(columns =>
+    {
+        columns.Bound(model => model.Id);
+        columns.Bound(model => model.Title);
+        columns.Bound(model => model.Content);
+        columns.Bound(model => model.Author);
+        columns.Bound(model => model.Category);
+        columns.Command(command =>
+            {
+                command.Edit();
+            });
+        columns.Command(command =>
+            {
+                command.Destroy();
+            });
+    })
+    .ToolBar(tool =>
+    {
+        tool.Create();
+    })
+    .Pageable()
+    .Sortable(sort =>
+    {
+        sort.SortMode(GridSortMode.SingleColumn);
+    })
+    .Groupable()
+    .Filterable()
+    .Editable(edit =>
+    {
+        edit.Mode(GridEditMode.PopUp).TemplateName("BookEditTemplate");
+    })
+    .Selectable()
+    .DataSource(data =>
+    {
+        data.Ajax()
+            .Model(m =>
+                {
+                    m.Id(b => b.Id);
+                })
+            .PageSize(10)
+            .ServerOperation(true)
+            .Read("ReadBooks", "Books")
+            .Update("UpdateBook", "Books")
+            .Create(create => create.Action("CreateBook", "Books"))
+            .Destroy("DeleteBook", "Books");
+    })
+)

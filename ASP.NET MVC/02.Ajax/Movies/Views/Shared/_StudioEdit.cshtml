@@ -1,0 +1,19 @@
+﻿@model Movies.DataModel.Studio
+
+@using (Ajax.BeginForm("Update", "Studios", new { id = Model.StudioId },
+    new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "container"
+    }))
+{
+    <div>
+        <label for="name">Studio name:</label>
+        <input type="text" name="StudioName" id="name" value="@Model.StudioName" />
+
+        <label for="address">Studio address:</label>
+        <input type="text" name="StudioAddress" id="address" value="@Model.StudioAddress" />
+    </div>
+    
+    <input type="submit" value="Update" class="btn" />
+}

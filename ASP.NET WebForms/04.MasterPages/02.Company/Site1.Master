@@ -1,0 +1,20 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="_02.Company.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>My Company Inc. Ltd. Corp.</header>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        <footer>Copyright Trademark Coca-Cola-Mcdonalds-Microsoft</footer>
+    </form>
+</body>
+</html>

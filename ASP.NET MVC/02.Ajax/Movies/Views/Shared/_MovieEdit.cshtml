@@ -1,0 +1,55 @@
+﻿@model Movies.Models.EditMovieModel
+
+@{
+    var selectList = Model.Studios.Select(x => new SelectListItem
+    {
+        Text = x.StudioName,
+        Value = x.StudioId.ToString(),
+        Selected = x.StudioId == Model.Movie.StudioId ? true : false
+    });
+}
+
+@using (Ajax.BeginForm("Update", new { id = Model.Movie.MovieId },
+    new AjaxOptions
+    {
+        UpdateTargetId = "container",
+        HttpMethod = "POST",
+        OnSuccess = "updateSuccess",
+
+    }))
+{
+
+    <div>
+
+        <label for="title">Title:</label>
+        <input type="text" name="Title" id="title" value="@Model.Movie.Title" />
+        <label for="year">Year:</label>
+        <input  type="number" name="Year" id="year" value="@Model.Movie.Year" />
+
+        <label for="director">Director:</label>
+
+        <input type="text" name="Director" id="director" value="@Model.Movie.Director" />
+
+        <label for="male">
+            Leading Male Actor:
+        </label>
+        <input type="text" name="LeadingMaleRole" id="male" value="@Model.Movie.LeadingMaleRole" />
+
+
+        <label for="female">
+            Leading Female Actor:
+        </label>
+        <input type="text" name="LeadingFemaleRole" id="female" value="@Model.Movie.LeadingFemaleRole" />
+
+        <label>Studio:</label>
+        @Html.DropDownList("StudioId", selectList)
+    </div>
+
+    <input type="submit" value="Update" class="btn" />
+}
+
+<script>
+    function updateSuccess() {
+        $("#movie-container").html("<p>Movie updated!</p>");
+    }
+</script>

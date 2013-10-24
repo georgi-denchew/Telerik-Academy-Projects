@@ -1,0 +1,33 @@
+﻿@model IList<MVCApplication.Areas.Products.Models.ProductModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Hello</h2>
+
+@section Aside {
+    <aside>
+        <ul>
+            <li>Yesterday</li>
+            <li>All</li>
+            <li>My</li>
+            <li>Trouble</li>
+            <li>Seemd</li>
+            <li>So far away</li>
+        </ul>
+    </aside>
+}
+
+<div class="well-small span4">
+    @using (Html.BeginForm("Search", "Products", FormMethod.Post))
+    {
+        <label for="Name">Name:</label>
+        <input id="Name" name="name" type="text" placeholder="Name" />
+        <input type="submit" value="Search" />
+    }
+</div>
+
+
+
+@Html.Partial("_AllProducts", Model)

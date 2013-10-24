@@ -1,0 +1,74 @@
+﻿@model IList<Movies.DataModel.Studio>
+
+@{
+    ViewBag.Title = "Studios";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row-fluid">
+    <div class="span6">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td>@Model[i].StudioName</td>
+                    <td>@Model[i].StudioAddress</td>
+                    <td>
+                        @Ajax.ActionLink("View Details", "Index", new { id = Model[i].StudioId },
+                        new AjaxOptions
+                        {
+                            InsertionMode = InsertionMode.Replace,
+                            UpdateTargetId = "studio-container"
+                        })
+                    </td>
+                    <td>
+                        @Ajax.ActionLink("Edit", "Edit", new { id = Model[i].StudioId },
+                        new AjaxOptions
+                        {
+                            InsertionMode = InsertionMode.Replace,
+                            UpdateTargetId = "studio-container"
+                        },
+                        new { @class = "btn" })
+                    </td>
+                    <td>
+                        @Ajax.ActionLink("Delete", "Delete", new { id = Model[i].StudioId },
+                        new AjaxOptions
+                        {
+                            Confirm = string.Format("Are you sure you want to delete \"{0}\"?", Model[i].StudioName),
+                            UpdateTargetId = "container",
+                            InsertionMode = InsertionMode.Replace,
+                            OnSuccess = "studioDeleteSuccess"
+                        }, 
+                        new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </table>
+
+        @Ajax.ActionLink("Add Studio", "CreateNew", null,
+        new AjaxOptions
+        {
+            InsertionMode = InsertionMode.Replace,
+            UpdateTargetId = "studio-container"
+        }, 
+        new { @class = "btn btn-info"})
+
+    </div>
+
+    <div class="span6 well" id="studio-container">
+    </div>
+</div>
+
+<script>
+    function studioDeleteSuccess() {
+        $("#studio-container").html("<p>Studio deleted!</p>");
+    }
+</script>

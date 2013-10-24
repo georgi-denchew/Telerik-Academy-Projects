@@ -1,0 +1,54 @@
+﻿@model KendoMVCDemo.Areas.Administration.ViewModels.DetailedBookViewModel
+
+@using (Html.BeginForm("UpdateBook", "Books"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    @Html.HiddenFor(model => model.Id)
+
+    <div class="control-group">
+        @Html.LabelFor(model => model.Title, new { @class = "control-label" })
+        <div class="controls">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title, null, new { @class = "help-inline" })
+        </div>
+    </div>
+
+    <div class="control-group">
+        @Html.LabelFor(model => model.Content, new { @class = "control-label" })
+        <div class="controls">
+            @Html.EditorFor(model => model.Content)
+            @Html.ValidationMessageFor(model => model.Content, null, new { @class = "help-inline" })
+        </div>
+    </div>
+
+    <div class="control-group">
+        @Html.LabelFor(model => model.Author, new { @class = "control-label" })
+        <div class="controls">
+            @Html.EditorFor(model => model.Author)
+            @Html.ValidationMessageFor(model => model.Author, null, new { @class = "help-inline" })
+        </div>
+    </div>
+    <div class="control-group">
+        @Html.LabelFor(model => model.Category, new { @class = "control-label" })
+        <div class="controls">
+            @(Html.Kendo().DropDownList()
+                .Name("CategoryId")
+                .DataSource(source =>
+                    {
+                        source.Read(read =>
+                            {
+                                read.Action("GetAllCategories", "Categories");
+                            });
+                        source.ServerFiltering(false);
+                    }
+                )
+                .DataTextField("Name")
+                .DataValueField("Id")
+                .Value(Model.CategoryId.ToString())
+                )
+            @Html.ValidationMessageFor(model => model.Author, null, new { @class = "help-inline" })
+        </div>
+    </div>
+}
